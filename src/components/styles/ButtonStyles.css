@@ -1,0 +1,68 @@
+html {
+    background-color: black;
+}
+
+.uiverse-button {
+    margin: 0;
+    height: auto;
+    background: transparent;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    --border-right: 4px;
+    --text-stroke-color: rgba(255, 255, 255, 0.4);
+    --animation-color: #ac0c0c;
+    --fs-size: 2em;
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: var(--fs-size);
+    font-family: "Arial";
+    position: relative;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 0.8px var(--text-stroke-color);
+    z-index: 10;
+}
+
+.uiverse-button .hover-text {
+    position: absolute;
+    box-sizing: border-box;
+    color: var(--animation-color);
+    width: 0%;
+    inset: 0;
+    border-right: var(--border-right) solid var(--animation-color);
+    overflow: hidden;
+    transition: 0.4s ease-in-out;
+    -webkit-text-stroke: 0.8px var(--animation-color);
+}
+
+.uiverse-button:hover {
+    text-shadow: 0 0 3px rgba(255, 77, 77, 0.8), 0 0 6px rgba(255, 77, 77, 0.5);
+}
+
+.uiverse-button:hover .hover-text {
+    width: 100%;
+    filter: drop-shadow(0 0 6px rgba(255, 77, 77, 0.6));
+}
+
+.glowing-button {
+    padding: 12px 24px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    background: linear-gradient(90deg, #ff0000, #ff6a00, #ff0000);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.glowing-button:hover {
+    box-shadow: 0 0 30px rgba(255, 77, 77, 1);
+    transform: scale(1.05);
+}
