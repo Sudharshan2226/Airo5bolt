@@ -14,7 +14,7 @@ const rules = [
       "Participants are responsible for the safety and security of their personal belongings.",
       "Participants must maintain cleanliness, follow a proper dress code, and uphold discipline at the venue.",
       "Travel expenses must be borne by the participants.",
-      "The event will take place from 8:00 AM on April 16th to 4:00 PM on April 17th IST. Participants should plan accordingly.",
+      "The event will take place from 8:00 AM on April 7th to 3:00 PM on April 8th IST. Participants should plan accordingly.",
       "If the chosen problem statement requires hardware components, participants must bring their own as the organizing team will not provide any hardware.",
       "College students must bring their college ID card (a photocopy is acceptable) for verification at the grand finale.",
       "All project work must be completed during the Hackathon, and the code repository must be initialized at the start of the event.",
