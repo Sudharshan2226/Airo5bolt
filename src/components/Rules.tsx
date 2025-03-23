@@ -7,6 +7,8 @@ const rules = [
     details: [
       "Each team must consist of a minimum of 2 members and a maximum of 4 members.",
       "Teams are allowed to select and work on only one problem statement.",
+      "Inter-college teams: Allowed. Team members can be from the different colleges.",
+      "Inter-specialization teams: Allowed. Team members can be from different specializations within the same college.",
       "All solutions must be submitted before the specified deadline.",
       "Any form of plagiarism will result in immediate disqualification of the team.",
       "At least two participants from the registered team must be physically present for the grand finale round.",
