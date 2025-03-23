@@ -89,7 +89,7 @@ const Hero: React.FC = () => {
             {/* Glitch Effect Title */}
             <div className="mb-10">
               <h1 className="glitch-text font-bold text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-blue-600">
-                BSB
+                HackTronix 1.0
               </h1>
             </div>
 
