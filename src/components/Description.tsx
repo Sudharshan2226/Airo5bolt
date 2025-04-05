@@ -50,7 +50,7 @@ const Description = () => {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-300">
-              <EventDetail icon={Calendar} label="Date" value="April 7-8, 2025" />
+              <EventDetail icon={Calendar} label="Date" value="April 29-30, 2025" />
               <EventDetail icon={Clock} label="Duration" value="24 Hours" />
               <EventDetail icon={MapPin} label="Location" value="Sri Sairam Engineering College" />
             </div>
