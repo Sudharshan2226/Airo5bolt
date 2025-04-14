@@ -119,7 +119,7 @@ const Results = () => {
           <Flame className="w-16 h-16 text-red-500 mx-auto mb-4 animate-bounce" />
           
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-500 to-red-600 uppercase tracking-wider">
-            Dragons Results
+            Dragon's Results
           </h1>
           
           <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-red-500 mx-auto"></div>
