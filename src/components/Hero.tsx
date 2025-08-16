@@ -63,7 +63,7 @@ const HeroSection = () => {
     {
       icon: Award,
       label: "Department",
-      value: "ECE"
+      value: "AI & DS"
     }
   ];
 
@@ -136,7 +136,7 @@ const HeroSection = () => {
               
               <div className="text-center mb-6 sm:mb-8">
                 <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/90 font-semibold tracking-wide">
-                  DEPARTMENT OF ELECTRONICS AND COMMUNICATION ENGINEERING
+                  DEPARTMENT OF ARTIFICIAL INTELLIGENCE AND DATA SCIENCE
                 </p>
                 <p className="text-base sm:text-lg md:text-xl text-white/70 mt-2 font-medium tracking-wider">
                   PRESENTS
