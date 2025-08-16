@@ -1,13 +1,6 @@
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, Users, Award, Clock } from 'lucide-react';
+import { Calendar, MapPin, Users, Award } from 'lucide-react';
 import GradientText from './ui/GradientText';
-// Temporary test button
-// Remove or comment out after testing
-const TestButton = () => (
-  <button style={{ position: 'absolute', top: 20, right: 20, zIndex: 1000 }}>
-    Test Button
-  </button>
-);
 
 import collegeLogo from './assets/sec.png';
 import leoLogo from './assets/leo.png';
