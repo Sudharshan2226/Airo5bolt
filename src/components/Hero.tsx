@@ -1,5 +1,7 @@
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, Users, Award } from 'lucide-react';
+import baffle from 'baffle';
 import GradientText from './ui/GradientText';
 
 import collegeLogo from './assets/sec.png';
@@ -7,12 +9,61 @@ import leoLogo from './assets/leo.png';
 import zenistaLogo from './assets/leo.png';
 import backgroundVideo from './assets/dragondone.mp4';
 
+interface TimeLeft {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+}
+
 const HeroSection = () => {
+  const targetDate: number = new Date("September 12, 2025 00:00:00").getTime();
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft());
+
+  function calculateTimeLeft(): TimeLeft {
+    const now: number = new Date().getTime();
+    const difference: number = targetDate - now;
+
+    if (difference <= 0) {
+      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    }
+
+    return {
+      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+      minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+      seconds: Math.floor((difference % (1000 * 60)) / 1000),
+    };
+  }
+
+  useEffect(() => {
+    const glitchEffect = baffle(".glitch-text", {
+      characters: "▓▒░█ <>/[]{}".split(""),
+      speed: 50,
+    });
+
+    glitchEffect.start().reveal(2000, 800);
+
+    const interval = setInterval(() => {
+      glitchEffect.start().reveal(2000, 800);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   const eventDetails = [
     {
       icon: Calendar,
       label: "Date",
-      value: "8th August 2025"
+      value: "12th September 2025"
     },
     {
       icon: MapPin,
@@ -57,7 +108,7 @@ const HeroSection = () => {
       </video>
 
       {/* Video Overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/30 z-10" />
+      <div className="absolute inset-0 bg-black/40 z-10" />
 
       {/* Time-Travel Animated Background (overlay on video) */}
       <div className="absolute inset-0 z-20">
@@ -120,12 +171,12 @@ const HeroSection = () => {
             key={i}
             className="absolute w-2 h-2 bg-time-portal/30 rounded-full"
             initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
+              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1920),
+              y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1080),
             }}
             animate={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
+              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1920),
+              y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1080),
               opacity: [0, 1, 0],
             }}
             transition={{
@@ -223,7 +274,7 @@ const HeroSection = () => {
           </motion.div>
           
           <motion.h1
-            className="text-7xl md:text-8xl font-bold mb-4 tracking-wider"
+            className="glitch-text text-7xl md:text-8xl font-bold mb-4 tracking-wider"
             transition={{ duration: 3, repeat: Infinity }}
           >
             <GradientText 
@@ -254,13 +305,26 @@ const HeroSection = () => {
           >
             National Level Technical Symposium
           </motion.p>
+
+          {/* Countdown Timer */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.4, duration: 0.8 }}
+            className="grid grid-cols-4 gap-4 mb-12 max-w-2xl mx-auto text-center"
+          >
+            <CountdownBlock value={timeLeft.days} label="Days" />
+            <CountdownBlock value={timeLeft.hours} label="Hours" />
+            <CountdownBlock value={timeLeft.minutes} label="Minutes" />
+            <CountdownBlock value={timeLeft.seconds} label="Seconds" />
+          </motion.div>
         </motion.div>
 
         {/* Event Details Grid */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 0.8 }}
+          transition={{ delay: 1.6, duration: 0.8 }}
           className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12"
         >
           {eventDetails.map((detail, index) => (
@@ -268,7 +332,7 @@ const HeroSection = () => {
               key={detail.label}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.2 + index * 0.1, duration: 0.8 }}
+              transition={{ delay: 1.8 + index * 0.1, duration: 0.8 }}
               className="bg-card/80 backdrop-blur-sm border border-time-portal/20 rounded-lg p-6 hover:border-time-portal/40 transition-all duration-300 time-warp"
             >
               <detail.icon className="text-time-portal mx-auto mb-3" size={28} />
@@ -278,29 +342,11 @@ const HeroSection = () => {
           ))}
         </motion.div>
 
-        {/* Institution Details */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.5, duration: 0.8 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-            Sri Sairam Engineering College
-          </h2>
-          <p className="text-lg text-muted-foreground mb-2">
-            Department of Electronics and Communication Engineering
-          </p>
-          <p className="text-muted-foreground">
-            Sai Leo Nagar, West Tambaram, Chennai – 600044
-          </p>
-        </motion.div> */}
-
         {/* CTA Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.8, duration: 0.8 }}
+          transition={{ delay: 2.0, duration: 0.8 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <button
@@ -315,32 +361,29 @@ const HeroSection = () => {
             Learn More
           </button>
         </motion.div>
-
-        {/* Scroll Indicator */}
-        {/* <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2.5, duration: 1 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="text-time-portal"
-          >
-            <div className="w-6 h-10 border-2 border-time-portal rounded-full mx-auto mb-2">
-              <motion.div
-                animate={{ y: [0, 12, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="w-1 h-3 bg-time-portal rounded-full mx-auto mt-2"
-              />
-            </div>
-            <p className="text-xs">Scroll Down</p>
-          </motion.div>
-        </motion.div> */}
       </div>
     </section>
   );
 };
+
+interface CountdownBlockProps {
+  value: number;
+  label: string;
+}
+
+const CountdownBlock: React.FC<CountdownBlockProps> = ({ value, label }) => (
+  <div className="flex flex-col items-center justify-center text-center bg-black/50 backdrop-blur-sm border border-time-portal/30 rounded-lg p-4 hover:border-time-portal/50 transition-all duration-300">
+    <span className="countdown font-mono text-3xl sm:text-5xl transition-transform duration-300 text-time-glow font-bold">
+      <span
+        style={{ "--value": value } as React.CSSProperties}
+        aria-live="polite"
+        aria-label={String(value)}
+      >
+        {value.toString().padStart(2, '0')}
+      </span>
+    </span>
+    <span className="text-xs sm:text-sm text-gray-400 mt-2">{label}</span>
+  </div>
+);
 
 export default HeroSection;
