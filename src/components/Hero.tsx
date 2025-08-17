@@ -31,7 +31,7 @@ const HeroSection = () => {
     {
       icon: Award,
       label: "Department",
-      value: "ECE"
+      value: "AI&DS"
     }
   ];
 
