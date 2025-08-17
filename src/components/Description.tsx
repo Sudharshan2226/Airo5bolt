@@ -29,7 +29,7 @@ const Description = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center font-avartar tracking-wider">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4079ff] to-[#ffab40]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4079ff] to-[#40ffaa]">
               About Airo 5.O
             </span>
           </h2>

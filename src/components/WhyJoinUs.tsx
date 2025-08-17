@@ -8,7 +8,7 @@ const WhyJoinUs = () => {
       description: "Connect with experts, mentors, and innovators for real-world guidance.",
     },
     {
-      icon: <FaUsers className="text-[#ffab40] text-3xl" />,
+      icon: <FaUsers className="text-[#40ffaa] text-3xl" />,
       title: "Networking",
       description: "Meet like-minded hackers and future collaborators.",
     },
@@ -18,7 +18,7 @@ const WhyJoinUs = () => {
       description: "Win from a prize pool worth ₹25,500 and get noticed by recruiters.",
     },
     {
-      icon: <FaTools className="text-[#ffab40] text-3xl" />,
+      icon: <FaTools className="text-[#40ffaa] text-3xl" />,
       title: "Hands-on Experience",
       description: "Step out of the classroom and apply your skills to real-world problems.",
     },
@@ -32,7 +32,7 @@ const WhyJoinUs = () => {
   return (
     <div className="w-full bg-black/20 py-12 px-6 md:px-16">
       <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center font-avartar tracking-wider">
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4079ff] to-[#ffab40]">
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4079ff] to-[#40ffaa]">
           Why Join Us?
         </span>
       </h2>
