@@ -246,7 +246,7 @@ const Prizes = () => {
             return (
               <div
                 key={event.id}
-                className="flex items-center justify-center"
+                className="flex items-center justify-center min-h-[500px]"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
                 <CardFlip
@@ -369,13 +369,7 @@ const Prizes = () => {
           </div>
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <p className="text-gray-400 text-lg mb-6">Ready to make your mark?</p>
-          <div className="inline-flex px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-full text-white font-bold transition-colors duration-300">
-            Registration Opens Soon
-          </div>
-        </div>
+        
       </div>
     </section>
   );
