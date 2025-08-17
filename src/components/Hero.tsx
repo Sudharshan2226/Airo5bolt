@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, Users, Award } from 'lucide-react';
+import { useState, useEffect } from 'react';
 import GradientText from './ui/GradientText';
 
 import zenistaLogo from './assets/leo.png';
@@ -9,7 +10,62 @@ import zenistaLogo from './assets/leo.png';
 // For example: import backgroundVideo from './assets/pandora-video.mp4';
 import backgroundVideo from './assets/dragondone.mp4';
 
+interface TimeLeft {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+}
+
+interface CountdownBlockProps {
+  value: number;
+  label: string;
+}
+
+const CountdownBlock: React.FC<CountdownBlockProps> = ({ value, label }) => (
+  <div className="flex flex-col items-center justify-center text-center">
+    <span className="countdown font-mono text-3xl sm:text-5xl transition-transform duration-300">
+      <span
+        style={{ "--value": value } as React.CSSProperties}
+        aria-live="polite"
+        aria-label={String(value)}
+      >
+        {value}
+      </span>
+    </span>
+    <span className="text-xs sm:text-sm text-gray-400">{label}</span>
+  </div>
+);
+
 const HeroSection = () => {
+  const targetDate: number = new Date("sep 12, 2025 00:00:00").getTime();
+  
+  function calculateTimeLeft(): TimeLeft {
+    const now: number = new Date().getTime();
+    const difference: number = targetDate - now;
+
+    if (difference <= 0) {
+      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    }
+
+    return {
+      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+      minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+      seconds: Math.floor((difference % (1000 * 60)) / 1000),
+    };
+  }
+
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [targetDate]);
+
   const eventDetails = [
     {
       icon: Calendar,
@@ -195,7 +251,7 @@ const HeroSection = () => {
             transition={{ duration: 3, repeat: Infinity }}
           >
             <GradientText 
-              colors={["#4079ff", "#40ffaa", "#4079ff"]}
+              colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#4079ff", "#40ffaa"]}
               animationSpeed={4} 
               showBorder={false} 
               className="font-avartar"
@@ -210,7 +266,6 @@ const HeroSection = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1, duration: 0.8 }}
             className="text-2xl md:text-3xl text-[#40ffaa] mb-2"
-            style={{ textShadow: '0 0 10px #40ffaa' }}
           >
             2025
           </motion.div>
@@ -225,11 +280,26 @@ const HeroSection = () => {
           </motion.p>
         </motion.div>
 
+        {/* Countdown Timer */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.4, duration: 0.8 }}
+          className="mb-12"
+        >
+          <div className="grid grid-cols-4 md:grid-cols-4 gap-4 mb-12 max-w-2xl mx-auto text-center">
+            <CountdownBlock value={timeLeft.days} label="Days" />
+            <CountdownBlock value={timeLeft.hours} label="Hours" />
+            <CountdownBlock value={timeLeft.minutes} label="Minutes" />
+            <CountdownBlock value={timeLeft.seconds} label="Seconds" />
+          </div>
+        </motion.div>
+
         {/* Event Details Grid */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 0.8 }}
+          transition={{ delay: 1.6, duration: 0.8 }}
           className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12"
         >
           {eventDetails.map((detail, index) => (
@@ -237,12 +307,30 @@ const HeroSection = () => {
               key={detail.label}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.2 + index * 0.1, duration: 0.8 }}
-              className="bg-card/80 backdrop-blur-sm border border-[#4079ff]/20 rounded-lg p-6 hover:border-[#4079ff]/40 transition-all duration-300"
+              transition={{ delay: 1.8 + index * 0.1, duration: 0.8 }}
+              className="relative bg-black/60 backdrop-blur-md border border-[#4079ff]/30 rounded-lg p-6 hover:border-[#40ffaa]/50 hover:shadow-[0_0_20px_rgba(64,255,170,0.3)] transition-all duration-500 group overflow-hidden"
             >
-              <detail.icon className="text-[#4079ff] mx-auto mb-3" size={28} />
-              <p className="text-sm text-muted-foreground mb-1">{detail.label}</p>
-              <p className="font-semibold text-foreground">{detail.value}</p>
+              {/* Animated background glow */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#4079ff]/5 via-transparent to-[#40ffaa]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              {/* Animated border effect */}
+              <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-[#4079ff]/20 via-[#40ffaa]/20 to-[#4079ff]/20 animate-pulse" />
+              </div>
+              
+              <div className="relative z-10">
+                <motion.div
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <detail.icon 
+                    className="text-[#40ffaa] mx-auto mb-3 drop-shadow-[0_0_10px_rgba(64,255,170,0.5)]" 
+                    size={28} 
+                  />
+                </motion.div>
+                <p className="text-sm text-gray-300 mb-1 font-medium">{detail.label}</p>
+                <p className="font-bold text-white text-lg tracking-wide">{detail.value}</p>
+              </div>
             </motion.div>
           ))}
         </motion.div>
@@ -251,7 +339,7 @@ const HeroSection = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.8, duration: 0.8 }}
+          transition={{ delay: 2.2, duration: 0.8 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <button

@@ -1,4 +1,5 @@
 import { Calendar, Clock, MapPin } from "lucide-react";
+import GradientText from './ui/GradientText';
 
 const Description = () => {
   const features = [
@@ -28,19 +29,34 @@ const Description = () => {
     <section id="event" className="py-16 bg-gray-950">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center font-avartar tracking-wider">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4079ff] to-[#40ffaa]">
-              About Airo 5.O
-            </span>
+            <h2 className="text-[3.5rem] md:text-[5rem] font-bold mb-2 text-center font-avartar tracking-wider">
+            <GradientText 
+            colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#4079ff", "#40ffaa"]}
+            animationSpeed={4} 
+            showBorder={false} 
+            className="font-avartar"
+            style={{ fontFamily: "'AvartarWater', sans-serif" }}
+            >
+            About Airo 5.O
+            </GradientText>
           </h2>
 
           <div className="bg-black/20 backdrop-blur-sm border border-[#4079ff]/20 rounded-xl p-6 md:p-8 shadow-xl shadow-[#4079ff]/10 mb-12">
             <p className="text-gray-300 mb-6 leading-relaxed">
-            Welcome to AIRO 5.O, A 24-hour tech marathon where innovation meets determination. This hackathon helps in pushing boundaries, solving real-world problems, and turning ideas into reality. Whether you're an expert coder, a budding developer, or someone with a big idea, AIRO 5.O is the perfect platform to learn, collaborate, and create something incredible.
+            AIRO 5.0 - The Power of Ideas, The Spirit
+of Innovation!
+AIRO 5.0 marks the 5th edition of the
+National-Level Tech Fest organized by the
+Department of Artificial Intelligence and
+Data Science. This vibrant fest is a celebration
+of technology, creativity, and collaboration,
+bringing together students from across the
+country to showcase their skills and
+imagination
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-300">
-              <EventDetail icon={Calendar} label="Date" value="April 29-30, 2025" />
+              <EventDetail icon={Calendar} label="Date" value="Sep 12, 2025" />
               <EventDetail icon={Clock} label="Duration" value="24 Hours" />
               <EventDetail icon={MapPin} label="Location" value="Sri Sairam Engineering College" />
             </div>
