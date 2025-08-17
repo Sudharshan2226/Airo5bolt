@@ -71,7 +71,7 @@ const HeroSection = () => {
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           className="absolute inset-0 opacity-10"
           style={{
-            backgroundImage: `linear-gradient(rgba(64, 121, 255, 0.3) 1px, transparent 1px),
+            backgroundImage: `linear-gradient(rgba(64, 255, 170, 0.3) 1px, transparent 1px),
                              linear-gradient(90deg, rgba(64, 121, 255, 0.3) 1px, transparent 1px)`,
             backgroundSize: '50px 50px'
           }}
@@ -105,9 +105,9 @@ const HeroSection = () => {
           animate={{ 
             background: [
               'radial-gradient(circle at 20% 50%, rgba(64, 121, 255, 0.1) 0%, transparent 50%)',
-              'radial-gradient(circle at 80% 50%, rgba(255, 171, 64, 0.1) 0%, transparent 50%)',
+              'radial-gradient(circle at 80% 50%, rgba(64, 255, 170, 0.1) 0%, transparent 50%)',
               'radial-gradient(circle at 50% 20%, rgba(64, 121, 255, 0.1) 0%, transparent 50%)',
-              'radial-gradient(circle at 50% 80%, rgba(255, 171, 64, 0.1) 0%, transparent 50%)'
+              'radial-gradient(circle at 50% 80%, rgba(64, 255, 170, 0.1) 0%, transparent 50%)'
             ]
           }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
@@ -120,9 +120,9 @@ const HeroSection = () => {
         {Array.from({ length: 30 }).map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-2 h-2 bg-[#ffab40]/70 rounded-full"
+            className="absolute w-2 h-2 bg-[#40ffaa]/70 rounded-full"
             style={{
-              boxShadow: '0 0 10px #ffab40, 0 0 20px #ffab40, 0 0 30px #4079ff'
+              boxShadow: '0 0 10px #40ffaa, 0 0 20px #40ffaa, 0 0 30px #4079ff'
             }}
             initial={{
               x: Math.random() * window.innerWidth,
@@ -178,7 +178,7 @@ const HeroSection = () => {
               animate={{
                 filter: [
                   'drop-shadow(0 0 20px #4079ff)',
-                  'drop-shadow(0 0 30px #ffab40)',
+                  'drop-shadow(0 0 30px #40ffaa)',
                   'drop-shadow(0 0 20px #4079ff)'
                 ]
               }}
@@ -195,7 +195,7 @@ const HeroSection = () => {
             transition={{ duration: 3, repeat: Infinity }}
           >
             <GradientText 
-              colors={["#4079ff", "#ffab40", "#4079ff"]}
+              colors={["#4079ff", "#40ffaa", "#4079ff"]}
               animationSpeed={4} 
               showBorder={false} 
               className="font-avartar"
@@ -209,8 +209,8 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1, duration: 0.8 }}
-            className="text-2xl md:text-3xl text-[#ffab40] mb-2"
-            style={{ textShadow: '0 0 10px #ffab40' }}
+            className="text-2xl md:text-3xl text-[#40ffaa] mb-2"
+            style={{ textShadow: '0 0 10px #40ffaa' }}
           >
             2025
           </motion.div>
@@ -256,7 +256,7 @@ const HeroSection = () => {
         >
           <button
             onClick={scrollToEvents}
-            className="bg-gradient-to-r from-[#4079ff] to-[#ffab40] hover:scale-105 transform transition-all duration-300 text-lg px-8 py-6 shadow-[0_0_20px_#4079ff]"
+            className="bg-gradient-to-r from-[#4079ff] to-[#40ffaa] hover:scale-105 transform transition-all duration-300 text-lg px-8 py-6 shadow-[0_0_20px_#4079ff] animate-pulse"
           >
             Explore Events
           </button>

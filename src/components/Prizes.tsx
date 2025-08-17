@@ -117,7 +117,7 @@ const Prizes: React.FC = () => {
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#4079ff]/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#ffab40]/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#40ffaa]/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         <div className="absolute top-3/4 left-1/2 w-64 h-64 bg-[#4079ff]/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
       </div>
 
@@ -126,7 +126,7 @@ const Prizes: React.FC = () => {
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-7xl font-black mb-6 tracking-tight">
             <GradientText
-              colors={["#4079ff", "#ffab40", "#4079ff"]}
+              colors={["#4079ff", "#40ffaa", "#4079ff"]}
               animationSpeed={4}
               showBorder={false}
               className="font-avartar"
@@ -135,7 +135,7 @@ const Prizes: React.FC = () => {
               Epic Events
             </GradientText>
           </h2>
-          <div className="w-32 h-1 bg-gradient-to-r from-[#4079ff] to-[#ffab40] mx-auto mb-6 rounded-full"></div>
+          <div className="w-32 h-1 bg-gradient-to-r from-[#4079ff] to-[#40ffaa] mx-auto mb-6 rounded-full"></div>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Where innovation meets competition. Choose your battlefield.
           </p>
@@ -229,7 +229,7 @@ const Prizes: React.FC = () => {
         {/* Bottom CTA */}
         <div className="text-center mt-16">
           <p className="text-gray-400 text-lg mb-6">Ready to make your mark?</p>
-          <div className="inline-flex px-8 py-3 bg-gradient-to-r from-[#4079ff] to-[#ffab40] rounded-full text-white font-bold animate-pulse">
+          <div className="inline-flex px-8 py-3 bg-gradient-to-r from-[#4079ff] to-[#40ffaa] rounded-full text-white font-bold animate-pulse">
             Registration Opens Soon
           </div>
         </div>
