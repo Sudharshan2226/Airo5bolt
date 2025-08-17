@@ -116,9 +116,9 @@ const Prizes: React.FC = () => {
     <section id="prizes" className="py-20 bg-gradient-to-br from-gray-950 via-black to-gray-950 text-white relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#5AACCF]/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#80C271]/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-3/4 left-1/2 w-64 h-64 bg-[#EFFC93]/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#4079ff]/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#ffab40]/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-3/4 left-1/2 w-64 h-64 bg-[#4079ff]/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -126,7 +126,7 @@ const Prizes: React.FC = () => {
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-7xl font-black mb-6 tracking-tight">
             <GradientText
-              colors={["#5AACCF", "#EFFC93", "#80C271", "#5AACCF"]}
+              colors={["#4079ff", "#ffab40", "#4079ff"]}
               animationSpeed={4}
               showBorder={false}
               className="font-avartar"
@@ -135,7 +135,7 @@ const Prizes: React.FC = () => {
               Epic Events
             </GradientText>
           </h2>
-          <div className="w-32 h-1 bg-gradient-to-r from-[#5AACCF] to-[#80C271] mx-auto mb-6 rounded-full"></div>
+          <div className="w-32 h-1 bg-gradient-to-r from-[#4079ff] to-[#ffab40] mx-auto mb-6 rounded-full"></div>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Where innovation meets competition. Choose your battlefield.
           </p>
@@ -148,8 +148,8 @@ const Prizes: React.FC = () => {
             return (
               <div
                 key={event.id}
-                className={`group relative bg-black/20 backdrop-blur-xl rounded-3xl overflow-hidden transition-all duration-700 transform hover:scale-105 border border-[#5AACCF]/20 hover:border-[#5AACCF]/40 ${
-                  hoveredCard === event.id ? 'shadow-2xl shadow-[#5AACCF]/20' : 'shadow-xl'
+                className={`group relative bg-black/20 backdrop-blur-xl rounded-3xl overflow-hidden transition-all duration-700 transform hover:scale-105 border border-[#4079ff]/20 hover:border-[#4079ff]/40 ${
+                  hoveredCard === event.id ? 'shadow-2xl shadow-[#4079ff]/20' : 'shadow-xl'
                 }`}
                 onMouseEnter={() => setHoveredCard(event.id)}
                 onMouseLeave={() => setHoveredCard(null)}
@@ -182,11 +182,11 @@ const Prizes: React.FC = () => {
 
                   {/* Stats Grid */}
                   <div className="grid grid-cols-2 gap-4 mb-6">
-                    <div className="bg-gray-800/50 rounded-xl p-3 backdrop-blur-sm border border-[#5AACCF]/20">
+                    <div className="bg-gray-800/50 rounded-xl p-3 backdrop-blur-sm border border-[#4079ff]/20">
                       <div className="text-gray-400 text-xs mb-1">Team Size</div>
                       <div className="text-white font-bold text-sm">{event.teamSize}</div>
                     </div>
-                    <div className="bg-gray-800/50 rounded-xl p-3 backdrop-blur-sm border border-[#5AACCF]/20">
+                    <div className="bg-gray-800/50 rounded-xl p-3 backdrop-blur-sm border border-[#4079ff]/20">
                       <div className="text-gray-400 text-xs mb-1">Duration</div>
                       <div className="text-white font-bold text-sm">{event.duration}</div>
                     </div>
@@ -229,7 +229,7 @@ const Prizes: React.FC = () => {
         {/* Bottom CTA */}
         <div className="text-center mt-16">
           <p className="text-gray-400 text-lg mb-6">Ready to make your mark?</p>
-          <div className="inline-flex px-8 py-3 bg-gradient-to-r from-[#5AACCF] to-[#80C271] rounded-full text-white font-bold animate-pulse">
+          <div className="inline-flex px-8 py-3 bg-gradient-to-r from-[#4079ff] to-[#ffab40] rounded-full text-white font-bold animate-pulse">
             Registration Opens Soon
           </div>
         </div>

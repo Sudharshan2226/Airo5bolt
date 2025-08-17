@@ -3,27 +3,27 @@ import { FaUserTie, FaUsers, FaTrophy, FaTools, FaBolt } from "react-icons/fa";
 const WhyJoinUs = () => {
   const benefits = [
     {
-      icon: <FaUserTie className="text-[#5AACCF] text-3xl" />,
+      icon: <FaUserTie className="text-[#4079ff] text-3xl" />,
       title: "Industry Mentors",
       description: "Connect with experts, mentors, and innovators for real-world guidance.",
     },
     {
-      icon: <FaUsers className="text-[#80C271] text-3xl" />,
+      icon: <FaUsers className="text-[#ffab40] text-3xl" />,
       title: "Networking",
       description: "Meet like-minded hackers and future collaborators.",
     },
     {
-      icon: <FaTrophy className="text-[#EFFC93] text-3xl" />,
+      icon: <FaTrophy className="text-[#4079ff] text-3xl" />,
       title: "Exciting Prizes & Recognition",
       description: "Win from a prize pool worth ₹25,500 and get noticed by recruiters.",
     },
     {
-      icon: <FaTools className="text-[#5AACCF] text-3xl" />,
+      icon: <FaTools className="text-[#ffab40] text-3xl" />,
       title: "Hands-on Experience",
       description: "Step out of the classroom and apply your skills to real-world problems.",
     },
     {
-      icon: <FaBolt className="text-[#80C271] text-3xl" />,
+      icon: <FaBolt className="text-[#4079ff] text-3xl" />,
       title: "Fast-Paced, High-Impact",
       description: "Build, prototype, and pitch your ideas in just 24 hours.",
     },
@@ -32,7 +32,7 @@ const WhyJoinUs = () => {
   return (
     <div className="w-full bg-black/20 py-12 px-6 md:px-16">
       <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center font-avartar tracking-wider">
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5AACCF] to-[#80C271]">
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4079ff] to-[#ffab40]">
           Why Join Us?
         </span>
       </h2>
@@ -44,7 +44,7 @@ const WhyJoinUs = () => {
         {benefits.map((benefit, index) => (
           <div
             key={index}
-            className="bg-black/20 backdrop-blur-sm flex flex-col items-center p-6 rounded-xl shadow-lg transition transform hover:scale-105 w-80 border border-[#5AACCF]/20 hover:border-[#5AACCF]/40"
+            className="bg-black/20 backdrop-blur-sm flex flex-col items-center p-6 rounded-xl shadow-lg transition transform hover:scale-105 w-80 border border-[#4079ff]/20 hover:border-[#4079ff]/40"
           >
             <div className="mb-4">{benefit.icon}</div>
             <h3 className="text-xl font-semibold text-white">{benefit.title}</h3>
