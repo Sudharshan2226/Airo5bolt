@@ -3,7 +3,7 @@ import sponsor from './assets/sponsor.jpg'
 
 const Footer: React.FC = () => {
   return (
-    <footer className="backdrop-blur-sm border-t border-[#4079ff]/20 py-8">
+    <footer className="backdrop-blur-sm border-t border-chart-2/20 py-8">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
@@ -26,22 +26,22 @@ const Footer: React.FC = () => {
                 <div>
                   <ul className="space-y-2 text-gray-400">
                     <li>
-                      <a href="/" className="hover:text-[#4079ff] transition-colors">
+                      <a href="/" className="hover:text-chart-2 transition-colors">
                         Home
                       </a>
                     </li>
                     <li>
-                      <a href="/domain" className="hover:text-[#4079ff] transition-colors">
+                      <a href="/domain" className="hover:text-chart-2 transition-colors">
                         Domains
                       </a>
                     </li>
                     <li>
-                      <a href="/#timeline" className="hover:text-[#4079ff] transition-colors">
+                      <a href="/#timeline" className="hover:text-chart-2 transition-colors">
                         Timeline
                       </a>
                     </li>
                     <li>
-                      <a href="/guidelines" className="hover:text-[#4079ff] transition-colors">
+                      <a href="/guidelines" className="hover:text-chart-2 transition-colors">
                         Guidelines
                       </a>
                     </li>
@@ -50,17 +50,17 @@ const Footer: React.FC = () => {
                 <div>
                   <ul className="space-y-2 text-gray-400">
                     <li>
-                      <a href="/#prizes" className="hover:text-[#4079ff] transition-colors">
+                      <a href="/#prizes" className="hover:text-chart-2 transition-colors">
                         Prizes
                       </a>
                     </li>
                     <li>
-                      <a href="/team" className="hover:text-[#4079ff] transition-colors">
+                      <a href="/team" className="hover:text-chart-2 transition-colors">
                         Team
                       </a>
                     </li>
                     <li>
-                      <a href="/results" className="hover:text-[#4079ff] transition-colors">
+                      <a href="/results" className="hover:text-chart-2 transition-colors">
                         Result
                       </a>
                     </li>                    
@@ -92,7 +92,7 @@ interface SocialIconProps {
 const SocialIcon: React.FC<SocialIconProps> = ({ icon }) => (
   <a
     href="#"
-    className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-[#4079ff] hover:text-white transition-all"
+    className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-chart-2 hover:text-white transition-all"
   >
     {icon}
   </a>
