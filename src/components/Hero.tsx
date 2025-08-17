@@ -49,7 +49,7 @@ const HeroSection = () => {
         playsInline
         className="absolute inset-0 w-full h-full object-cover z-0"
         style={{ 
-          filter: 'brightness(0.4) contrast(1.2)'
+          filter: 'hue-rotate(240deg) brightness(0.4)'
         }}
         ref={(video) => {
           if (video) {

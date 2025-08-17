@@ -60,13 +60,13 @@ export function TimelineSection() {
 
       {/* Timeline Content */}
       <div className="max-w-4xl mx-auto relative z-10 px-6">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-400">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-[#5AACCF] to-[#80C271] font-avartar tracking-wider">
           Event Timeline
         </h2>
 
         {/* Timeline Line */}
         <div
-          className="eventline absolute left-6 sm:left-10 md:left-1/2 w-1 bg-gradient-to-b from-red-600 to-orange-500 transform -translate-x-1/2"
+          className="eventline absolute left-6 sm:left-10 md:left-1/2 w-1 bg-gradient-to-b from-[#5AACCF] to-[#80C271] transform -translate-x-1/2"
           style={{ height: `${lineHeight}px`, top: "100px" }}
         ></div>
 
@@ -80,18 +80,18 @@ export function TimelineSection() {
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               {/* Circle Indicator */}
-              <div className="circle absolute left-6 sm:left-10 md:left-1/2 transform -translate-x-1/2 w-4 h-4 md:w-6 md:h-6 border-4 border-orange-500 bg-red-900 rounded-full flex items-center justify-center shadow-lg shadow-red-500/50">
-                <div className="w-2 h-2 md:w-3 md:h-3 bg-orange-500 rounded-full animate-pulse"></div>
+              <div className="circle absolute left-6 sm:left-10 md:left-1/2 transform -translate-x-1/2 w-4 h-4 md:w-6 md:h-6 border-4 border-[#80C271] bg-gray-900 rounded-full flex items-center justify-center shadow-lg shadow-[#5AACCF]/50">
+                <div className="w-2 h-2 md:w-3 md:h-3 bg-[#5AACCF] rounded-full animate-pulse"></div>
               </div>
 
               {/* Event Card - Custom Media Queries */}
               <div
-                className={`w-full md:w-2/5 max-w-[300px] md:max-w-none bg-black/40 border border-red-700 text-white p-4 md:p-6 rounded-2xl shadow-xl transition-transform duration-500 ease-in-out hover:scale-105 hover:border-orange-400 hover:shadow-orange-500/50 ${index % 2 === 0 ? "md:ml-16" : "md:mr-16"
+                className={`w-full md:w-2/5 max-w-[300px] md:max-w-none bg-black/20 border border-[#5AACCF]/20 text-white p-4 md:p-6 rounded-2xl shadow-xl transition-transform duration-500 ease-in-out hover:scale-105 hover:border-[#80C271] hover:shadow-[#80C271]/50 ${index % 2 === 0 ? "md:ml-16" : "md:mr-16"
                   }`}
               >
-                <p className="text-xs md:text-sm font-semibold text-orange-400 line-through">{event.time}</p>
-                <p className="text-xs md:text-sm font-semibold text-orange-400">{event.timeref}</p>
-                <h3 className="text-lg md:text-xl font-bold text-red-400">{event.title}</h3>
+                <p className="text-xs md:text-sm font-semibold text-[#80C271] line-through">{event.time}</p>
+                <p className="text-xs md:text-sm font-semibold text-[#80C271]">{event.timeref}</p>
+                <h3 className="text-lg md:text-xl font-bold text-[#5AACCF]">{event.title}</h3>
                 <p className="text-gray-300 text-xs md:text-sm">{event.description}</p>
               </div>
             </div>
