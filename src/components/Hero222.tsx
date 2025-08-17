@@ -6,7 +6,7 @@ import brochure from "./assets/HackTronix1.0_Brochure.pdf";
 import placeholderImage from "./assets/DRAGON.jpeg";
 import collegeLogo from "./assets/sec.png";
 import leoLogo from "./assets/leo.png";
-import zenistaLogo from "./assets/logo.png";
+import zenistaLogo from "./assets/leo.png";
 import { UiverseButton, GlowingButton } from "./Buttons";
 
 interface TimeLeft {
