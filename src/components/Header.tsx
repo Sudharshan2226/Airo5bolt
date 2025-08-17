@@ -15,7 +15,7 @@ const Header: React.FC = () => {
         </div>
         <h1 className="text-xl md:text-2xl font-bold">
           <a href="/" className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-blue-600">
-            Hacktronix 1.0
+            AIRO 5.O
           </a>
         </h1>
       </div>

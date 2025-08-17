@@ -1,50 +1,240 @@
-import React from "react";
-import goldTrophy from "./assets/gold_trophy.jpeg";
-import silverTrophy from "./assets/silver_trophy.jpg";
-import bronzeTrophy from "./assets/bronze_trophy.png";
-import innovationTrophy from "./assets/medal2.jpg";
-
+import React, { useState } from "react";
+import { Code, Palette, TrendingUp, Video, Bot, MessageSquare, Terminal } from "lucide-react";
+import GradientText from './ui/GradientText';
 const Prizes: React.FC = () => {
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+
+  const eventsData = [
+    {
+      id: 1,
+      name: "Coding Event",
+      description: "Battle through algorithmic challenges and showcase your programming prowess in our intense coding marathon.",
+      teamSize: "1-2 members",
+      mode: "Online",
+      prize: "₹15,000",
+      icon: Code,
+      gradient: "from-emerald-500 via-teal-500 to-cyan-500",
+      bgPattern: "coding",
+      difficulty: "Advanced",
+      duration: "6 hours"
+    },
+    {
+      id: 2,
+      name: "UI/UX Hackathon",
+      description: "Design revolutionary user experiences that push the boundaries of digital interaction and visual storytelling.",
+      teamSize: "2-4 members",
+      mode: "Hybrid",
+      prize: "₹20,000",
+      icon: Palette,
+      gradient: "from-pink-500 via-purple-500 to-indigo-500",
+      bgPattern: "design",
+      difficulty: "Intermediate",
+      duration: "48 hours"
+    },
+    {
+      id: 3,
+      name: "Pitchfest",
+      description: "Transform your groundbreaking ideas into compelling presentations that captivate investors and industry leaders.",
+      teamSize: "3-5 members",
+      mode: "Offline",
+      prize: "₹25,000",
+      icon: TrendingUp,
+      gradient: "from-orange-500 via-red-500 to-pink-500",
+      bgPattern: "business",
+      difficulty: "Expert",
+      duration: "3 days"
+    },
+    {
+      id: 4,
+      name: "AI Video Generation",
+      description: "Harness the power of artificial intelligence to create mind-bending visual narratives and cinematic experiences.",
+      teamSize: "2-3 members",
+      mode: "Online",
+      prize: "₹12,000",
+      icon: Video,
+      gradient: "from-violet-500 via-purple-500 to-blue-500",
+      bgPattern: "ai",
+      difficulty: "Advanced",
+      duration: "4 hours"
+    },
+    {
+      id: 5,
+      name: "AI Chatbot",
+      description: "Engineer intelligent conversational agents that understand, learn, and interact with human-like sophistication.",
+      teamSize: "2-4 members",
+      mode: "Online",
+      prize: "₹18,000",
+      icon: Bot,
+      gradient: "from-blue-500 via-cyan-500 to-teal-500",
+      bgPattern: "bot",
+      difficulty: "Advanced",
+      duration: "8 hours"
+    },
+    {
+      id: 6,
+      name: "Debate Championship",
+      description: "Engage in intellectual warfare where words are weapons and logic is your shield in this battle of minds.",
+      teamSize: "1 member",
+      mode: "Offline",
+      prize: "₹8,000",
+      icon: MessageSquare,
+      gradient: "from-yellow-500 via-orange-500 to-red-500",
+      bgPattern: "debate",
+      difficulty: "Intermediate",
+      duration: "2 hours"
+    },
+    {
+      id: 7,
+      name: "Linux Workshop",
+      description: "Master the art of open-source wizardry and become a command-line ninja in this intensive Linux bootcamp.",
+      teamSize: "Individual",
+      mode: "Offline",
+      prize: "₹5,000",
+      icon: Terminal,
+      gradient: "from-green-500 via-emerald-500 to-teal-500",
+      bgPattern: "linux",
+      difficulty: "Beginner",
+      duration: "6 hours"
+    }
+  ];
+
+  const handleReadMore = (eventId: number) => {
+    console.log(`Navigate to event ${eventId} details`);
+  };
+
+  const getDifficultyColor = (difficulty: string) => {
+    switch (difficulty) {
+      case 'Beginner': return 'bg-green-500/20 text-green-300 border-green-500/30';
+      case 'Intermediate': return 'bg-yellow-500/20 text-yellow-300 border-yellow-500/30';
+      case 'Advanced': return 'bg-orange-500/20 text-orange-300 border-orange-500/30';
+      case 'Expert': return 'bg-red-500/20 text-red-300 border-red-500/30';
+      default: return 'bg-gray-500/20 text-gray-300 border-gray-500/30';
+    }
+  };
+
   return (
-    <section id="prizes" className="py-16 bg-gray-950 text-white text-center">
-      <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-blue-600">
-          🏆 Prizes 🏆
-        </span>
-      </h2>
+    <section id="prizes" className="py-20 bg-gradient-to-br from-gray-950 via-gray-900 to-black text-white relative overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-3/4 left-1/2 w-64 h-64 bg-pink-500/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
+      </div>
 
-      {/* Prizes Container */}
-      <div className="flex flex-col items-center gap-8">
-        {/* First Prize - Centered */}
-        <PrizeCard imgSrc={goldTrophy} title="First Prize" amount="₹10,000" bgColor="bg-yellow-500 text-black" />
+      <div className="container mx-auto px-6 relative z-10">
+        {/* Epic Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-5xl md:text-7xl font-black mb-6 tracking-tight">
+            <GradientText
+              colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+              animationSpeed={3}
+              showBorder={false}
+              className="font-avartar"
+              style={{ fontFamily: "'AvartarWater', sans-serif" }}
+            >
+              Epic Events
+            </GradientText>
+          </h2>
+          <div className="w-32 h-1 bg-gradient-to-r from-red-500 to-blue-500 mx-auto mb-6 rounded-full"></div>
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            Where innovation meets competition. Choose your battlefield.
+          </p>
+        </div>
 
-        {/* Second & Third Prize - Centered Below */}
-        <div className="flex flex-wrap justify-center gap-8">
-          <PrizeCard imgSrc={silverTrophy} title="Second Prize" amount="₹7,500" bgColor="bg-gray-400 text-black" />
-          <PrizeCard imgSrc={bronzeTrophy} title="Third Prize" amount="₹5,000" bgColor="bg-orange-500 text-black" />
-          <PrizeCard imgSrc={innovationTrophy} title="Best Innovation" amount="₹2,000" bgColor="bg-orange-500 text-black" />          
+        {/* Events Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-8xl mx-auto">
+          {eventsData.map((event, index) => {
+            const Icon = event.icon;
+            return (
+              <div
+                key={event.id}
+                className={`group relative bg-gradient-to-br from-gray-900/50 via-gray-800/50 to-gray-900/50 backdrop-blur-xl rounded-3xl overflow-hidden transition-all duration-700 transform hover:scale-105 border border-gray-700/50 hover:border-gray-600/70 ${
+                  hoveredCard === event.id ? 'shadow-2xl shadow-purple-500/25' : 'shadow-xl'
+                }`}
+                onMouseEnter={() => setHoveredCard(event.id)}
+                onMouseLeave={() => setHoveredCard(null)}
+                style={{ animationDelay: `${index * 150}ms` }}
+              >
+                {/* Gradient Overlay */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${event.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
+                
+                {/* Floating Icon */}
+                <div className="relative p-6">
+                  <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${event.gradient} mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    <Icon className="w-8 h-8 text-white" />
+                  </div>
+                  
+                  {/* Difficulty Badge */}
+                  <div className={`absolute top-6 right-6 px-3 py-1 rounded-full text-xs font-bold border ${getDifficultyColor(event.difficulty)}`}>
+                    {event.difficulty}
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="px-6 pb-6">
+                  <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all duration-300">
+                    {event.name}
+                  </h3>
+                  
+                  <p className="text-gray-300 text-sm mb-6 leading-relaxed line-clamp-3 group-hover:text-gray-200 transition-colors duration-300">
+                    {event.description}
+                  </p>
+
+                  {/* Stats Grid */}
+                  <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div className="bg-gray-800/50 rounded-xl p-3 backdrop-blur-sm border border-gray-700/50">
+                      <div className="text-gray-400 text-xs mb-1">Team Size</div>
+                      <div className="text-white font-bold text-sm">{event.teamSize}</div>
+                    </div>
+                    <div className="bg-gray-800/50 rounded-xl p-3 backdrop-blur-sm border border-gray-700/50">
+                      <div className="text-gray-400 text-xs mb-1">Duration</div>
+                      <div className="text-white font-bold text-sm">{event.duration}</div>
+                    </div>
+                  </div>
+
+                  {/* Mode & Prize */}
+                  <div className="flex justify-between items-center mb-6">
+                    <span className={`px-4 py-2 rounded-full text-sm font-bold ${
+                      event.mode === 'Online' ? 'bg-green-500/20 text-green-300 border border-green-500/30' :
+                      event.mode === 'Offline' ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30' :
+                      'bg-purple-500/20 text-purple-300 border border-purple-500/30'
+                    }`}>
+                      {event.mode}
+                    </span>
+                    <div className="text-right">
+                      <div className="text-gray-400 text-xs">Prize Pool</div>
+                      <div className={`text-xl font-black bg-gradient-to-r ${event.gradient} bg-clip-text text-transparent`}>
+                        {event.prize}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Epic Button */}
+                  <button
+                    onClick={() => handleReadMore(event.id)}
+                    className={`w-full relative overflow-hidden bg-gradient-to-r ${event.gradient} text-white font-bold py-4 px-6 rounded-2xl transition-all duration-300 group-hover:shadow-2xl transform group-hover:translate-y-[-2px] hover:scale-[1.02]`}
+                  >
+                    <span className="relative z-10">ENTER THE ARENA</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                  </button>
+                </div>
+
+                {/* Hover Glow Effect */}
+                <div className={`absolute -inset-1 bg-gradient-to-r ${event.gradient} opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500 -z-10`}></div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="text-center mt-16">
+          <p className="text-gray-400 text-lg mb-6">Ready to make your mark?</p>
+          <div className="inline-flex px-8 py-3 bg-gradient-to-r from-red-500 to-blue-500 rounded-full text-white font-bold animate-pulse">
+            Registration Opens Soon
+          </div>
         </div>
       </div>
     </section>
-  );
-};
-
-interface PrizeCardProps {
-  imgSrc: string;
-  title: string;
-  amount: string;
-  bgColor: string;
-}
-
-const PrizeCard: React.FC<PrizeCardProps> = ({ imgSrc, title, amount, bgColor }) => {
-  return (
-    <div
-      className={`p-6 w-64 rounded-2xl shadow-xl transition-transform transform hover:scale-105 ${bgColor}`}
-    >
-      <img src={imgSrc} alt={title} className="w-32 mx-auto mb-4" />
-      <h3 className="text-2xl font-semibold">{title}</h3>
-      <p className="text-lg font-medium">{amount}</p>
-    </div>
   );
 };
 

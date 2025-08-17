@@ -43,14 +43,14 @@ export function TimelineSection() {
   }, []);
 
   const timelineEvents = [
-    { time: "March 11, 2025", title: "HackTronix 1.0 Launch", description: "Official launch of HackTronix 1.0"},
+    { time: "March 11, 2025", title: "AIRO 5.O Launch", description: "Official launch of AIRO 5.O"},
     { time: "March 12, 2025", title: "Problem Statements Unleashed", description: "Kickoff and problem statement reveal" },
     { time: "March 13, 2025", title: "Registration Opens", description: "Registration for HackTronix begins"},
     { time: "March 13, 2025", title: "Start of Idea Submission", description: "Participants start submitting their ideas"},
     { time: "April 5, 2025",timeref: "April 10, 2025", title: "Idea Submission Deadline", description: "Round 1 ends at 11:59 PM" },
     { time: "April 5, 2025",timeref: "April 12, 2025", title: "Finalists Announcement", description: "Top 30 teams are announced"},
     { time: "April 6, 2025",timeref: "April 13, 2025", title: "Round 2 Registration Starts", description: "Registration for the next round begins" },
-    { time: "April 7-8, 2025",timeref: "April 29-30, 2025", title: "Grand Finale", description: "Final round of HackTronix 1.0. Buckle up!"},
+    { time: "April 7-8, 2025",timeref: "April 29-30, 2025", title: "Grand Finale", description: "Final round of AIRO 5.O. Buckle up!"},
   ];
 
   return (

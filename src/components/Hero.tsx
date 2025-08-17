@@ -1,54 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import { Calendar, MapPin, Users, Award } from 'lucide-react';
 import GradientText from './ui/GradientText';
 
 import collegeLogo from './assets/sec.png';
 import leoLogo from './assets/leo.png';
 import zenistaLogo from './assets/leo.png';
+// [USER ACTION REQUIRED]
+// To add your own background video, place it in the `src/components/assets` folder
+// and update the import path below to point to your new file.
+// For example: import backgroundVideo from './assets/pandora-video.mp4';
 import backgroundVideo from './assets/dragondone.mp4';
-import placeholderImage from './assets/DRAGON.jpeg';
-
-interface TimeLeft {
-  days: number;
-  hours: number;
-  minutes: number;
-  seconds: number;
-}
 
 const HeroSection = () => {
-  const targetDate: number = new Date("September 12, 2025 00:00:00").getTime();
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft());
-  const [videoLoaded, setVideoLoaded] = useState(false);
-
-  function calculateTimeLeft(): TimeLeft {
-    const now: number = new Date().getTime();
-    const difference: number = targetDate - now;
-
-    if (difference <= 0) {
-      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-    }
-
-    return {
-      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-      minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
-      seconds: Math.floor((difference % (1000 * 60)) / 1000),
-    };
-  }
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
-
   const eventDetails = [
     {
       icon: Calendar,
       label: "Date",
-      value: "12th September 2025"
+      value: "8th August 2025"
     },
     {
       icon: MapPin,
@@ -63,7 +31,7 @@ const HeroSection = () => {
     {
       icon: Award,
       label: "Department",
-      value: "AI & DS"
+      value: "ECE"
     }
   ];
 
@@ -72,28 +40,17 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen h-auto overflow-hidden pt-20">
-      {/* Background Video with Placeholder */}
-      {!videoLoaded && (
-        <img
-          src={placeholderImage}
-          alt="Loading background"
-          className="absolute inset-0 w-full h-full object-cover z-0"
-        />
-      )}
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Video */}
       <video
         autoPlay
         muted
         loop
         playsInline
-        className={`absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-500 ${
-          videoLoaded ? "opacity-100" : "opacity-0"
-        }`}
+        className="absolute inset-0 w-full h-full object-cover z-0"
         style={{ 
           filter: 'brightness(0.4) contrast(1.2)'
         }}
-        onLoadedData={() => setVideoLoaded(true)}
-        onError={(e) => console.error("Video Error:", e)}
         ref={(video) => {
           if (video) {
             video.playbackRate = 0.65;
@@ -103,141 +60,218 @@ const HeroSection = () => {
         <source src={backgroundVideo} type="video/mp4" />
       </video>
 
-      {/* Overlay for better text visibility */}
-      <div className="absolute inset-0 bg-black/40"></div>
+      {/* Video Overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/30 z-10" />
 
-      {/* Content */}
-      <div className="relative z-10 w-full py-8 sm:py-12 md:py-16 min-h-screen flex flex-col justify-center">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-6xl mx-auto space-y-8 sm:space-y-12 md:space-y-16">
-            
-            {/* College Header */}
-            <div className="mb-8 sm:mb-10 md:mb-12">
-              <div className="flex items-center justify-center md:gap-12 gap-4 mb-6 sm:mb-8">
-                <img
-                  src={collegeLogo}
-                  alt="College Logo"
-                  className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 rounded-full object-cover border-2 border-white/20 shadow-lg"
-                />
-                <div className="text-center">
-                  <h2 className="text-sm sm:text-lg md:text-3xl lg:text-4xl font-bold text-white leading-tight">
-                    Sri Sairam Engineering College
-                  </h2>
-                  <p className="text-xs sm:text-sm md:text-lg text-white/70 mt-1 md:mt-2 font-medium">
-                    Sai Leo Nagar, West Tambaram, Chennai – 600044
-                  </p>
-                </div>
-                <img
-                  src={leoLogo}
-                  alt="leo Logo"
-                  className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 rounded-full object-cover border-2 border-white/20 shadow-lg"
-                />
-              </div>
-              
-              <div className="text-center mb-6 sm:mb-8">
-                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/90 font-semibold tracking-wide">
-                  DEPARTMENT OF ARTIFICIAL INTELLIGENCE AND DATA SCIENCE
-                </p>
-                <p className="text-base sm:text-lg md:text-xl text-white/70 mt-2 font-medium tracking-wider">
-                  PRESENTS
-                </p>
-              </div>
-            </div>
-
-            {/* Event Title */}
-            <div className="mb-10 sm:mb-12 md:mb-16">
-              {/* Main Logo */}
-              <div className="flex justify-center mb-8 sm:mb-10">
-                <img
-                  src={zenistaLogo}
-                  alt="Zenista Logo"
-                  className="w-36 h-36 sm:w-44 sm:h-44 md:w-52 md:h-52 object-contain drop-shadow-2xl"
-                />
-              </div>
-              
-              {/* Main Title */}
-              <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-4 tracking-widest">
-                <GradientText 
-                  colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]} 
-                  animationSpeed={3} 
-                  showBorder={false} 
-                  className="font-avartar"
-                  style={{ fontFamily: "'AvartarWater', sans-serif" }}
-                >
-                  Airo 5.O
-                </GradientText>
-              </h1>
-              
-              {/* Year */}
-              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-cyan-400 mb-4 font-bold tracking-wider">
-                2025
-              </div>
-              
-              {/* Subtitle */}
-              <p className="text-xl sm:text-2xl md:text-3xl text-white/80 mb-6 sm:mb-8 font-medium tracking-wide">
-                National Level Technical Symposium
-              </p>
-            </div>
-
-            {/* Countdown Timer - Improved Style */}
-            <div className="grid grid-cols-4 gap-3 sm:gap-4 md:gap-6 mb-12 max-w-3xl mx-auto text-center">
-              <CountdownBlock value={timeLeft.days} label="Days" />
-              <CountdownBlock value={timeLeft.hours} label="Hours" />
-              <CountdownBlock value={timeLeft.minutes} label="Minutes" />
-              <CountdownBlock value={timeLeft.seconds} label="Seconds" />
-            </div>
-
-            {/* Event Details Grid - Enhanced */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-12 max-w-5xl mx-auto">
-              {eventDetails.map((detail) => (
-                <div
-                  key={detail.label}
-                  className="bg-black/20 backdrop-blur-md border border-white/10 rounded-xl p-4 md:p-6 hover:border-cyan-400/50 hover:bg-black/30 transition-all duration-300 hover:scale-105"
-                >
-                  <detail.icon className="text-cyan-400 mx-auto mb-3" size={32} />
-                  <p className="text-xs md:text-sm text-white/60 mb-2 font-medium uppercase tracking-wider">{detail.label}</p>
-                  <p className="font-bold text-white text-sm md:text-base leading-tight">{detail.value}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* CTA Buttons - Enhanced */}
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
-              <button
-                onClick={scrollToEvents}
-                className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold text-lg px-8 py-4 rounded-xl hover:scale-105 transform transition-all duration-300 shadow-lg hover:shadow-cyan-500/25"
-              >
-                Explore Events
-              </button>
-              <button
-                className="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black font-semibold text-lg px-8 py-4 rounded-xl hover:scale-105 transform transition-all duration-300 backdrop-blur-sm"
-              >
-                Download Brochure
-              </button>
-            </div>
-          </div>
+      {/* Pandora Animated Background (overlay on video) */}
+      <div className="absolute inset-0 z-20">
+        {/* Parallax Grid */}
+        <motion.div
+          animate={{ 
+            backgroundPosition: ['0% 0%', '100% 100%'],
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage: `linear-gradient(rgba(46, 103, 160, 0.3) 1px, transparent 1px), 
+                             linear-gradient(90deg, rgba(46, 103, 160, 0.3) 1px, transparent 1px)`,
+            backgroundSize: '50px 50px'
+          }}
+        />
+        
+        {/* Bioluminescent Pulses */}
+        <div className="absolute inset-0">
+          {Array.from({ length: 3 }).map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-96 h-96 rounded-full border border-[#5AACCF]/20"
+              style={{
+                top: `${20 + i * 30}%`,
+                left: `${10 + i * 40}%`,
+              }}
+              animate={{
+                scale: [0, 2, 0],
+                opacity: [0.3, 0.1, 0],
+              }}
+              transition={{
+                duration: 8,
+                repeat: Infinity,
+                delay: i * 2.5,
+              }}
+            />
+          ))}
         </div>
+        
+        {/* Gradient Overlay */}
+        <motion.div
+          animate={{ 
+            background: [
+              'radial-gradient(circle at 20% 50%, hsl(207 88% 55% / 0.1) 0%, transparent 50%)',
+              'radial-gradient(circle at 80% 50%, hsl(160 88% 60% / 0.1) 0%, transparent 50%)',
+              'radial-gradient(circle at 50% 20%, hsl(207 88% 55% / 0.1) 0%, transparent 50%)',
+              'radial-gradient(circle at 50% 80%, hsl(160 88% 60% / 0.1) 0%, transparent 50%)'
+            ]
+          }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute inset-0"
+        />
+      </div>
+
+      {/* Floating Woodsprites */}
+      <div className="absolute inset-0 z-25">
+        {Array.from({ length: 30 }).map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 bg-[#EFFC93]/70 rounded-full"
+            style={{
+              boxShadow: '0 0 10px #EFFC93, 0 0 20px #EFFC93, 0 0 30px #80C271'
+            }}
+            initial={{
+              x: Math.random() * window.innerWidth,
+              y: Math.random() * window.innerHeight,
+              opacity: 0
+            }}
+            animate={{
+              x: Math.random() * window.innerWidth,
+              y: Math.random() * window.innerHeight,
+              opacity: [0, 1, 0],
+            }}
+            transition={{
+              duration: Math.random() * 12 + 8,
+              repeat: Infinity,
+              delay: Math.random() * 7,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Main Content */}
+      <div className="relative z-30 max-w-7xl mx-auto px-6 lg:px-8 text-center">
+        {/* College Header */}
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.2 }}
+          className="mb-12 mt-8"
+        >
+          
+          
+        </motion.div>
+
+        {/* Event Title */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.8 }}
+          className="mb-1"
+        >
+          {/* Zenista Logo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 1.0 }}
+            className="flex justify-center mb-8"
+          >
+            <motion.img
+              src={zenistaLogo}
+              alt="Zenista Logo"
+              className="w-32 h-32 md:w-40 md:h-40 object-contain"
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              animate={{
+                filter: [
+                  'drop-shadow(0 0 20px #5AACCF)',
+                  'drop-shadow(0 0 30px #80C271)',
+                  'drop-shadow(0 0 20px #5AACCF)'
+                ]
+              }}
+              transition={{ 
+                scale: { duration: 0.3 },
+                rotate: { duration: 0.3 },
+                filter: { duration: 4, repeat: Infinity, ease: 'easeInOut' }
+              }}
+            />
+          </motion.div>
+          
+          <motion.h1
+            className="text-7xl md:text-8xl font-bold mb-4 tracking-wider"
+            transition={{ duration: 3, repeat: Infinity }}
+          >
+            <GradientText 
+              colors={["#5AACCF", "#EFFC93", "#80C271", "#5AACCF"]} 
+              animationSpeed={4} 
+              showBorder={false} 
+              className="font-avartar"
+              style={{ fontFamily: "'AvartarWater', sans-serif" }}
+            >
+              Airo 5.O
+            </GradientText>
+          </motion.h1>
+          
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 1, duration: 0.8 }}
+            className="text-2xl md:text-3xl text-[#EFFC93] mb-2"
+            style={{ textShadow: '0 0 10px #EFFC93' }}
+          >
+            2025
+          </motion.div>
+          
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2, duration: 0.8 }}
+            className="text-xl md:text-2xl text-muted-foreground mb-8"
+          >
+            National Level Technical Symposium
+          </motion.p>
+        </motion.div>
+
+        {/* Event Details Grid */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 0.8 }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12"
+        >
+          {eventDetails.map((detail, index) => (
+            <motion.div
+              key={detail.label}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.2 + index * 0.1, duration: 0.8 }}
+              className="bg-card/80 backdrop-blur-sm border border-[#5AACCF]/20 rounded-lg p-6 hover:border-[#5AACCF]/40 transition-all duration-300"
+            >
+              <detail.icon className="text-[#5AACCF] mx-auto mb-3" size={28} />
+              <p className="text-sm text-muted-foreground mb-1">{detail.label}</p>
+              <p className="font-semibold text-foreground">{detail.value}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* CTA Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.8, duration: 0.8 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center"
+        >
+          <button
+            onClick={scrollToEvents}
+            className="bg-gradient-to-r from-[#5AACCF] to-[#80C271] hover:scale-105 transform transition-all duration-300 text-lg px-8 py-6 shadow-[0_0_20px_#5AACCF]"
+          >
+            Explore Events
+          </button>
+          <button
+            onClick={scrollToEvents}
+            className="border-[#5AACCF] text-[#5AACCF] hover:bg-[#5AACCF]/10 hover:scale-105 transform transition-all duration-300 text-lg px-8 py-6"
+          >
+            Learn More
+          </button>
+        </motion.div>
       </div>
     </section>
   );
 };
-
-interface CountdownBlockProps {
-  value: number;
-  label: string;
-}
-
-const CountdownBlock: React.FC<CountdownBlockProps> = ({ value, label }) => (
-  <div className="bg-black/30 backdrop-blur-md border border-white/20 rounded-xl p-4 md:p-6 hover:border-cyan-400/50 transition-all duration-300 hover:scale-105">
-    <div className="text-center">
-      <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-cyan-400 mb-2 font-mono tracking-wider">
-        {value.toString().padStart(2, '0')}
-      </div>
-      <div className="text-xs sm:text-sm md:text-base text-white/70 font-medium uppercase tracking-widest">
-        {label}
-      </div>
-    </div>
-  </div>
-);
 
 export default HeroSection;

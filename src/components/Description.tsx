@@ -26,16 +26,6 @@ const Description = () => {
 
   return (
     <section id="event" className="py-16 bg-gray-950">
-      {/* Background effects */}
-      <div
-        className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-gray-950 to-transparent"
-        aria-hidden="true"
-      ></div>
-      <div
-        className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-gray-950 to-transparent"
-        aria-hidden="true"
-      ></div>
-
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
@@ -46,7 +36,7 @@ const Description = () => {
 
           <div className="bg-gray-900/50 backdrop-blur-sm border border-red-900/20 rounded-xl p-6 md:p-8 shadow-xl shadow-red-900/5 mb-12">
             <p className="text-gray-300 mb-6 leading-relaxed">
-            Welcome to HackTronix 1.0, A 24-hour tech marathon where innovation meets determination. This hackathon helps in pushing boundaries, solving real-world problems, and turning ideas into reality. Whether you're an expert coder, a budding developer, or someone with a big idea, HackTronix 1.0 is the perfect platform to learn, collaborate, and create something incredible.
+            Welcome to AIRO 5.O, A 24-hour tech marathon where innovation meets determination. This hackathon helps in pushing boundaries, solving real-world problems, and turning ideas into reality. Whether you're an expert coder, a budding developer, or someone with a big idea, AIRO 5.O is the perfect platform to learn, collaborate, and create something incredible.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-300">

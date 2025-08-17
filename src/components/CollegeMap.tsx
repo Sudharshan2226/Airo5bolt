@@ -55,7 +55,7 @@ const MapLocation: React.FC = () => {
             className="max-w-2xl mx-auto text-lg text-gray-300"
           >
             Visit us at <span className="font-medium">Sri Sairam Engineering College</span>, 
-            the venue for <span className="font-medium">Hacktronix 1.0</span>. 
+            the venue for <span className="font-medium">AIRO 5.O</span>. 
             Navigate using the interactive map below.
           </motion.p>
         </div>

@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h3 className="text-xl font-bold mb-4 text-white">Hacktronix 1.0</h3>
+              <h3 className="text-xl font-bold mb-4 text-white">AIRO 5.O</h3>
               <p className="text-gray-400 mb-4">
                 A 24-hour hackathon exploring the upside-down world of technology.
               </p>
@@ -77,7 +77,7 @@ const Footer: React.FC = () => {
           </div>
 
           <div className="border-t border-gray-800 pt-6 text-center text-gray-500 text-sm">
-            <p>© 2025 Hacktronix 1.0 | Sri Sairam Engineering College</p>
+            <p>© 2025 AIRO 5.O | Sri Sairam Engineering College</p>
           </div>
         </div>
       </div>

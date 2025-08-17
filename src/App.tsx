@@ -7,7 +7,7 @@ import Description from "./components/Description";
 import { TimelineSection } from "./components/TimeLineSection";
 import Rules from "./components/Rules";
 import OrganizersPage from "./components/OrganizersPage";
-import { FireParticles } from "./components/FireParticles";
+// import { FireParticles } from "./components/FireParticles";
 import CollegeMap from "./components/CollegeMap";
 import WhyJoinUs from "./components/WhyJoinUs";
 import Domains from "./components/Domains";
@@ -54,7 +54,7 @@ function App() {
     <Router>
       <ScrollToHashElement />
       <div className="flex flex-col min-h-screen">
-        <FireParticles />
+        {/* <FireParticles /> */}
         <main className="flex-grow">
           <Header />
           <Routes>

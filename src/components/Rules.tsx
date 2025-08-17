@@ -29,7 +29,7 @@ const rules = [
     ],
   },
   {
-    category: "HackTronix 1.0 Rules",
+    category: "AIRO 5.O Rules",
     icon: <FaDragon className="text-red-500 text-3xl" />,
     details: [
       "Teams must upload the problem statement PPT and obtain approval during registration.",
@@ -42,7 +42,7 @@ const rules = [
       "From all registered teams, the top 30 teams will advance to the grand finale.",
       "Bonus points will be awarded for proper version control on GitHub.",
       "Teams must follow the provided PPT template for submissions.",
-      "Participants must regularly check the HackTronix 1.0 website for updates.",
+      "Participants must regularly check the AIRO 5.O website for updates.",
       "Teams interested in donating their projects for public use are welcome to do so."
     ],
   },
