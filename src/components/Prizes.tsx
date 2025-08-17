@@ -13,7 +13,7 @@ const Prizes: React.FC = () => {
       mode: "Online",
       prize: "₹15,000",
       icon: Code,
-      gradient: "from-emerald-500 via-teal-500 to-cyan-500",
+      gradient: "from-cyan-500 via-blue-500 to-purple-500",
       bgPattern: "coding",
       difficulty: "Advanced",
       duration: "6 hours"
@@ -26,7 +26,7 @@ const Prizes: React.FC = () => {
       mode: "Hybrid",
       prize: "₹20,000",
       icon: Palette,
-      gradient: "from-pink-500 via-purple-500 to-indigo-500",
+      gradient: "from-green-400 via-teal-500 to-blue-500",
       bgPattern: "design",
       difficulty: "Intermediate",
       duration: "48 hours"
@@ -39,7 +39,7 @@ const Prizes: React.FC = () => {
       mode: "Offline",
       prize: "₹25,000",
       icon: TrendingUp,
-      gradient: "from-orange-500 via-red-500 to-pink-500",
+      gradient: "from-yellow-400 via-green-500 to-teal-500",
       bgPattern: "business",
       difficulty: "Expert",
       duration: "3 days"
@@ -52,7 +52,7 @@ const Prizes: React.FC = () => {
       mode: "Online",
       prize: "₹12,000",
       icon: Video,
-      gradient: "from-violet-500 via-purple-500 to-blue-500",
+      gradient: "from-blue-400 via-purple-500 to-indigo-500",
       bgPattern: "ai",
       difficulty: "Advanced",
       duration: "4 hours"
@@ -65,7 +65,7 @@ const Prizes: React.FC = () => {
       mode: "Online",
       prize: "₹18,000",
       icon: Bot,
-      gradient: "from-blue-500 via-cyan-500 to-teal-500",
+      gradient: "from-teal-400 via-cyan-500 to-blue-500",
       bgPattern: "bot",
       difficulty: "Advanced",
       duration: "8 hours"
@@ -78,7 +78,7 @@ const Prizes: React.FC = () => {
       mode: "Offline",
       prize: "₹8,000",
       icon: MessageSquare,
-      gradient: "from-yellow-500 via-orange-500 to-red-500",
+      gradient: "from-green-400 via-yellow-500 to-green-600",
       bgPattern: "debate",
       difficulty: "Intermediate",
       duration: "2 hours"
@@ -91,7 +91,7 @@ const Prizes: React.FC = () => {
       mode: "Offline",
       prize: "₹5,000",
       icon: Terminal,
-      gradient: "from-green-500 via-emerald-500 to-teal-500",
+      gradient: "from-blue-400 via-teal-500 to-green-500",
       bgPattern: "linux",
       difficulty: "Beginner",
       duration: "6 hours"
@@ -106,19 +106,19 @@ const Prizes: React.FC = () => {
     switch (difficulty) {
       case 'Beginner': return 'bg-green-500/20 text-green-300 border-green-500/30';
       case 'Intermediate': return 'bg-yellow-500/20 text-yellow-300 border-yellow-500/30';
-      case 'Advanced': return 'bg-orange-500/20 text-orange-300 border-orange-500/30';
-      case 'Expert': return 'bg-red-500/20 text-red-300 border-red-500/30';
+      case 'Advanced': return 'bg-blue-500/20 text-blue-300 border-blue-500/30';
+      case 'Expert': return 'bg-purple-500/20 text-purple-300 border-purple-500/30';
       default: return 'bg-gray-500/20 text-gray-300 border-gray-500/30';
     }
   };
 
   return (
-    <section id="prizes" className="py-20 bg-gradient-to-br from-gray-950 via-gray-900 to-black text-white relative overflow-hidden">
+    <section id="prizes" className="py-20 bg-gradient-to-br from-gray-950 via-black to-gray-950 text-white relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-3/4 left-1/2 w-64 h-64 bg-pink-500/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#5AACCF]/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#80C271]/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-3/4 left-1/2 w-64 h-64 bg-[#EFFC93]/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -126,8 +126,8 @@ const Prizes: React.FC = () => {
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-7xl font-black mb-6 tracking-tight">
             <GradientText
-              colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
-              animationSpeed={3}
+              colors={["#5AACCF", "#EFFC93", "#80C271", "#5AACCF"]}
+              animationSpeed={4}
               showBorder={false}
               className="font-avartar"
               style={{ fontFamily: "'AvartarWater', sans-serif" }}
@@ -135,7 +135,7 @@ const Prizes: React.FC = () => {
               Epic Events
             </GradientText>
           </h2>
-          <div className="w-32 h-1 bg-gradient-to-r from-red-500 to-blue-500 mx-auto mb-6 rounded-full"></div>
+          <div className="w-32 h-1 bg-gradient-to-r from-[#5AACCF] to-[#80C271] mx-auto mb-6 rounded-full"></div>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Where innovation meets competition. Choose your battlefield.
           </p>
@@ -148,8 +148,8 @@ const Prizes: React.FC = () => {
             return (
               <div
                 key={event.id}
-                className={`group relative bg-gradient-to-br from-gray-900/50 via-gray-800/50 to-gray-900/50 backdrop-blur-xl rounded-3xl overflow-hidden transition-all duration-700 transform hover:scale-105 border border-gray-700/50 hover:border-gray-600/70 ${
-                  hoveredCard === event.id ? 'shadow-2xl shadow-purple-500/25' : 'shadow-xl'
+                className={`group relative bg-black/20 backdrop-blur-xl rounded-3xl overflow-hidden transition-all duration-700 transform hover:scale-105 border border-[#5AACCF]/20 hover:border-[#5AACCF]/40 ${
+                  hoveredCard === event.id ? 'shadow-2xl shadow-[#5AACCF]/20' : 'shadow-xl'
                 }`}
                 onMouseEnter={() => setHoveredCard(event.id)}
                 onMouseLeave={() => setHoveredCard(null)}
@@ -182,11 +182,11 @@ const Prizes: React.FC = () => {
 
                   {/* Stats Grid */}
                   <div className="grid grid-cols-2 gap-4 mb-6">
-                    <div className="bg-gray-800/50 rounded-xl p-3 backdrop-blur-sm border border-gray-700/50">
+                    <div className="bg-gray-800/50 rounded-xl p-3 backdrop-blur-sm border border-[#5AACCF]/20">
                       <div className="text-gray-400 text-xs mb-1">Team Size</div>
                       <div className="text-white font-bold text-sm">{event.teamSize}</div>
                     </div>
-                    <div className="bg-gray-800/50 rounded-xl p-3 backdrop-blur-sm border border-gray-700/50">
+                    <div className="bg-gray-800/50 rounded-xl p-3 backdrop-blur-sm border border-[#5AACCF]/20">
                       <div className="text-gray-400 text-xs mb-1">Duration</div>
                       <div className="text-white font-bold text-sm">{event.duration}</div>
                     </div>
@@ -229,7 +229,7 @@ const Prizes: React.FC = () => {
         {/* Bottom CTA */}
         <div className="text-center mt-16">
           <p className="text-gray-400 text-lg mb-6">Ready to make your mark?</p>
-          <div className="inline-flex px-8 py-3 bg-gradient-to-r from-red-500 to-blue-500 rounded-full text-white font-bold animate-pulse">
+          <div className="inline-flex px-8 py-3 bg-gradient-to-r from-[#5AACCF] to-[#80C271] rounded-full text-white font-bold animate-pulse">
             Registration Opens Soon
           </div>
         </div>

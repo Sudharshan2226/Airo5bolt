@@ -3,12 +3,12 @@ import sponsor from './assets/sponsor.jpg'
 
 const Footer: React.FC = () => {
   return (
-    <footer className="backdrop-blur-sm border-t border-red-900/30 py-8">
+    <footer className="backdrop-blur-sm border-t border-[#5AACCF]/20 py-8">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h3 className="text-xl font-bold mb-4 text-white">AIRO 5.O</h3>
+              <h3 className="text-xl font-bold mb-4 text-white font-avartar tracking-wider">AIRO 5.O</h3>
               <p className="text-gray-400 mb-4">
                 A 24-hour hackathon exploring the upside-down world of technology.
               </p>
@@ -26,22 +26,22 @@ const Footer: React.FC = () => {
                 <div>
                   <ul className="space-y-2 text-gray-400">
                     <li>
-                      <a href="/" className="hover:text-red-500 transition-colors">
+                      <a href="/" className="hover:text-[#5AACCF] transition-colors">
                         Home
                       </a>
                     </li>
                     <li>
-                      <a href="/domain" className="hover:text-red-500 transition-colors">
+                      <a href="/domain" className="hover:text-[#5AACCF] transition-colors">
                         Domains
                       </a>
                     </li>
                     <li>
-                      <a href="/#timeline" className="hover:text-red-500 transition-colors">
+                      <a href="/#timeline" className="hover:text-[#5AACCF] transition-colors">
                         Timeline
                       </a>
                     </li>
                     <li>
-                      <a href="/guidelines" className="hover:text-red-500 transition-colors">
+                      <a href="/guidelines" className="hover:text-[#5AACCF] transition-colors">
                         Guidelines
                       </a>
                     </li>
@@ -50,17 +50,17 @@ const Footer: React.FC = () => {
                 <div>
                   <ul className="space-y-2 text-gray-400">
                     <li>
-                      <a href="/#prizes" className="hover:text-red-500 transition-colors">
+                      <a href="/#prizes" className="hover:text-[#5AACCF] transition-colors">
                         Prizes
                       </a>
                     </li>
                     <li>
-                      <a href="/team" className="hover:text-red-500 transition-colors">
+                      <a href="/team" className="hover:text-[#5AACCF] transition-colors">
                         Team
                       </a>
                     </li>
                     <li>
-                      <a href="/results" className="hover:text-red-500 transition-colors">
+                      <a href="/results" className="hover:text-[#5AACCF] transition-colors">
                         Result
                       </a>
                     </li>                    
@@ -92,7 +92,7 @@ interface SocialIconProps {
 const SocialIcon: React.FC<SocialIconProps> = ({ icon }) => (
   <a
     href="#"
-    className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-red-600 hover:text-white transition-all"
+    className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-[#5AACCF] hover:text-black transition-all"
   >
     {icon}
   </a>
