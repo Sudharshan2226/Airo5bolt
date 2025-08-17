@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import logo from './assets/leo.png'
+import logo from './assets/leo.png';
+import GradientText from './ui/GradientText';
+
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,9 +16,15 @@ const Header: React.FC = () => {
           <img src={logo} alt="College Logo" className="w-full h-full object-cover object-center" />
         </div>
         <h1 className="text-xl md:text-2xl font-bold">
-          <a href="/" className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-blue-600">
-            AIRO 5.O
-          </a>
+           <GradientText 
+              colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#4079ff", "#40ffaa"]}
+              animationSpeed={4} 
+              showBorder={false} 
+              className="font-avartar"
+              style={{ fontFamily: "'AvartarWater', sans-serif" }}
+            >
+              Airo 5.O
+            </GradientText>
         </h1>
       </div>
 
