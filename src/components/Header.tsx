@@ -54,7 +54,6 @@ interface NavLinksProps {
 const NavLinks: React.FC<NavLinksProps> = ({ mobile = false, setIsMenuOpen }) => {
   const links = [
     { name: 'Home', href: '/' },
-    { name: 'Domain', href: '/Domain' },
     { name: 'Timeline', href: '/#timeline' },
     { name: 'Team', href: '/Team' },
     { name: 'Guidelines', href: '/Guidelines' },

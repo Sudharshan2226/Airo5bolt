@@ -193,11 +193,11 @@ const HeroSection = () => {
           </motion.div>
           
           <motion.h1
-            className="text-7xl md:text-8xl font-bold mb-4 tracking-wider"
+            className="text-9xl md:text-9xl font-bold mb-4 tracking-wider"
             transition={{ duration: 3, repeat: Infinity }}
           >
             <GradientText 
-              colors={["#5AACCF", "#EFFC93", "#80C271", "#5AACCF"]} 
+              colors={["#40ffaa", "#4079ff", "#40ffaa","#4079ff", "#4079ff", "#40ffaa"]} 
               animationSpeed={4} 
               showBorder={false} 
               className="font-avartar"
