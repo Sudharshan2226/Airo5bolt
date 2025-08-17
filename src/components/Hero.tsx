@@ -2,8 +2,6 @@ import { motion } from 'framer-motion';
 import { Calendar, MapPin, Users, Award } from 'lucide-react';
 import GradientText from './ui/GradientText';
 
-import collegeLogo from './assets/sec.png';
-import leoLogo from './assets/leo.png';
 import zenistaLogo from './assets/leo.png';
 // [USER ACTION REQUIRED]
 // To add your own background video, place it in the `src/components/assets` folder
@@ -73,8 +71,8 @@ const HeroSection = () => {
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           className="absolute inset-0 opacity-10"
           style={{
-            backgroundImage: `linear-gradient(rgba(46, 103, 160, 0.3) 1px, transparent 1px), 
-                             linear-gradient(90deg, rgba(46, 103, 160, 0.3) 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(rgba(64, 121, 255, 0.3) 1px, transparent 1px),
+                             linear-gradient(90deg, rgba(64, 121, 255, 0.3) 1px, transparent 1px)`,
             backgroundSize: '50px 50px'
           }}
         />
@@ -84,7 +82,7 @@ const HeroSection = () => {
           {Array.from({ length: 3 }).map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-96 h-96 rounded-full border border-[#5AACCF]/20"
+              className="absolute w-96 h-96 rounded-full border border-[#4079ff]/20"
               style={{
                 top: `${20 + i * 30}%`,
                 left: `${10 + i * 40}%`,
@@ -106,10 +104,10 @@ const HeroSection = () => {
         <motion.div
           animate={{ 
             background: [
-              'radial-gradient(circle at 20% 50%, hsl(207 88% 55% / 0.1) 0%, transparent 50%)',
-              'radial-gradient(circle at 80% 50%, hsl(160 88% 60% / 0.1) 0%, transparent 50%)',
-              'radial-gradient(circle at 50% 20%, hsl(207 88% 55% / 0.1) 0%, transparent 50%)',
-              'radial-gradient(circle at 50% 80%, hsl(160 88% 60% / 0.1) 0%, transparent 50%)'
+              'radial-gradient(circle at 20% 50%, rgba(64, 121, 255, 0.1) 0%, transparent 50%)',
+              'radial-gradient(circle at 80% 50%, rgba(255, 171, 64, 0.1) 0%, transparent 50%)',
+              'radial-gradient(circle at 50% 20%, rgba(64, 121, 255, 0.1) 0%, transparent 50%)',
+              'radial-gradient(circle at 50% 80%, rgba(255, 171, 64, 0.1) 0%, transparent 50%)'
             ]
           }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
@@ -122,9 +120,9 @@ const HeroSection = () => {
         {Array.from({ length: 30 }).map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-2 h-2 bg-[#EFFC93]/70 rounded-full"
+            className="absolute w-2 h-2 bg-[#ffab40]/70 rounded-full"
             style={{
-              boxShadow: '0 0 10px #EFFC93, 0 0 20px #EFFC93, 0 0 30px #80C271'
+              boxShadow: '0 0 10px #ffab40, 0 0 20px #ffab40, 0 0 30px #4079ff'
             }}
             initial={{
               x: Math.random() * window.innerWidth,
@@ -179,9 +177,9 @@ const HeroSection = () => {
               whileHover={{ scale: 1.1, rotate: 5 }}
               animate={{
                 filter: [
-                  'drop-shadow(0 0 20px #5AACCF)',
-                  'drop-shadow(0 0 30px #80C271)',
-                  'drop-shadow(0 0 20px #5AACCF)'
+                  'drop-shadow(0 0 20px #4079ff)',
+                  'drop-shadow(0 0 30px #ffab40)',
+                  'drop-shadow(0 0 20px #4079ff)'
                 ]
               }}
               transition={{ 
@@ -197,7 +195,7 @@ const HeroSection = () => {
             transition={{ duration: 3, repeat: Infinity }}
           >
             <GradientText 
-              colors={["#5AACCF", "#EFFC93", "#80C271", "#5AACCF"]} 
+              colors={["#4079ff", "#ffab40", "#4079ff"]}
               animationSpeed={4} 
               showBorder={false} 
               className="font-avartar"
@@ -211,8 +209,8 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1, duration: 0.8 }}
-            className="text-2xl md:text-3xl text-[#EFFC93] mb-2"
-            style={{ textShadow: '0 0 10px #EFFC93' }}
+            className="text-2xl md:text-3xl text-[#ffab40] mb-2"
+            style={{ textShadow: '0 0 10px #ffab40' }}
           >
             2025
           </motion.div>
@@ -240,9 +238,9 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.2 + index * 0.1, duration: 0.8 }}
-              className="bg-card/80 backdrop-blur-sm border border-[#5AACCF]/20 rounded-lg p-6 hover:border-[#5AACCF]/40 transition-all duration-300"
+              className="bg-card/80 backdrop-blur-sm border border-[#4079ff]/20 rounded-lg p-6 hover:border-[#4079ff]/40 transition-all duration-300"
             >
-              <detail.icon className="text-[#5AACCF] mx-auto mb-3" size={28} />
+              <detail.icon className="text-[#4079ff] mx-auto mb-3" size={28} />
               <p className="text-sm text-muted-foreground mb-1">{detail.label}</p>
               <p className="font-semibold text-foreground">{detail.value}</p>
             </motion.div>
@@ -258,13 +256,13 @@ const HeroSection = () => {
         >
           <button
             onClick={scrollToEvents}
-            className="bg-gradient-to-r from-[#5AACCF] to-[#80C271] hover:scale-105 transform transition-all duration-300 text-lg px-8 py-6 shadow-[0_0_20px_#5AACCF]"
+            className="bg-gradient-to-r from-[#4079ff] to-[#ffab40] hover:scale-105 transform transition-all duration-300 text-lg px-8 py-6 shadow-[0_0_20px_#4079ff]"
           >
             Explore Events
           </button>
           <button
             onClick={scrollToEvents}
-            className="border-[#5AACCF] text-[#5AACCF] hover:bg-[#5AACCF]/10 hover:scale-105 transform transition-all duration-300 text-lg px-8 py-6"
+            className="border-[#4079ff] text-[#4079ff] hover:bg-[#4079ff]/10 hover:scale-105 transform transition-all duration-300 text-lg px-8 py-6"
           >
             Learn More
           </button>
