@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Code, Palette, TrendingUp, Video, Bot, MessageSquare, Terminal } from "lucide-react";
 import GradientText from './ui/GradientText';
+import { cn } from "@/lib/utils";
+import { AnimatePresence, motion } from "motion/react";
 const Prizes: React.FC = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
@@ -116,9 +118,9 @@ const Prizes: React.FC = () => {
     <section id="prizes" className="py-20 bg-gradient-to-br from-gray-950 via-black to-gray-950 text-white relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#4079ff]/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#40ffaa]/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-3/4 left-1/2 w-64 h-64 bg-[#4079ff]/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#0b63f6]/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#13e2da]/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-3/4 left-1/2 w-64 h-64 bg-[#0b63f6]/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -126,7 +128,7 @@ const Prizes: React.FC = () => {
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-7xl font-black mb-6 tracking-tight">
             <GradientText
-              colors={["#4079ff", "#40ffaa", "#4079ff"]}
+              colors={["#0b63f6", "#13e2da", "#0b63f6"]}
               animationSpeed={4}
               showBorder={false}
               className="font-avartar"
@@ -135,7 +137,7 @@ const Prizes: React.FC = () => {
               Epic Events
             </GradientText>
           </h2>
-          <div className="w-32 h-1 bg-gradient-to-r from-[#4079ff] to-[#40ffaa] mx-auto mb-6 rounded-full"></div>
+          <div className="w-32 h-1 bg-gradient-to-r from-[#0b63f6] to-[#13e2da] mx-auto mb-6 rounded-full"></div>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Where innovation meets competition. Choose your battlefield.
           </p>
@@ -148,79 +150,102 @@ const Prizes: React.FC = () => {
             return (
               <div
                 key={event.id}
-                className={`group relative bg-black/20 backdrop-blur-xl rounded-3xl overflow-hidden transition-all duration-700 transform hover:scale-105 border border-[#4079ff]/20 hover:border-[#4079ff]/40 ${
-                  hoveredCard === event.id ? 'shadow-2xl shadow-[#4079ff]/20' : 'shadow-xl'
-                }`}
+                className="relative group block p-2 h-full w-full"
                 onMouseEnter={() => setHoveredCard(event.id)}
                 onMouseLeave={() => setHoveredCard(null)}
                 style={{ animationDelay: `${index * 150}ms` }}
               >
-                {/* Gradient Overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${event.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
-                
-                {/* Floating Icon */}
-                <div className="relative p-6">
-                  <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${event.gradient} mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                    <Icon className="w-8 h-8 text-white" />
-                  </div>
-                  
-                  {/* Difficulty Badge */}
-                  <div className={`absolute top-6 right-6 px-3 py-1 rounded-full text-xs font-bold border ${getDifficultyColor(event.difficulty)}`}>
-                    {event.difficulty}
-                  </div>
-                </div>
+                <AnimatePresence>
+                  {hoveredCard === event.id && (
+                    <motion.span
+                      className="absolute inset-0 h-full w-full bg-gradient-to-br from-[#0b63f6]/20 to-[#13e2da]/20 block rounded-3xl"
+                      layoutId="hoverBackground"
+                      initial={{ opacity: 0 }}
+                      animate={{
+                        opacity: 1,
+                        transition: { duration: 0.15 },
+                      }}
+                      exit={{
+                        opacity: 0,
+                        transition: { duration: 0.15, delay: 0.2 },
+                      }}
+                    />
+                  )}
+                </AnimatePresence>
 
-                {/* Content */}
-                <div className="px-6 pb-6">
-                  <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all duration-300">
-                    {event.name}
-                  </h3>
-                  
-                  <p className="text-gray-300 text-sm mb-6 leading-relaxed line-clamp-3 group-hover:text-gray-200 transition-colors duration-300">
-                    {event.description}
-                  </p>
-
-                  {/* Stats Grid */}
-                  <div className="grid grid-cols-2 gap-4 mb-6">
-                    <div className="bg-gray-800/50 rounded-xl p-3 backdrop-blur-sm border border-[#4079ff]/20">
-                      <div className="text-gray-400 text-xs mb-1">Team Size</div>
-                      <div className="text-white font-bold text-sm">{event.teamSize}</div>
-                    </div>
-                    <div className="bg-gray-800/50 rounded-xl p-3 backdrop-blur-sm border border-[#4079ff]/20">
-                      <div className="text-gray-400 text-xs mb-1">Duration</div>
-                      <div className="text-white font-bold text-sm">{event.duration}</div>
-                    </div>
-                  </div>
-
-                  {/* Mode & Prize */}
-                  <div className="flex justify-between items-center mb-6">
-                    <span className={`px-4 py-2 rounded-full text-sm font-bold ${
-                      event.mode === 'Online' ? 'bg-green-500/20 text-green-300 border border-green-500/30' :
-                      event.mode === 'Offline' ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30' :
-                      'bg-purple-500/20 text-purple-300 border border-purple-500/30'
-                    }`}>
-                      {event.mode}
-                    </span>
-                    <div className="text-right">
-                      <div className="text-gray-400 text-xs">Prize Pool</div>
-                      <div className={`text-xl font-black bg-gradient-to-r ${event.gradient} bg-clip-text text-transparent`}>
-                        {event.prize}
+                <div className={cn(
+                  "rounded-3xl h-full w-full overflow-hidden bg-black/20 backdrop-blur-xl border border-[#0b63f6]/20 group-hover:border-[#0b63f6]/40 relative z-20 transition-all duration-700 transform hover:scale-105",
+                  hoveredCard === event.id ? 'shadow-2xl shadow-[#0b63f6]/20' : 'shadow-xl'
+                )}>
+                  <div className="relative z-50">
+                    {/* Gradient Overlay */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${event.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
+                    
+                    {/* Floating Icon */}
+                    <div className="relative p-6">
+                      <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${event.gradient} mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                        <Icon className="w-8 h-8 text-white" />
+                      </div>
+                      
+                      {/* Difficulty Badge */}
+                      <div className={`absolute top-6 right-6 px-3 py-1 rounded-full text-xs font-bold border ${getDifficultyColor(event.difficulty)}`}>
+                        {event.difficulty}
                       </div>
                     </div>
+
+                    {/* Content */}
+                    <div className="px-6 pb-6">
+                      <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all duration-300">
+                        {event.name}
+                      </h3>
+                      
+                      <p className="text-gray-300 text-sm mb-6 leading-relaxed line-clamp-3 group-hover:text-gray-200 transition-colors duration-300">
+                        {event.description}
+                      </p>
+
+                      {/* Stats Grid */}
+                      <div className="grid grid-cols-2 gap-4 mb-6">
+                        <div className="bg-gray-800/50 rounded-xl p-3 backdrop-blur-sm border border-[#0b63f6]/20">
+                          <div className="text-gray-400 text-xs mb-1">Team Size</div>
+                          <div className="text-white font-bold text-sm">{event.teamSize}</div>
+                        </div>
+                        <div className="bg-gray-800/50 rounded-xl p-3 backdrop-blur-sm border border-[#0b63f6]/20">
+                          <div className="text-gray-400 text-xs mb-1">Duration</div>
+                          <div className="text-white font-bold text-sm">{event.duration}</div>
+                        </div>
+                      </div>
+
+                      {/* Mode & Prize */}
+                      <div className="flex justify-between items-center mb-6">
+                        <span className={`px-4 py-2 rounded-full text-sm font-bold ${
+                          event.mode === 'Online' ? 'bg-green-500/20 text-green-300 border border-green-500/30' :
+                          event.mode === 'Offline' ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30' :
+                          'bg-purple-500/20 text-purple-300 border border-purple-500/30'
+                        }`}>
+                          {event.mode}
+                        </span>
+                        <div className="text-right">
+                          <div className="text-gray-400 text-xs">Prize Pool</div>
+                          <div className={`text-xl font-black bg-gradient-to-r ${event.gradient} bg-clip-text text-transparent`}>
+                            {event.prize}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Epic Button */}
+                      <button
+                        onClick={() => handleReadMore(event.id)}
+                        className={`w-full relative overflow-hidden bg-gradient-to-r ${event.gradient} text-white font-bold py-4 px-6 rounded-2xl transition-all duration-300 group-hover:shadow-2xl transform group-hover:translate-y-[-2px] hover:scale-[1.02]`}
+                      >
+                        <span className="relative z-10">ENTER THE ARENA</span>
+                        <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                      </button>
+                    </div>
+
+                    {/* Hover Glow Effect */}
+                    <div className={`absolute -inset-1 bg-gradient-to-r ${event.gradient} opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500 -z-10`}></div>
                   </div>
-
-                  {/* Epic Button */}
-                  <button
-                    onClick={() => handleReadMore(event.id)}
-                    className={`w-full relative overflow-hidden bg-gradient-to-r ${event.gradient} text-white font-bold py-4 px-6 rounded-2xl transition-all duration-300 group-hover:shadow-2xl transform group-hover:translate-y-[-2px] hover:scale-[1.02]`}
-                  >
-                    <span className="relative z-10">ENTER THE ARENA</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
-                  </button>
                 </div>
-
-                {/* Hover Glow Effect */}
-                <div className={`absolute -inset-1 bg-gradient-to-r ${event.gradient} opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500 -z-10`}></div>
               </div>
             );
           })}
@@ -229,7 +254,7 @@ const Prizes: React.FC = () => {
         {/* Bottom CTA */}
         <div className="text-center mt-16">
           <p className="text-gray-400 text-lg mb-6">Ready to make your mark?</p>
-          <div className="inline-flex px-8 py-3 bg-gradient-to-r from-[#4079ff] to-[#40ffaa] rounded-full text-white font-bold animate-pulse">
+          <div className="inline-flex px-8 py-3 bg-gradient-to-r from-[#0b63f6] to-[#13e2da] rounded-full text-white font-bold animate-pulse">
             Registration Opens Soon
           </div>
         </div>
