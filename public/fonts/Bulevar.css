@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'Bulevar';
+  src: url('./Bulevar-poster-webfont-transfonter.woff2') format('woff2'),
+       url('./Bulevar-poster-webfont-transfonter.woff') format('woff'),
+       url('./Bulevar-poster-webfont-transfonter.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bulevar';
+  src: url('./Bulevar-regular-webfont-transfonter.woff2') format('woff2'),
+       url('./Bulevar-regular-webfont-transfonter.woff') format('woff'),
+       url('./Bulevar-regular-webfont-transfonter.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'General Sans';
+  src: url('./GeneralSans-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Migra';
+  src: url('./Migra-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,0 +1,36 @@
+{
+  "name": "aanstekelijk-hero-section",
+  "version": "1.0.0",
+  "description": "Standalone hero section based on aanstekelijk.nl website",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "serve": "python -m http.server 8000"
+  },
+  "dependencies": {
+    "@barba/core": "^2.9.7",
+    "@vimeo/player": "^2.18.0",
+    "flickity": "^2.3.0",
+    "gsap": "^3.12.2",
+    "vanilla-lazyload": "^17.8.3"
+  },
+  "cdn-dependencies": {
+    "gsap": "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js",
+    "gsap-scrolltrigger": "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js",
+    "gsap-textplugin": "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js",
+    "vimeo-player": "https://unpkg.com/@vimeo/player@2.18.0/dist/player.min.js",
+    "barba": "https://unpkg.com/@barba/core",
+    "lazyload": "https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js",
+    "flickity": "https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js",
+    "jquery": "https://code.jquery.com/jquery-3.7.1.min.js"
+  },
+  "keywords": [
+    "hero-section",
+    "gsap",
+    "animation",
+    "responsive",
+    "video-background"
+  ],
+  "author": "Based on aanstekelijk.nl",
+  "license": "ISC"
+}

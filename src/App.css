@@ -1,0 +1,23 @@
+/* Ensure proper scrolling behavior */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Ensure the main scroll container has proper height */
+.main-wrap[data-scroll-container] {
+  min-height: 100vh;
+}
+
+/* Target section should have some content to scroll to */
+#section-intro {
+  min-height: 100vh;
+  padding: 4rem 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* Fix for smooth scroll initialization */
+[data-scroll-container] {
+  position: relative;
+}

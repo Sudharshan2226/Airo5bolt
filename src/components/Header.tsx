@@ -15,9 +15,9 @@ const Header: React.FC = () => {
         <div className="w-[72px] h-12 rounded-full flex items-center justify-center overflow-hidden">
           <img src={logo} alt="College Logo" className="w-full h-full object-cover object-center" />
         </div>
-        <h1 className="text-xl md:text-2xl font-bold">
+        <h1 className="text-lg md:text-xl font-medium">
            <GradientText 
-              colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#4079ff", "#40ffaa"]}
+              colors={["#8fa8d8", "#6b9eff", "#8fa8d8", "#6b9eff", "#6b9eff", "#8fa8d8"]}
               animationSpeed={4} 
               showBorder={false} 
               className="font-avartar"

@@ -29,9 +29,9 @@ const Description = () => {
     <section id="event" className="py-16 bg-gray-950">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-            <h2 className="text-[3.5rem] md:text-[5rem] font-bold mb-2 text-center font-avartar tracking-wider">
+            <h2 className="text-[2.5rem] md:text-[3.5rem] font-medium mb-2 text-center font-avartar tracking-wider">
             <GradientText 
-            colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#4079ff", "#40ffaa"]}
+            colors={["#8fa8d8", "#6b9eff", "#8fa8d8", "#6b9eff", "#6b9eff", "#8fa8d8"]}
             animationSpeed={4} 
             showBorder={false} 
             className="font-avartar"
@@ -80,7 +80,7 @@ type FeatureCardProps = {
 
 const FeatureCard = ({ title, description }: FeatureCardProps) => (
   <div className="bg-black/20 backdrop-blur-sm border border-[#4079ff]/10 rounded-lg p-6 hover:border-[#4079ff]/30 transition-all duration-300 hover:shadow-lg hover:shadow-[#4079ff]/10 group">
-    <h3 className="text-xl font-semibold mb-3 text-white group-hover:text-[#4079ff] transition-colors">
+    <h3 className="text-base font-medium mb-3 text-gray-200 group-hover:text-[#6b9eff] transition-colors">
       {title}
     </h3>
     <p className="text-gray-400">{description}</p>

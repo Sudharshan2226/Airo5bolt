@@ -2,8 +2,9 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from "react-route
 import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Hero from "./components/Hero";
+import PrimaryHero from "./components/PrimaryHero";
 import Description from "./components/Description";
+import ScrollWrapper from "./components/ScrollWrapper";
 // import { TimelineSection } from "./components/TimeLineSection";
 import Rules from "./components/Rules";
 import OrganizersPage from "./components/OrganizersPage";
@@ -55,21 +56,29 @@ function App() {
       <div className="flex flex-col min-h-screen">
         {/* <FireParticles /> */}
         <main className="flex-grow">
-          <Header />
           <Routes>
             <Route path="/" element={
-              <div>
-                <Hero />
-                <Description />
-                <Prizes />
-                <WhyJoinUs />
-                <CollegeMap />
-                <Footer />
-              </div>
+              <ScrollWrapper>
+                <PrimaryHero />
+                <div data-scroll-section>
+                </div>
+                <div data-scroll-section>
+                  <Prizes />
+                </div>
+                <div data-scroll-section>
+                  <WhyJoinUs />
+                </div>
+                <div data-scroll-section>
+                  <CollegeMap />
+                </div>
+                <div data-scroll-section>
+                  <Footer />
+                </div>
+              </ScrollWrapper>
             } />
-            <Route path="/team" element={<div><OrganizersPage /> <Footer /> </div>} />
-            <Route path="/guidelines" element={<div><Rules /> <Footer /> </div>} />
-            <Route path="/results" element={<Results />} />
+            <Route path="/team" element={<div><Header /><OrganizersPage /> <Footer /> </div>} />
+            <Route path="/guidelines" element={<div><Header /><Rules /> <Footer /> </div>} />
+            <Route path="/results" element={<div><Header /><Results /></div>} />
           </Routes>
         </main>
       </div>

@@ -1,0 +1,50 @@
+/* Font path overrides for React app */
+@font-face {
+   font-family: 'General Sans';
+   src:  url('/fonts/GeneralSans-Variable.ttf') format('truetype supports variations'),
+         url('/fonts/GeneralSans-Variable.ttf') format('truetype-variations');
+   font-weight: 100 1000;
+   font-style: normal;
+   font-display: auto;
+}
+
+@font-face {
+   font-family: 'Bulevar';
+   src:  url('/fonts/bulevar-poster-webfont-transfonter.woff2') format('woff2'),
+         url('/fonts/bulevar-poster-webfont-transfonter.woff') format('woff'),
+         url('/fonts/bulevar-poster-webfont-transfonter.ttf') format('truetype');
+   font-weight: 800;
+   font-style: normal;
+   font-display: auto;
+}
+
+@font-face {
+   font-family: 'Bulevar';
+   src:  url('/fonts/bulevar-regular-webfont-transfonter.woff2') format('woff2'),
+         url('/fonts/bulevar-regular-webfont-transfonter.woff') format('woff'),
+         url('/fonts/bulevar-regular-webfont-transfonter.ttf') format('truetype');
+   font-weight: 400;
+   font-style: normal;
+   font-display: auto;
+}
+
+@font-face {
+   font-family: 'Migra';
+   src: url('/fonts/Migra-Regular.otf') format('opentype');
+   font-weight: 400;
+   font-style: normal;
+   font-display: auto;
+}
+
+/* Texture background override */
+.fixed-background.dark .texture {
+   background-image: url('/texture-dark.jpg');
+}
+
+/* Ensure the page takes full height */
+html, body {
+   height: 100%;
+   margin: 0;
+   padding: 0;
+   overflow-x: hidden;
+}
