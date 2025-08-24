@@ -225,9 +225,9 @@ const Prizes = () => {
       <div className="container mx-auto px-6 relative z-10">
         {/* Header with Main Gradient */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-semibold mb-6 tracking-tight">
+          <h2 className="text-2xl md:text-4xl font-semibold mb-6 tracking-tight">
             <GradientText
-              colors={["#8fa8d8", "#6b9eff", "#8fa8d8", "#6b9eff", "#6b9eff", "#8fa8d8"]}
+              colors={["#60a5fa", "#3b82f6"]}
               className="font-avartar"
               style={{ fontFamily: "'AvartarWater', sans-serif" }}
             >
