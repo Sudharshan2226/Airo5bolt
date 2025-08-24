@@ -224,8 +224,8 @@ const Prizes = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Header with Main Gradient */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-semibold mb-6 tracking-tight">
+        <div className="text-center mb-12">
+          <h2 className="text-xl md:text-3xl font-semibold mb-3 tracking-tight">
             <GradientText
               colors={["#8fa8d8", "#6b9eff", "#8fa8d8", "#6b9eff", "#6b9eff", "#8fa8d8"]}
               className="font-avartar"
@@ -234,8 +234,8 @@ const Prizes = () => {
               Epic Events
             </GradientText>
           </h2>
-          <div className="w-32 h-1 bg-blue-500 mx-auto mb-6 rounded-full"></div>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <div className="w-24 h-1 bg-blue-500/80 mx-auto mb-4 rounded-full"></div>
+          <p className="text-base text-gray-400 max-w-2xl mx-auto">
             Where innovation meets competition. Choose your battlefield.
           </p>
         </div>
@@ -286,11 +286,11 @@ const Prizes = () => {
 
                       {/* Content */}
                       <div className="px-6 pb-6">
-                        <h3 className="text-xl md:text-2xl font-bold mb-3 text-white">
+                        <h3 className="text-lg md:text-xl font-bold mb-2 text-white">
                           {event.name}
                         </h3>
                         
-                        <p className="text-gray-300 text-sm mb-6 leading-relaxed">
+                        <p className="text-gray-400 text-xs mb-4 leading-relaxed">
                           {event.description}
                         </p>
 
@@ -298,11 +298,11 @@ const Prizes = () => {
                         <div className="grid grid-cols-2 gap-4 mb-6">
                           <div className="bg-gray-800/50 rounded-xl p-3 backdrop-blur-sm border border-gray-700">
                             <div className="text-gray-400 text-xs mb-1">Team Size</div>
-                            <div className="text-white font-bold text-sm">{event.teamSize}</div>
+                            <div className="text-white font-medium text-xs">{event.teamSize}</div>
                           </div>
                           <div className="bg-gray-800/50 rounded-xl p-3 backdrop-blur-sm border border-gray-700">
                             <div className="text-gray-400 text-xs mb-1">Duration</div>
-                            <div className="text-white font-bold text-sm">{event.duration}</div>
+                            <div className="text-white font-medium text-xs">{event.duration}</div>
                           </div>
                         </div>
 
@@ -310,7 +310,7 @@ const Prizes = () => {
                         <div className="flex justify-end items-center mb-6">
                           <div className="text-right">
                             <div className="text-gray-400 text-xs">Prize Pool</div>
-                            <div className={`text-lg font-black ${colors.text}`}>
+                            <div className={`text-base font-bold ${colors.text}`}>
                               {event.prize}
                             </div>
                           </div>
@@ -319,7 +319,7 @@ const Prizes = () => {
                         {/* Button */}
                         <button
                           onClick={() => handleReadMore(event.id)}
-                          className={`w-full ${colors.bg} hover:opacity-90 text-white font-bold py-3 px-6 rounded-2xl transition-all duration-300`}
+                          className={`w-full ${colors.bg} hover:opacity-90 text-white font-medium py-2 px-4 rounded-xl transition-all duration-300 text-sm`}
                         >
                           ENTER THE ARENA
                         </button>
