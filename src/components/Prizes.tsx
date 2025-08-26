@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Code, Palette, TrendingUp, Video, Bot, MessageSquare, Terminal, ChevronLeft, ChevronRight } from "lucide-react";
 
-import GradientText from './ui/GradientText';
 import CardFlip from './ui/card-flip';
 
 // Types for Carousel API
@@ -113,87 +112,81 @@ const Prizes = () => {
   const eventsData = [
     {
       id: 1,
-      name: "Coding Event",
+      name: "Glitch in the Multiverse ",
       description: "Battle through algorithmic challenges and showcase your programming prowess in our intense coding marathon.",
       teamSize: "1-2 members",
       mode: "Online",
       prize: "₹5,000",
       icon: Code,
+      image: "/src/components/assets/events/gwen.jpg",
       color: "blue",
       difficulty: "Advanced",
       duration: "6 hours"
     },
     {
       id: 2,
-      name: "UI/UX Hackathon",
+      name: "Webverse Interface",
       description: "Design revolutionary user experiences that push the boundaries of digital interaction and visual storytelling.",
       teamSize: "2-4 members",
       mode: "Hybrid",
       prize: "₹5,000",
       icon: Palette,
+      image: "/src/components/assets/events/gwen.jpg",
       color: "teal",
       difficulty: "Intermediate",
       duration: "4 hours"
     },
     {
       id: 3,
-      name: "Pitchfest",
+      name: "Multiverse Pitch",
       description: "Transform your groundbreaking ideas into compelling presentations that captivate investors and industry leaders.",
       teamSize: "3-5 members",
       mode: "Offline",
       prize: "₹5,000",
       icon: TrendingUp,
+      image: "/src/components/assets/events/gwen.jpg",
       color: "green",
       difficulty: "Expert",
       duration: "3 days"
     },
     {
       id: 4,
-      name: "AI Video Generation",
+      name: "Web of Creativity",
       description: "Harness the power of artificial intelligence to create mind-bending visual narratives and cinematic experiences.",
       teamSize: "2-3 members",
       mode: "Online",
       prize: "₹5,000",
       icon: Video,
+      image: "/src/components/assets/events/gwen.jpg",
       color: "purple",
       difficulty: "Advanced",
       duration: "4 hours"
     },
     {
       id: 5,
-      name: "AI Chatbot",
+      name: "Spidey Bot",
       description: "Engineer intelligent conversational agents that understand, learn, and interact with human-like sophistication.",
       teamSize: "2-4 members",
       mode: "Online",
       prize: "₹5,000",
       icon: Bot,
+      image: "/src/components/assets/events/gwen.jpg",
       color: "cyan",
       difficulty: "Advanced",
       duration: "8 hours"
     },
     {
       id: 6,
-      name: "Debate Championship",
+      name: "CTF: Across Dimensions",
       description: "Engage in intellectual warfare where words are weapons and logic is your shield in this battle of minds.",
       teamSize: "1 member",
       mode: "Offline",
       prize: "₹5,000",
       icon: MessageSquare,
+      image: "/src/components/assets/events/gwen.jpg",
       color: "yellow",
       difficulty: "Intermediate",
       duration: "2 hours"
-    },
-    {
-      id: 7,
-      name: "Linux Workshop",
-      description: "Master the art of open-source wizardry and become a command-line ninja in this intensive Linux bootcamp.",
-      teamSize: "Individual",
-      mode: "Offline",
-      prize: "₹5,000",
-      icon: Terminal,
-      color: "emerald",
-      difficulty: "Beginner",
-      duration: "6 hours"
     }
   ];
 
@@ -201,41 +194,70 @@ const Prizes = () => {
     console.log(`Navigate to event ${eventId} details`);
   };
 
-  const getColorClasses = (color: string) => {
-    const colorMap: Record<string, { bg: string; text: string; border: string }> = {
-      blue: { bg: 'bg-blue-500', text: 'text-blue-400', border: 'border-blue-500/30' },
-      teal: { bg: 'bg-teal-500', text: 'text-teal-400', border: 'border-teal-500/30' },
-      green: { bg: 'bg-green-500', text: 'text-green-400', border: 'border-green-500/30' },
-      purple: { bg: 'bg-purple-500', text: 'text-purple-400', border: 'border-purple-500/30' },
-      cyan: { bg: 'bg-cyan-500', text: 'text-cyan-400', border: 'border-cyan-500/30' },
-      yellow: { bg: 'bg-yellow-500', text: 'text-yellow-400', border: 'border-yellow-500/30' },
-      emerald: { bg: 'bg-emerald-500', text: 'text-emerald-400', border: 'border-emerald-500/30' }
-    };
-    return colorMap[color] || colorMap.blue;
-  };
-
   return (
-    <section id="prizes" className="py-20 bg-gray-950 text-white relative overflow-hidden">
+    <section id="prizes" className="py-20 bg-black text-white relative overflow-hidden">
       {/* Simplified Background */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-teal-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full blur-3xl"
+             style={{ backgroundColor: 'rgba(139, 0, 0, 0.08)' }}></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full blur-3xl"
+             style={{ backgroundColor: 'rgba(106, 13, 173, 0.06)' }}></div>
+        <div className="absolute top-1/2 left-1/2 w-64 h-64 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"
+             style={{ backgroundColor: 'rgba(0, 191, 255, 0.04)' }}></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Header with Main Gradient */}
-        <div className="text-center mb-12">
-          <h2 className="text-xl md:text-3xl font-semibold mb-3 tracking-tight">
-            <GradientText
-              colors={["#8fa8d8", "#6b9eff", "#8fa8d8", "#6b9eff", "#6b9eff", "#8fa8d8"]}
-              className="font-avartar"
-              style={{ fontFamily: "'AvartarWater', sans-serif" }}
+        <div className="text-center mb-16">
+          <h2 className="font-black mb-6 tracking-tight flex items-center justify-center gap-4 md:gap-6 flex-wrap">
+            {/* Epic - Inter Black */}
+            <span 
+              className="animate-fade-in-up"
+              style={{ 
+                fontFamily: "'Inter', sans-serif",
+                fontWeight: 900,
+                fontSize: 'clamp(2.5rem, 7vw, 4rem)',
+                background: 'linear-gradient(135deg, #8B0000 0%, #DC143C 50%, #FF1493 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                animationDelay: '0.2s',
+                animationFillMode: 'both'
+              }}
             >
-              Epic Events
-            </GradientText>
+              Epic
+            </span>
+            
+            {/* Events - Orbitron */}
+            <span 
+              className="animate-fade-in-up"
+              style={{ 
+                fontFamily: "'Orbitron', monospace",
+                fontWeight: 700,
+                fontSize: 'clamp(2.5rem, 7vw, 4rem)',
+                background: 'linear-gradient(135deg, #00BFFF 0%, #6A0DAD 50%, #00FFFF 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                animationDelay: '0.6s',
+                animationFillMode: 'both',
+                letterSpacing: '0.1em'
+              }}
+            >
+              Events
+            </span>
           </h2>
-          <div className="w-24 h-1 bg-blue-500/80 mx-auto mb-4 rounded-full"></div>
-          <p className="text-base text-gray-400 max-w-2xl mx-auto">
+          <div className="w-32 h-1 mx-auto mb-6 rounded-full animate-fade-in" 
+               style={{
+                 background: 'linear-gradient(90deg, #8B0000 0%, #DC143C 100%)',
+                 animationDelay: '1s',
+                 animationFillMode: 'both'
+               }}></div>
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto animate-fade-in-up"
+             style={{
+               animationDelay: '1.2s',
+               animationFillMode: 'both'
+             }}>
             Where innovation meets competition. Choose your battlefield.
           </p>
         </div>
@@ -251,13 +273,13 @@ const Prizes = () => {
               >
                 <CardFlip
                   title={event.name}
-                  subtitle={`${event.prize} Prize Pool`}
+                  subtitle={event.prize}
                   description={event.description}
+                  image={event.image}
                   features={[
                     `Team Size: ${event.teamSize}`,
                     `Duration: ${event.duration}`,
-                    `Mode: ${event.mode}`,
-                    `Difficulty: ${event.difficulty}`
+                    `Prize: ${event.prize}`
                   ]}
                 />
               </div>
@@ -269,16 +291,27 @@ const Prizes = () => {
         <div className="lg:hidden">
           <Carousel setApi={setApi} className="w-full max-w-sm mx-auto md:max-w-2xl">
             <CarouselContent>
-              {eventsData.map((event) => {
+              {eventsData.map((event, index) => {
                 const Icon = event.icon;
-                const colors = getColorClasses(event.color);
                 
                 return (
                   <CarouselItem key={event.id} className="px-4">
-                    <div className="rounded-3xl h-full w-full overflow-hidden bg-gray-900/50 backdrop-blur-xl border border-gray-700 shadow-xl">
+                    <div className="rounded-3xl h-full w-full overflow-hidden backdrop-blur-xl border shadow-xl"
+                         style={{
+                           backgroundColor: 'rgba(26, 26, 26, 0.8)',
+                           borderColor: 'rgba(45, 45, 45, 0.7)',
+                           boxShadow: '0 25px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(139, 0, 0, 0.1)'
+                         }}>
                       {/* Icon Section */}
                       <div className="relative p-6">
-                        <div className={`inline-flex p-4 rounded-2xl ${colors.bg} mb-4`}>
+                        <div className="inline-flex p-4 rounded-2xl mb-4"
+                             style={{
+                               background: index % 4 === 0 ? 'linear-gradient(135deg, #8B0000, #DC143C)' :
+                                          index % 4 === 1 ? 'linear-gradient(135deg, #6A0DAD, #FF1493)' :
+                                          index % 4 === 2 ? 'linear-gradient(135deg, #00BFFF, #00FFFF)' :
+                                          'linear-gradient(135deg, #DC143C, #8B0000)',
+                               boxShadow: '0 0 20px rgba(139, 0, 0, 0.3)'
+                             }}>
                           <Icon className="w-8 h-8 text-white" />
                         </div>
         
@@ -286,23 +319,35 @@ const Prizes = () => {
 
                       {/* Content */}
                       <div className="px-6 pb-6">
-                        <h3 className="text-lg md:text-xl font-bold mb-2 text-white">
+                        <h3 className="text-xl md:text-2xl font-bold mb-3 text-white">
                           {event.name}
                         </h3>
                         
-                        <p className="text-gray-400 text-xs mb-4 leading-relaxed">
+                        <p className="text-gray-300 text-sm mb-6 leading-relaxed">
                           {event.description}
                         </p>
 
                         {/* Stats Grid */}
                         <div className="grid grid-cols-2 gap-4 mb-6">
-                          <div className="bg-gray-800/50 rounded-xl p-3 backdrop-blur-sm border border-gray-700">
+                          <div className="rounded-xl p-3 backdrop-blur-sm border"
+                               style={{
+                                 backgroundColor: 'rgba(26, 26, 26, 0.5)',
+                                 borderColor: index % 3 === 0 ? 'rgba(139, 0, 0, 0.3)' :
+                                             index % 3 === 1 ? 'rgba(106, 13, 173, 0.3)' :
+                                             'rgba(0, 191, 255, 0.3)'
+                               }}>
                             <div className="text-gray-400 text-xs mb-1">Team Size</div>
-                            <div className="text-white font-medium text-xs">{event.teamSize}</div>
+                            <div className="text-white font-bold text-sm">{event.teamSize}</div>
                           </div>
-                          <div className="bg-gray-800/50 rounded-xl p-3 backdrop-blur-sm border border-gray-700">
+                          <div className="rounded-xl p-3 backdrop-blur-sm border"
+                               style={{
+                                 backgroundColor: 'rgba(26, 26, 26, 0.5)',
+                                 borderColor: index % 3 === 0 ? 'rgba(139, 0, 0, 0.3)' :
+                                             index % 3 === 1 ? 'rgba(106, 13, 173, 0.3)' :
+                                             'rgba(0, 191, 255, 0.3)'
+                               }}>
                             <div className="text-gray-400 text-xs mb-1">Duration</div>
-                            <div className="text-white font-medium text-xs">{event.duration}</div>
+                            <div className="text-white font-bold text-sm">{event.duration}</div>
                           </div>
                         </div>
 
@@ -310,7 +355,13 @@ const Prizes = () => {
                         <div className="flex justify-end items-center mb-6">
                           <div className="text-right">
                             <div className="text-gray-400 text-xs">Prize Pool</div>
-                            <div className={`text-base font-bold ${colors.text}`}>
+                            <div className="text-lg font-black"
+                                 style={{
+                                   color: index % 4 === 0 ? '#DC143C' :
+                                          index % 4 === 1 ? '#FF1493' :
+                                          index % 4 === 2 ? '#00BFFF' :
+                                          '#00FFFF'
+                                 }}>
                               {event.prize}
                             </div>
                           </div>
@@ -319,7 +370,14 @@ const Prizes = () => {
                         {/* Button */}
                         <button
                           onClick={() => handleReadMore(event.id)}
-                          className={`w-full ${colors.bg} hover:opacity-90 text-white font-medium py-2 px-4 rounded-xl transition-all duration-300 text-sm`}
+                          className="w-full text-white font-bold py-3 px-6 rounded-2xl transition-all duration-300 hover:opacity-90"
+                          style={{
+                            background: index % 4 === 0 ? 'linear-gradient(135deg, #8B0000, #DC143C)' :
+                                       index % 4 === 1 ? 'linear-gradient(135deg, #6A0DAD, #FF1493)' :
+                                       index % 4 === 2 ? 'linear-gradient(135deg, #00BFFF, #00FFFF)' :
+                                       'linear-gradient(135deg, #DC143C, #8B0000)',
+                            boxShadow: '0 4px 15px rgba(139, 0, 0, 0.3)'
+                          }}
                         >
                           ENTER THE ARENA
                         </button>
@@ -336,7 +394,11 @@ const Prizes = () => {
             <button
               onClick={() => api?.scrollPrev()}
               disabled={!api?.canScrollPrev()}
-              className="bg-gray-800/80 hover:bg-gray-700/80 disabled:opacity-50 disabled:cursor-not-allowed text-white p-3 rounded-full transition-colors"
+              className="disabled:opacity-50 disabled:cursor-not-allowed text-white p-3 rounded-full transition-colors hover:opacity-80"
+              style={{
+                background: 'linear-gradient(135deg, #8B0000, #DC143C)',
+                boxShadow: '0 4px 15px rgba(139, 0, 0, 0.3)'
+              }}
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
@@ -344,7 +406,11 @@ const Prizes = () => {
             <button
               onClick={() => api?.scrollNext()}
               disabled={!api?.canScrollNext()}
-              className="bg-gray-800/80 hover:bg-gray-700/80 disabled:opacity-50 disabled:cursor-not-allowed text-white p-3 rounded-full transition-colors"
+              className="disabled:opacity-50 disabled:cursor-not-allowed text-white p-3 rounded-full transition-colors hover:opacity-80"
+              style={{
+                background: 'linear-gradient(135deg, #8B0000, #DC143C)',
+                boxShadow: '0 4px 15px rgba(139, 0, 0, 0.3)'
+              }}
             >
               <ChevronRight className="w-5 h-5" />
             </button>
@@ -360,9 +426,10 @@ const Prizes = () => {
                 <button
                   key={i}
                   onClick={() => api?.scrollTo(i)}
-                  className={`w-2 h-2 rounded-full transition-colors ${
-                    i === current - 1 ? 'bg-blue-500' : 'bg-gray-600'
-                  }`}
+                  className="w-2 h-2 rounded-full transition-colors"
+                  style={{
+                    backgroundColor: i === current - 1 ? '#DC143C' : '#2d2d2d'
+                  }}
                 />
               ))}
             </div>

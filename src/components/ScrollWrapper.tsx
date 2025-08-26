@@ -11,7 +11,6 @@ const ScrollWrapper: React.FC<ScrollWrapperProps> = ({ children }) => {
       '/normalize.css',
       '/components-v1.2.css', 
       '/style-v1.2.css',
-      '/styleguide-v1.2.css',
       '/loconative-scroll.min.css'
     ];
 

@@ -266,6 +266,10 @@
    isolation: isolate;
 }
 
+.navigation-active {
+   pointer-events: all;
+}
+
 .main-navigation,
 .main-navigation-duplicate,
 .main-navigation-duplicate-duplicate {
@@ -313,7 +317,8 @@
 
 /* Main */
 
-[data-navigation-status="active"] .main-navigation {
+[data-navigation-status="active"] .main-navigation,
+.navigation-active .main-navigation {
    transform: translateY(0%) rotate(0.001deg);
    transition: var(--animation-nav) 0.3s;
 }
@@ -323,7 +328,8 @@
    transition: var(--animation-nav) 0s;
 }
 
-[data-navigation-status="active"] .main-navigation-inner {
+[data-navigation-status="active"] .main-navigation-inner,
+.navigation-active .main-navigation-inner {
    transform: translateY(0%) rotate(0.001deg);
    transition: var(--animation-nav) 0.3s;
 }
@@ -335,7 +341,8 @@
 
 /* Main Duplicate */
 
-[data-navigation-status="active"] .main-navigation-duplicate {
+[data-navigation-status="active"] .main-navigation-duplicate,
+.navigation-active .main-navigation-duplicate {
    transform: translateY(0%) rotate(0.001deg);
    transition: var(--animation-nav) 0.15s;
 }
@@ -345,7 +352,8 @@
    transition: var(--animation-nav) 0.15s;
 }
 
-[data-navigation-status="active"] .main-navigation-inner-duplicate {
+[data-navigation-status="active"] .main-navigation-inner-duplicate,
+.navigation-active .main-navigation-inner-duplicate {
    transform: translateY(0%) rotate(0.001deg);
    transition: var(--animation-nav) 0.15s;
 }
@@ -357,7 +365,8 @@
 
 /* Main Duplicate Duplicate */
 
-[data-navigation-status="active"] .main-navigation-duplicate-duplicate {
+[data-navigation-status="active"] .main-navigation-duplicate-duplicate,
+.navigation-active .main-navigation-duplicate-duplicate {
    transform: translateY(0%) rotate(0.001deg);
    transition: var(--animation-nav) 0s;
 }
@@ -367,7 +376,8 @@
    transition: var(--animation-nav) 0.3s;
 }
 
-[data-navigation-status="active"] .main-navigation-inner-duplicate-duplicate {
+[data-navigation-status="active"] .main-navigation-inner-duplicate-duplicate,
+.navigation-active .main-navigation-inner-duplicate-duplicate {
    transform: translateY(0%) rotate(0.001deg);
    transition: var(--animation-nav) 0s;
 }

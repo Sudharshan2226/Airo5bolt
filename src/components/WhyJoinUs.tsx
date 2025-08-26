@@ -31,8 +31,8 @@ const WhyJoinUs = () => {
 
   return (
     <div className="w-full bg-black/20 py-12 px-6 md:px-16">
-      <h2 className="text-xl md:text-2xl font-bold mb-4 text-center font-avartar tracking-wider">
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4079ff]/70 to-[#40ffaa]/70">
+      <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center font-avartar tracking-wider">
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4079ff] to-[#40ffaa]">
           Why Join Us?
         </span>
       </h2>

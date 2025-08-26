@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./styles/Preloader.css"; 
-import preloader from './assets/preloader.mp4'
+import preloader from './assets/AIROCOMINGSOONFINAL.mp4'
 import logo from './assets/leo.png'
 
 const Preloader: React.FC = () => {
@@ -25,13 +25,6 @@ const Preloader: React.FC = () => {
         </video>
       </div>
 
-      {/* Preloader Logo */}
-      <div className="preloader flex items-center justify-center pb-5">
-        <img className="rounded-full w-25 h-25" src={logo} alt="Logo"/>
-      </div>
-
-      {/* Spinning Loader */}
-      <div className="preloader2"></div>
 
       {/* Loading Text Animation */}
       <div className="spinner">

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import PrimaryHero from "./components/PrimaryHero";
-import Description from "./components/Description";
+// import Description from "./components/Description";
 import ScrollWrapper from "./components/ScrollWrapper";
 // import { TimelineSection } from "./components/TimeLineSection";
 import Rules from "./components/Rules";
