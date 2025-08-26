@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import "./styles/Preloader.css"; 
+import "./styles/Preloader.css";
 import preloader from './assets/AIROCOMINGSOONFINAL.mp4'
-// import logo from './assets/leo.png'
 
 const Preloader: React.FC = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -9,7 +8,7 @@ const Preloader: React.FC = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(false);
-    }, 3000); 
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);

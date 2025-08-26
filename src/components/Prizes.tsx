@@ -7,7 +7,7 @@ import CardFlip from './ui/card-flip';
 interface CarouselApi {
   scrollSnapList: () => number[];
   selectedScrollSnap: () => number;
-  on: (event: string, callback: () => void) => void;
+  on: (event?: string, callback?: () => void) => void;
   scrollTo: (index: number) => void;
   canScrollNext: () => boolean;
   canScrollPrev: () => boolean;
@@ -28,7 +28,7 @@ const Carousel = ({ children, setApi, className }: {
     const api: CarouselApi = {
       scrollSnapList: () => Array.from({ length: totalSlides }, (_, i) => i),
       selectedScrollSnap: () => currentSlide,
-      on: (_event: string, _callback: () => void) => {
+      on: () => {
         // Mock event listener
       },
       scrollTo: (index: number) => setCurrentSlide(index),
@@ -53,7 +53,7 @@ const Carousel = ({ children, setApi, className }: {
     <div className={`relative ${className}`}>
       {React.Children.map(children, (child) => {
         if (React.isValidElement(child) && child.type === CarouselContent) {
-          return React.cloneElement(child, { currentSlide, setTotalSlides } as any);
+          return React.cloneElement(child, { currentSlide, setTotalSlides });
         }
         return child;
       })}

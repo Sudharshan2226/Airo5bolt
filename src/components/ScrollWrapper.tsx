@@ -47,7 +47,7 @@ const ScrollWrapper: React.FC<ScrollWrapperProps> = ({ children }) => {
     };
 
     // Load scripts sequentially
-    scripts.reduce((promise: Promise<any>, src: string) => {
+    scripts.reduce((promise: Promise<void>, src: string) => {
       return promise.then(() => loadScript(src));
     }, Promise.resolve());
 
