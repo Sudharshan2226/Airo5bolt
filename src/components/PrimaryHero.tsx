@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import './PrimaryHero.scoped.css';
-import dragon from "./assets/dragondone.mp4";
 const PrimaryHero: React.FC = () => {
   useEffect(() => {
     // Load the original styleguide CSS that includes all fonts and styles

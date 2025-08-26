@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, Users, Award } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import GradientText from './ui/GradientText';
 
 import zenistaLogo from './assets/leo.png';
@@ -40,7 +40,7 @@ const CountdownBlock: React.FC<CountdownBlockProps> = ({ value, label }) => (
 const HeroSection = () => {
   const targetDate: number = new Date("sep 12, 2025 00:00:00").getTime();
   
-  function calculateTimeLeft(): TimeLeft {
+  const calculateTimeLeft = useCallback((): TimeLeft => {
     const now: number = new Date().getTime();
     const difference: number = targetDate - now;
 
@@ -54,7 +54,7 @@ const HeroSection = () => {
       minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
       seconds: Math.floor((difference % (1000 * 60)) / 1000),
     };
-  }
+  }, [targetDate]);
 
   const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft());
 
@@ -64,7 +64,7 @@ const HeroSection = () => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [targetDate]);
+  }, [calculateTimeLeft]);
 
   const eventDetails = [
     {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import baffle from "baffle";
 import { motion } from "framer-motion";
 import dragon from "./assets/dragondone.mp4";
@@ -18,10 +18,8 @@ interface TimeLeft {
 
 const Hero: React.FC = () => {
   const targetDate: number = new Date("April 29, 2025 00:00:00").getTime();
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft());
-  const [videoLoaded, setVideoLoaded] = useState(false);
 
-  function calculateTimeLeft(): TimeLeft {
+  const calculateTimeLeft = useCallback((): TimeLeft => {
     const now: number = new Date().getTime();
     const difference: number = targetDate - now;
 
@@ -35,7 +33,10 @@ const Hero: React.FC = () => {
       minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
       seconds: Math.floor((difference % (1000 * 60)) / 1000),
     };
-  }
+  }, [targetDate]);
+
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft());
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   useEffect(() => {
     const glitchEffect = baffle(".glitch-text", {
@@ -58,7 +59,7 @@ const Hero: React.FC = () => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [calculateTimeLeft]);
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden py-4">
