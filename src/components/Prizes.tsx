@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Code, Palette, TrendingUp, Video, Bot, MessageSquare, Terminal, ChevronLeft, ChevronRight } from "lucide-react";
+import { Code, Palette, TrendingUp, Video, Bot, MessageSquare, ChevronLeft, ChevronRight } from "lucide-react";
 
 import CardFlip from './ui/card-flip';
 

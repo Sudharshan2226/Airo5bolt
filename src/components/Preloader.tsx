@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./styles/Preloader.css"; 
 import preloader from './assets/AIROCOMINGSOONFINAL.mp4'
-import logo from './assets/leo.png'
+// import logo from './assets/leo.png'
 
 const Preloader: React.FC = () => {
   const [isVisible, setIsVisible] = useState(true);
