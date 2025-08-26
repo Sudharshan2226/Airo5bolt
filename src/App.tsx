@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Header from "./components/Header";
 import Footer from "./components/Footer";
 import PrimaryHero from "./components/PrimaryHero";
 // import Description from "./components/Description";
@@ -14,6 +13,7 @@ import WhyJoinUs from "./components/WhyJoinUs";
 import Results from "./components/Results";
 import Preloader from "./components/Preloader";
 import Prizes from "./components/Prizes";
+import { FloatingNav } from "./components/FloatingNav";
 
 function ScrollToHashElement() {
   const location = useLocation();
@@ -55,6 +55,7 @@ function App() {
       <ScrollToHashElement />
       <div className="flex flex-col min-h-screen">
         {/* <FireParticles /> */}
+        <FloatingNav />
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={
@@ -76,9 +77,9 @@ function App() {
                 </div>
               </ScrollWrapper>
             } />
-            <Route path="/team" element={<div><Header /><OrganizersPage /> <Footer /> </div>} />
-            <Route path="/guidelines" element={<div><Header /><Rules /> <Footer /> </div>} />
-            <Route path="/results" element={<div><Header /><Results /></div>} />
+            <Route path="/team" element={<div><OrganizersPage /> <Footer /> </div>} />
+            <Route path="/guidelines" element={<div><Rules /> <Footer /> </div>} />
+            <Route path="/results" element={<div><Results /> <Footer /></div>} />
           </Routes>
         </main>
       </div>
