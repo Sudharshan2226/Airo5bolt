@@ -53,7 +53,7 @@ const Carousel = ({ children, setApi, className }: {
     <div className={`relative ${className}`}>
       {React.Children.map(children, (child) => {
         if (React.isValidElement(child) && child.type === CarouselContent) {
-          return React.cloneElement(child, { currentSlide, setTotalSlides });
+          return React.cloneElement(child, { currentSlide, setTotalSlides } as any);
         }
         return child;
       })}

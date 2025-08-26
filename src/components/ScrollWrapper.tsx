@@ -36,11 +36,11 @@ const ScrollWrapper: React.FC<ScrollWrapperProps> = ({ children }) => {
       '/index.js'
     ];
 
-    const loadScript = (src: string) => {
+    const loadScript = (src: string): Promise<void> => {
       return new Promise((resolve, reject) => {
         const script = document.createElement('script');
         script.src = src;
-        script.onload = resolve;
+        script.onload = () => resolve();
         script.onerror = reject;
         document.head.appendChild(script);
       });
