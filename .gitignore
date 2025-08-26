@@ -22,3 +22,12 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Unused components (kept locally but not tracked)
+src/components/Description.tsx
+src/components/FireParticles.tsx
+src/components/Hero.tsx
+src/components/Hero221.tsx
+src/components/Hero222.tsx
+src/components/TimeLineSection.tsx
+src/components/ui/wrap-button.tsx

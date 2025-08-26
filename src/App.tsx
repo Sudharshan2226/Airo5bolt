@@ -2,12 +2,9 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from "react-route
 import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
 import PrimaryHero from "./components/PrimaryHero";
-// import Description from "./components/Description";
 import ScrollWrapper from "./components/ScrollWrapper";
-// import { TimelineSection } from "./components/TimeLineSection";
 import Rules from "./components/Rules";
 import OrganizersPage from "./components/OrganizersPage";
-// import { FireParticles } from "./components/FireParticles";
 import CollegeMap from "./components/CollegeMap";
 import WhyJoinUs from "./components/WhyJoinUs";
 import Results from "./components/Results";
@@ -54,7 +51,6 @@ function App() {
     <Router>
       <ScrollToHashElement />
       <div className="flex flex-col min-h-screen">
-        {/* <FireParticles /> */}
         <FloatingNav />
         <main className="flex-grow">
           <Routes>
