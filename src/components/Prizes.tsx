@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Code, Palette, TrendingUp, Video, Bot, MessageSquare, ChevronLeft, ChevronRight } from "lucide-react";
-
+import gwen from './assets/events/gwen.jpg';
 import CardFlip from './ui/card-flip';
+
+// Import other event images if you have them
+// import webverse from './assets/events/webverse.jpg';
+// import multiverse from './assets/events/multiverse.jpg';
+// import creativity from './assets/events/creativity.jpg';
+// import spideybot from './assets/events/spideybot.jpg';
+// import ctf from './assets/events/ctf.jpg';
 
 // Types for Carousel API
 interface CarouselApi {
@@ -109,6 +116,17 @@ const Prizes = () => {
     });
   }, [api]);
 
+  // Image mapping object
+  const eventImages = {
+    gwen: gwen,
+    // Add more images as you import them
+    // webverse: webverse,
+    // multiverse: multiverse,
+    // creativity: creativity,
+    // spideybot: spideybot,
+    // ctf: ctf
+  };
+
   const eventsData = [
     {
       id: 1,
@@ -118,7 +136,7 @@ const Prizes = () => {
       mode: "Online",
       prize: "₹5,000",
       icon: Code,
-      image: "/src/components/assets/events/gwen.jpg",
+      image: eventImages.gwen, // Use the imported image
       color: "blue",
       difficulty: "Advanced",
       duration: "6 hours"
@@ -131,7 +149,7 @@ const Prizes = () => {
       mode: "Hybrid",
       prize: "₹5,000",
       icon: Palette,
-      image: "/src/components/assets/events/gwen.jpg",
+      image: eventImages.gwen, // Use the imported image (or add specific image later)
       color: "teal",
       difficulty: "Intermediate",
       duration: "4 hours"
@@ -144,7 +162,7 @@ const Prizes = () => {
       mode: "Offline",
       prize: "₹5,000",
       icon: TrendingUp,
-      image: "/src/components/assets/events/gwen.jpg",
+      image: eventImages.gwen, // Use the imported image (or add specific image later)
       color: "green",
       difficulty: "Expert",
       duration: "3 days"
@@ -157,7 +175,7 @@ const Prizes = () => {
       mode: "Online",
       prize: "₹5,000",
       icon: Video,
-      image: "/src/components/assets/events/gwen.jpg",
+      image: eventImages.gwen, // Use the imported image (or add specific image later)
       color: "purple",
       difficulty: "Advanced",
       duration: "4 hours"
@@ -170,7 +188,7 @@ const Prizes = () => {
       mode: "Online",
       prize: "₹5,000",
       icon: Bot,
-      image: "/src/components/assets/events/gwen.jpg",
+      image: eventImages.gwen, // Use the imported image (or add specific image later)
       color: "cyan",
       difficulty: "Advanced",
       duration: "8 hours"
@@ -183,7 +201,7 @@ const Prizes = () => {
       mode: "Offline",
       prize: "₹5,000",
       icon: MessageSquare,
-      image: "/src/components/assets/events/gwen.jpg",
+      image: eventImages.gwen, // Use the imported image (or add specific image later)
       color: "yellow",
       difficulty: "Intermediate",
       duration: "2 hours"
