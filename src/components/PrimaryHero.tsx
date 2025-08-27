@@ -32,7 +32,6 @@ const PrimaryHero: React.FC = () => {
             <video src="https://aanstekelijk.nl/media/pages/home/807eb94734-1677769967/header-video-mobile-v9.mp4" autoPlay loop muted playsInline></video>
           </div>
         </div>
-        <div className="overlay overlay-dark"></div>
         <div className="container">
           <div className="row">
             <div className="col">
