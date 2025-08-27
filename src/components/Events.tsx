@@ -4,10 +4,10 @@ import gwen from './assets/events/gwen.jpg';
 import CardFlip from './ui/card-flip';
 
 // Import other event images if you have them
-// import webverse from './assets/events/webverse.jpg';
-// import multiverse from './assets/events/multiverse.jpg';
+import webverse from './assets/events/miles.jpg';
+import multiverse from './assets/events/peni.jpg';
 import creativity from './assets/events/spiderpunk.jpg';
-// import spideybot from './assets/events/spideybot.jpg';
+import spideybot from './assets/events/peni.jpg';
 import ctf from './assets/events/image.png';
 
 // Types for Carousel API
@@ -120,10 +120,10 @@ const Events = () => {
   const eventImages = {
     gwen: gwen,
     // Add more images as you import them
-    // webverse: webverse,
-    // multiverse: multiverse,
+    webverse: webverse,
+    multiverse: multiverse,
     creativity: creativity,
-    // spideybot: spideybot,
+    spideybot: spideybot,
     ctf: ctf
   };
 
@@ -136,7 +136,7 @@ const Events = () => {
       mode: "Online",
       prize: "₹5,000",
       icon: Code,
-      image: eventImages.gwen, // Use the imported image
+      image: eventImages.webverse, // Use the imported image
       color: "blue",
       difficulty: "Advanced",
       duration: "6 hours"
@@ -162,7 +162,7 @@ const Events = () => {
       mode: "Offline",
       prize: "₹5,000",
       icon: TrendingUp,
-      image: eventImages.gwen, // Use the imported image (or add specific image later)
+      image: eventImages.multiverse, // Use the imported image (or add specific image later)
       color: "green",
       difficulty: "Expert",
       duration: "3 days"
@@ -188,7 +188,7 @@ const Events = () => {
       mode: "Online",
       prize: "₹5,000",
       icon: Bot,
-      image: eventImages.gwen, // Use the imported image (or add specific image later)
+      image: eventImages.spideybot, // Use the imported image (or add specific image later)
       color: "cyan",
       difficulty: "Advanced",
       duration: "8 hours"
