@@ -9,7 +9,7 @@ import CollegeMap from "./components/CollegeMap";
 import WhyJoinUs from "./components/WhyJoinUs";
 import Results from "./components/Results";
 import Preloader from "./components/Preloader";
-import Prizes from "./components/Prizes";
+import Events from "./components/Events";
 import FAQ from "./components/FAQ";
 import { FloatingNav } from "./components/FloatingNav";
 
@@ -19,9 +19,25 @@ function ScrollToHashElement() {
   useEffect(() => {
     if (location.hash) {
       const elementId = location.hash.replace("#", "");
-      const element = document.getElementById(elementId);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
+      
+      // Use setTimeout to ensure the element is rendered
+      const scrollToElement = () => {
+        const element = document.getElementById(elementId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+          return true;
+        }
+        return false;
+      };
+
+      // Try immediately
+      if (!scrollToElement()) {
+        // If element not found, retry after a short delay
+        const timeoutId = setTimeout(() => {
+          scrollToElement();
+        }, 100);
+        
+        return () => clearTimeout(timeoutId);
       }
     }
   }, [location]);
@@ -61,7 +77,7 @@ function App() {
                 <div data-scroll-section>
                 </div>
                 <div data-scroll-section>
-                  <Prizes />
+                  <Events />
                 </div>
                 <div data-scroll-section>
                   <WhyJoinUs />

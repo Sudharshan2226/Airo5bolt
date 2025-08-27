@@ -14,6 +14,7 @@ import {
   useSpring,
   useTransform,
 } from "motion/react";
+import { useNavigate } from "react-router-dom";
 
 import { useRef, useState } from "react";
 
@@ -22,7 +23,7 @@ export const FloatingDock = ({
   desktopClassName,
   mobileClassName,
 }: {
-  items: { title: string; icon: React.ReactNode; href: string }[];
+  items: { title: string; icon: React.ReactNode; href: string; onClick?: () => void }[];
   desktopClassName?: string;
   mobileClassName?: string;
 }) => {
@@ -38,17 +39,32 @@ const FloatingDockMobile = ({
   items,
   className,
 }: {
-  items: { title: string; icon: React.ReactNode; href: string }[];
+  items: { title: string; icon: React.ReactNode; href: string; onClick?: () => void }[];
   className?: string;
 }) => {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleNavigation = (href: string, onClick?: () => void) => {
+    if (onClick) {
+      onClick();
+    } else if (href.startsWith('/#')) {
+      // Handle anchor links
+      const hash = href.substring(1); // Remove the leading '/'
+      navigate('/' + hash);
+    } else {
+      // Handle regular navigation
+      navigate(href);
+    }
+    setOpen(false);
+  };
   return (
     <div className={cn("relative block md:hidden", className)}>
       <AnimatePresence>
         {open && (
           <motion.div
             layoutId="nav"
-            className="absolute inset-x-0 bottom-full mb-2 flex flex-col gap-2"
+            className="absolute right-0 bottom-full mb-2 flex flex-col gap-2 items-end"
           >
             {items.map((item, idx) => (
               <motion.div
@@ -67,13 +83,14 @@ const FloatingDockMobile = ({
                 }}
                 transition={{ delay: (items.length - 1 - idx) * 0.05 }}
               >
-                <a
-                  href={item.href}
+                <button
+                  onClick={() => handleNavigation(item.href, item.onClick)}
                   key={item.title}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-900"
+                  className="flex h-12 items-center justify-between rounded-full bg-black shadow-lg border border-gray-700 px-3 min-w-[120px] max-w-[180px] gap-2"
                 >
-                  <div className="h-4 w-4">{item.icon}</div>
-                </a>
+                  <span className="text-white text-sm whitespace-nowrap">{item.title}</span>
+                  <div className="h-5 w-5 flex-shrink-0">{item.icon}</div>
+                </button>
               </motion.div>
             ))}
           </motion.div>
@@ -81,9 +98,9 @@ const FloatingDockMobile = ({
       </AnimatePresence>
       <button
         onClick={() => setOpen(!open)}
-        className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-800"
+        className="flex h-14 w-14 items-center justify-center rounded-full bg-black shadow-lg border border-gray-700"
       >
-        <IconLayoutNavbarCollapse className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
+        <IconLayoutNavbarCollapse className="h-6 w-6 text-white" />
       </button>
     </div>
   );
@@ -93,10 +110,24 @@ const FloatingDockDesktop = ({
   items,
   className,
 }: {
-  items: { title: string; icon: React.ReactNode; href: string }[];
+  items: { title: string; icon: React.ReactNode; href: string; onClick?: () => void }[];
   className?: string;
 }) => {
   let mouseX = useMotionValue(Infinity);
+  const navigate = useNavigate();
+
+  const handleNavigation = (href: string, onClick?: () => void) => {
+    if (onClick) {
+      onClick();
+    } else if (href.startsWith('/#')) {
+      // Handle anchor links
+      const hash = href.substring(1); // Remove the leading '/'
+      navigate('/' + hash);
+    } else {
+      // Handle regular navigation
+      navigate(href);
+    }
+  };
   return (
     <motion.div
       onMouseMove={(e) => mouseX.set(e.pageX)}
@@ -107,7 +138,7 @@ const FloatingDockDesktop = ({
       )}
     >
       {items.map((item) => (
-        <IconContainer mouseX={mouseX} key={item.title} {...item} />
+        <IconContainer mouseX={mouseX} key={item.title} {...item} handleNavigation={handleNavigation} />
       ))}
     </motion.div>
   );
@@ -118,11 +149,15 @@ function IconContainer({
   title,
   icon,
   href,
+  onClick,
+  handleNavigation,
 }: {
   mouseX: MotionValue;
   title: string;
   icon: React.ReactNode;
   href: string;
+  onClick?: () => void;
+  handleNavigation: (href: string, onClick?: () => void) => void;
 }) {
   let ref = useRef<HTMLDivElement>(null);
 
@@ -167,13 +202,13 @@ function IconContainer({
   const [hovered, setHovered] = useState(false);
 
   return (
-    <a href={href}>
+    <button onClick={() => handleNavigation(href, onClick)} className="bg-transparent border-none p-0">
       <motion.div
         ref={ref}
         style={{ width, height }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="relative flex aspect-square items-center justify-center rounded-full bg-gray-200 dark:bg-neutral-800"
+        className="relative flex aspect-square items-center justify-center rounded-full bg-black shadow-lg border border-gray-700"
       >
         <AnimatePresence>
           {hovered && (
@@ -194,6 +229,6 @@ function IconContainer({
           {icon}
         </motion.div>
       </motion.div>
-    </a>
+    </button>
   );
 }

@@ -1,7 +1,21 @@
 import { Github, Instagram, Linkedin, Twitter } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import sponsor from './assets/sponsor.jpg'
 
 const Footer: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleNavigation = (path: string) => {
+    if (path.startsWith('/#')) {
+      // Handle anchor links
+      const hash = path.substring(1); // Remove the leading '/'
+      navigate('/' + hash);
+    } else {
+      // Handle regular navigation
+      navigate(path);
+    }
+  };
+
   return (
     <footer className="backdrop-blur-sm border-t border-chart-2/20 py-8">
       <div className="container mx-auto px-4">
@@ -26,43 +40,43 @@ const Footer: React.FC = () => {
                 <div>
                   <ul className="space-y-2 text-gray-400">
                     <li>
-                      <a href="/" className="hover:text-chart-2 transition-colors">
+                      <button onClick={() => handleNavigation("/")} className="hover:text-chart-2 transition-colors text-left">
                         Home
-                      </a>
+                      </button>
                     </li>
                     <li>
-                      <a href="/domain" className="hover:text-chart-2 transition-colors">
+                      <button onClick={() => handleNavigation("/domain")} className="hover:text-chart-2 transition-colors text-left">
                         Domains
-                      </a>
+                      </button>
                     </li>
                     <li>
-                      <a href="/#timeline" className="hover:text-chart-2 transition-colors">
+                      <button onClick={() => handleNavigation("/#timeline")} className="hover:text-chart-2 transition-colors text-left">
                         Timeline
-                      </a>
+                      </button>
                     </li>
                     <li>
-                      <a href="/guidelines" className="hover:text-chart-2 transition-colors">
+                      <button onClick={() => handleNavigation("/guidelines")} className="hover:text-chart-2 transition-colors text-left">
                         Guidelines
-                      </a>
+                      </button>
                     </li>
                   </ul>
                 </div>
                 <div>
                   <ul className="space-y-2 text-gray-400">
                     <li>
-                      <a href="/#prizes" className="hover:text-chart-2 transition-colors">
-                        Prizes
-                      </a>
+                      <button onClick={() => handleNavigation("/#events")} className="hover:text-chart-2 transition-colors text-left">
+                        Events
+                      </button>
                     </li>
                     <li>
-                      <a href="/team" className="hover:text-chart-2 transition-colors">
+                      <button onClick={() => handleNavigation("/team")} className="hover:text-chart-2 transition-colors text-left">
                         Team
-                      </a>
+                      </button>
                     </li>
                     <li>
-                      <a href="/results" className="hover:text-chart-2 transition-colors">
+                      <button onClick={() => handleNavigation("/results")} className="hover:text-chart-2 transition-colors text-left">
                         Result
-                      </a>
+                      </button>
                     </li>                    
                   </ul>
                 </div>

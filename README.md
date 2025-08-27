@@ -9,7 +9,7 @@ The project now uses a modern floating navigation dock interface with the follow
 ### Active Components:
 - `src/components/PrimaryHero.tsx` - Main hero section
 - `src/components/FloatingNav.tsx` - Modern floating navigation dock
-- `src/components/Prizes.tsx` - Prize information section
+- `src/components/Events.tsx` - Events information section
 - `src/components/WhyJoinUs.tsx` - Why join section
 - `src/components/CollegeMap.tsx` - College location map
 - `src/components/OrganizersPage.tsx` - Team/organizers page
