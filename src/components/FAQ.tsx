@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ChevronDown, Mail, MessageCircle } from 'lucide-react';
 
 export default function EnhancedFAQ() {
