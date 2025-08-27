@@ -24,6 +24,7 @@ dist-ssr
 *.sw?
 
 # Unused components (kept locally but not tracked)
+dist
 hero
 src/components/Description.tsx
 src/components/FireParticles.tsx

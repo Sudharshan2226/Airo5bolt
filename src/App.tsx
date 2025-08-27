@@ -10,7 +10,7 @@ import WhyJoinUs from "./components/WhyJoinUs";
 import Results from "./components/Results";
 import Preloader from "./components/Preloader";
 import Prizes from "./components/Prizes";
-import Faq3 from "./components/Faq3";
+import FAQ from "./components/FAQ";
 import { FloatingNav } from "./components/FloatingNav";
 
 function ScrollToHashElement() {
@@ -70,7 +70,7 @@ function App() {
                   <CollegeMap />
                 </div>
                 <div data-scroll-section>
-                  <Faq3 />
+                  <FAQ />
                 </div>
                 <div data-scroll-section>
                   <Footer />
