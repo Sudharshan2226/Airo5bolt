@@ -6,9 +6,9 @@ import CardFlip from './ui/card-flip';
 // Import other event images if you have them
 // import webverse from './assets/events/webverse.jpg';
 // import multiverse from './assets/events/multiverse.jpg';
-// import creativity from './assets/events/creativity.jpg';
+import creativity from './assets/events/spiderpunk.jpg';
 // import spideybot from './assets/events/spideybot.jpg';
-// import ctf from './assets/events/ctf.jpg';
+import ctf from './assets/events/image.png';
 
 // Types for Carousel API
 interface CarouselApi {
@@ -122,9 +122,9 @@ const Prizes = () => {
     // Add more images as you import them
     // webverse: webverse,
     // multiverse: multiverse,
-    // creativity: creativity,
+    creativity: creativity,
     // spideybot: spideybot,
-    // ctf: ctf
+    ctf: ctf
   };
 
   const eventsData = [
@@ -175,7 +175,7 @@ const Prizes = () => {
       mode: "Online",
       prize: "₹5,000",
       icon: Video,
-      image: eventImages.gwen, // Use the imported image (or add specific image later)
+      image: eventImages.creativity, // Use the imported image (or add specific image later)
       color: "purple",
       difficulty: "Advanced",
       duration: "4 hours"
@@ -201,7 +201,7 @@ const Prizes = () => {
       mode: "Offline",
       prize: "₹5,000",
       icon: MessageSquare,
-      image: eventImages.gwen, // Use the imported image (or add specific image later)
+      image: eventImages.ctf, // Use the imported image (or add specific image later)
       color: "yellow",
       difficulty: "Intermediate",
       duration: "2 hours"
