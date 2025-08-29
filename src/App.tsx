@@ -8,7 +8,7 @@ import OrganizersPage from "./components/OrganizersPage";
 import CollegeMap from "./components/CollegeMap";
 import WhyJoinUs from "./components/WhyJoinUs";
 import Results from "./components/Results";
-import Preloader from "./components/Preloader";
+import Preloader from './components/Preloader';
 import Events from "./components/Events";
 import FAQ from "./components/FAQ";
 import { FloatingNav } from "./components/FloatingNav";
@@ -62,8 +62,9 @@ function App() {
   }, []);
 
   if (loading) {
-    return <Preloader />;
+    return <Preloader isLoading={loading} setIsLoading={setLoading} />;
   }
+  
 
   return (
     <Router>
