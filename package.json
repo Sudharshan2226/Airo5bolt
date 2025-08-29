@@ -6,15 +6,8 @@
     "scripts": {
         "dev": "vite",
         "build": "tsc -b && vite build",
-        "build:analyze": "npm run build && node scripts/analyze-build.js",
         "lint": "eslint .",
-        "preview": "vite preview",
-        "lighthouse": "lighthouse http://localhost:4173 --output html --output-path ./lighthouse-report.html --view",
-        "lighthouse:ci": "lighthouse http://localhost:4173 --output json --output-path ./lighthouse-report.json",
-        "perf": "npm run build && npm run preview",
-        "analyze": "node scripts/analyze-build.js",
-        "deploy-check": "npm run build && node scripts/deploy-check.js",
-        "deploy": "npm run deploy-check && vercel --prod"
+        "preview": "vite preview"
     },
     "dependencies": {
         "@radix-ui/react-slot": "^1.2.3",
