@@ -170,7 +170,7 @@ const PrimaryHero: React.FC = () => {
                 <h4> The Power of Ideas, The Spirit of Innovation! AIRO 5.0 marks the 5th edition of the National-Level Tech Fest organized by the Department of Artificial Intelligence and Data Science. This vibrant fest is a celebration of technology, creativity, and collaboration, bringing together students from across the country to showcase their skills and imagination.</h4>
               </div>
               <div className="col-row styled-content">
-                <p>We never make a boring hackathon. Ever. Promise.</p>
+                <p>We never make a boring Symposium. Ever. Promise.</p>
               </div>
               <div className="col-row">
                 <div className="btn btn-primary" data-button-status>
