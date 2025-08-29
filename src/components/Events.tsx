@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Code, Palette, TrendingUp, Video, Bot, MessageSquare, ChevronLeft, ChevronRight } from "lucide-react";
 import gwen from './assets/events/gwen.jpg';
 import CardFlip from './ui/card-flip';
+import { BorderBeam } from './ui/borderbeam';
 
 // Import other event images if you have them
 import webverse from './assets/events/miles.jpg';
-import multiverse from './assets/events/peni.jpg';
+import multiverse from './assets/events/WhatsApp Image 2025-08-27 at 15.17.31_1b7e7bc2.jpg';
 import creativity from './assets/events/spiderpunk.jpg';
 import spideybot from './assets/events/peni.jpg';
 import ctf from './assets/events/image.png';
@@ -131,79 +132,67 @@ const Events = () => {
     {
       id: 1,
       name: "Glitch in the Multiverse ",
-      description: "Battle through algorithmic challenges and showcase your programming prowess in our intense coding marathon.",
-      teamSize: "1-2 members",
-      mode: "Online",
+      description: "A unique coding competition where teamwork, logic, and strategy come together. In teams of two, one member picks and explains the problems while the other codes based on that explanation. Later, both join forces to solve and optimize the solution. With a mix of easy, medium, and hard challenges in C, C++, Python, or Java, every choice matters. Get ready to think fast, code smart, and compete for glory .",
+      teamSize: "2 members",
       prize: "₹5,000",
       icon: Code,
       image: eventImages.webverse, // Use the imported image
       color: "blue",
-      difficulty: "Advanced",
-      duration: "6 hours"
+      duration: "2 hours"
     },
     {
       id: 2,
       name: "Webverse Interface",
-      description: "Design revolutionary user experiences that push the boundaries of digital interaction and visual storytelling.",
+      description: "A fast-paced 2-hour hackathon where creativity meets usability. Teams of three will tackle a surprise problem statement, design core UI screens, and take on fun creative challenges along the way. With tools like Figma, Canva, and AI support, participants must showcase innovation, aesthetics, and user-centered design.",
       teamSize: "2-4 members",
-      mode: "Hybrid",
       prize: "₹5,000",
       icon: Palette,
       image: eventImages.gwen, // Use the imported image (or add specific image later)
       color: "teal",
-      difficulty: "Intermediate",
-      duration: "4 hours"
+      duration: "2 hours"
     },
     {
       id: 3,
       name: "Multiverse Pitch",
       description: "Transform your groundbreaking ideas into compelling presentations that captivate investors and industry leaders.",
       teamSize: "3-5 members",
-      mode: "Offline",
       prize: "₹5,000",
       icon: TrendingUp,
       image: eventImages.multiverse, // Use the imported image (or add specific image later)
       color: "green",
-      difficulty: "Expert",
-      duration: "3 days"
+      duration: "2 hours"
     },
     {
       id: 4,
       name: "Web of Creativity",
       description: "Harness the power of artificial intelligence to create mind-bending visual narratives and cinematic experiences.",
       teamSize: "2-3 members",
-      mode: "Online",
       prize: "₹5,000",
       icon: Video,
       image: eventImages.creativity, // Use the imported image (or add specific image later)
       color: "purple",
-      difficulty: "Advanced",
-      duration: "4 hours"
+      duration: "2 hours"
     },
     {
       id: 5,
       name: "Spidey Bot",
-      description: "Engineer intelligent conversational agents that understand, learn, and interact with human-like sophistication.",
+      description: "Dive into the future of AI with our Chatbot Challenge! Participants will design theme-based chatbots that blend creativity, innovation, and intelligence, showcasing their skills in building engaging conversations that redefine human–machine interaction.",
       teamSize: "2-4 members",
-      mode: "Online",
       prize: "₹5,000",
       icon: Bot,
       image: eventImages.spideybot, // Use the imported image (or add specific image later)
       color: "cyan",
-      difficulty: "Advanced",
-      duration: "8 hours"
+      duration: "2 hours"
     },
     {
       id: 6,
       name: "CTF: Across Dimensions",
-      description: "Engage in intellectual warfare where words are weapons and logic is your shield in this battle of minds.",
+      description: "Dive into thrilling hacking puzzles, crack complex codes, and capture hidden flags before time runs out! Test your skills, race against the clock, and experience an electrifying journey of coding and cyber adventures!",
       teamSize: "1 member",
-      mode: "Offline",
       prize: "₹5,000",
       icon: MessageSquare,
       image: eventImages.ctf, // Use the imported image (or add specific image later)
       color: "yellow",
-      difficulty: "Intermediate",
       duration: "2 hours"
     }
   ];
@@ -314,12 +303,24 @@ const Events = () => {
                 
                 return (
                   <CarouselItem key={event.id} className="px-4">
-                    <div className="rounded-3xl h-full w-full overflow-hidden backdrop-blur-xl border shadow-xl"
+                    <div className="relative rounded-3xl h-full w-full overflow-hidden backdrop-blur-xl border shadow-xl"
                          style={{
                            backgroundColor: 'rgba(26, 26, 26, 0.8)',
                            borderColor: 'rgba(45, 45, 45, 0.7)',
                            boxShadow: '0 25px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(139, 0, 0, 0.1)'
                          }}>
+                      <BorderBeam
+                        duration={6}
+                        size={400}
+                        className="from-transparent via-red-500 to-transparent"
+                      />
+                      <BorderBeam
+                        duration={6}
+                        delay={3}
+                        size={400}
+                        borderWidth={2}
+                        className="from-transparent via-blue-500 to-transparent"
+                      />
                       {/* Icon Section */}
                       <div className="relative p-6">
                         <div className="inline-flex p-4 rounded-2xl mb-4"
@@ -341,7 +342,7 @@ const Events = () => {
                           {event.name}
                         </h3>
                         
-                        <p className="text-gray-300 text-sm mb-6 leading-relaxed">
+                        <p className="text-gray-300 text-sm mb-6 leading-relaxed min-h-[80px]">
                           {event.description}
                         </p>
 

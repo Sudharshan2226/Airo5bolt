@@ -1,4 +1,5 @@
-import { FaFire, FaShieldAlt, FaDragon, FaExclamationTriangle } from "react-icons/fa";
+import { FaSpider, FaShieldAlt, FaExclamationTriangle } from "react-icons/fa";
+import { GiSpiderWeb } from "react-icons/gi";
 
 const rules = [
   {
@@ -30,7 +31,7 @@ const rules = [
   },
   {
     category: "AIRO 5.O Rules",
-    icon: <FaDragon className="text-red-500 text-3xl" />,
+    icon: <FaSpider className="text-red-500 text-3xl" />,
     details: [
       "Teams must upload the problem statement PPT and obtain approval during registration.",
       "Any form of plagiarism will lead to immediate disqualification.",
@@ -64,7 +65,7 @@ const Guidelines = () => {
       <div className="text-center mb-10">
         <h2 className="text-4xl font-bold text-white">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-blue-600">
-            HackTronix Guidelines
+            AIRO 5.O Guidelines
           </span>
         </h2>
         <p className="text-gray-300 mt-3 text-lg">
@@ -89,7 +90,7 @@ const Guidelines = () => {
             <ul className="mt-4 space-y-2 text-gray-300">
               {rule.details.map((detail, idx) => (
                 <li key={idx} className="flex items-start">
-                  <FaFire className="text-red-500 mr-2 mt-1" />
+                  <GiSpiderWeb className="text-red-500 mr-2 mt-1" />
                   {detail}
                 </li>
               ))}

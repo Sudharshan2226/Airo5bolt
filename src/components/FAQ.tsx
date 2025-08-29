@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ChevronDown, Mail, MessageCircle } from 'lucide-react';
+import { ChevronDown, Mail} from 'lucide-react';
 
 export default function EnhancedFAQ() {
     const [openItems, setOpenItems] = useState(new Set());
@@ -125,10 +125,20 @@ export default function EnhancedFAQ() {
                                 Our support team is available 24/7 to assist you with any questions.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                                <button className="flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors">
-                                    <MessageCircle className="w-5 h-5" />
-                                    Live Chat
-                                </button>
+                                <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                                    <a
+                                        href="tel:+917339189797"
+                                        className="flex items-center justify-center gap-3 border border-gray-600 hover:bg-gray-800 text-white px-6 py-3 rounded-lg transition-colors"
+                                    >
+                                        Robin S: +91 73391 89797
+                                    </a>
+                                    <a
+                                        href="tel:+919715181819"
+                                        className="flex items-center justify-center gap-3 border border-gray-600 hover:bg-gray-800 text-white px-6 py-3 rounded-lg transition-colors"
+                                    >
+                                        Athishta M: +91 97151 81819
+                                    </a>
+                                </div>
                                 <button className="flex items-center justify-center gap-3 border border-gray-600 hover:bg-gray-800 text-white px-6 py-3 rounded-lg transition-colors">
                                     <Mail className="w-5 h-5" />
                                     Email Support

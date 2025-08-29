@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import spider from "./assets/Untitled design.mp4";
 import './PrimaryHero.scoped.css';
 const PrimaryHero: React.FC = () => {
   useEffect(() => {
@@ -29,7 +30,7 @@ const PrimaryHero: React.FC = () => {
             <img alt="" className="lazy" src="https://aanstekelijk.nl/media/pages/home/4926f33bdb-1677769965/header-video-00-00-00-00-still001-192x-q72.jpg" data-src="https://aanstekelijk.nl/media/pages/home/4926f33bdb-1677769965/header-video-00-00-00-00-still001-1920x-q72.jpg" data-srcset="https://aanstekelijk.nl/media/pages/home/4926f33bdb-1677769965/header-video-00-00-00-00-still001-400x-q72.jpg 400w, https://aanstekelijk.nl/media/pages/home/4926f33bdb-1677769965/header-video-00-00-00-00-still001-540x-q72.jpg 540w, https://aanstekelijk.nl/media/pages/home/4926f33bdb-1677769965/header-video-00-00-00-00-still001-720x-q72.jpg 720w, https://aanstekelijk.nl/media/pages/home/4926f33bdb-1677769965/header-video-00-00-00-00-still001-1080x-q72.jpg 1080w, https://aanstekelijk.nl/media/pages/home/4926f33bdb-1677769965/header-video-00-00-00-00-still001-1440x-q72.jpg 1440w, https://aanstekelijk.nl/media/pages/home/4926f33bdb-1677769965/header-video-00-00-00-00-still001-1920x-q72.jpg 1920w" width="1920" height="1080"/>
           </picture>
           <div className="overlay vimeo-overlay-placeholder placeholder-mobile video-box">
-            <video src="https://aanstekelijk.nl/media/pages/home/807eb94734-1677769967/header-video-mobile-v9.mp4" autoPlay loop muted playsInline></video>
+            <video src={spider} autoPlay loop muted playsInline></video>
           </div>
         </div>
         <div className="overlay overlay-dark"></div>
@@ -51,7 +52,7 @@ const PrimaryHero: React.FC = () => {
               </picture>
               <div className="overlay vimeo-overlay-placeholder placeholder-mobile video-box">
                 <video autoPlay muted playsInline loop>
-                  <source src="https://aanstekelijk.nl/media/pages/home/807eb94734-1677769967/header-video-mobile-v9.mp4" type="video/mp4"/>
+                  <source src={spider} type="video/mp4"/>
                 </video>
               </div>
             </div>

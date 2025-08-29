@@ -22,9 +22,9 @@ const Footer: React.FC = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h3 className="text-xl font-bold mb-4 text-white font-avartar tracking-wider">AIRO 5.O</h3>
+              <h3 className="text-xl font-bold mb-4 text-white font-avartar tracking-wider">AIRO 5.0 - Where Technology Inspires Creativity.</h3>
               <p className="text-gray-400 mb-4">
-                A 24-hour hackathon exploring the upside-down world of technology.
+                Blending ideas, innovation, and imagination at the National Symposium 5.0
               </p>
               <div className="flex gap-4">
                 <SocialIcon icon={<Twitter size={18} />} />
@@ -45,16 +45,6 @@ const Footer: React.FC = () => {
                       </button>
                     </li>
                     <li>
-                      <button onClick={() => handleNavigation("/domain")} className="hover:text-chart-2 transition-colors text-left">
-                        Domains
-                      </button>
-                    </li>
-                    <li>
-                      <button onClick={() => handleNavigation("/#timeline")} className="hover:text-chart-2 transition-colors text-left">
-                        Timeline
-                      </button>
-                    </li>
-                    <li>
                       <button onClick={() => handleNavigation("/guidelines")} className="hover:text-chart-2 transition-colors text-left">
                         Guidelines
                       </button>
@@ -71,11 +61,6 @@ const Footer: React.FC = () => {
                     <li>
                       <button onClick={() => handleNavigation("/team")} className="hover:text-chart-2 transition-colors text-left">
                         Team
-                      </button>
-                    </li>
-                    <li>
-                      <button onClick={() => handleNavigation("/results")} className="hover:text-chart-2 transition-colors text-left">
-                        Result
                       </button>
                     </li>                    
                   </ul>
