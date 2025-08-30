@@ -154,7 +154,7 @@ const Events = () => {
     {
       id: 3,
       name: "Multiverse Pitch",
-      description: "Transform your groundbreaking ideas into compelling presentations that captivate investors and industry leaders.",
+      description: "Teams will showcase bold, domain-driven ideas and pitch them to a panel of judges acting as investors. With surprise challenges, rapid problem-solving, and creative twists, this event is all about turning visionary concepts into scalable, real-world solutions.",
       teamSize: "3-5 members",
       prize: "₹5,000",
       icon: TrendingUp,
