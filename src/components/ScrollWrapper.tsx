@@ -6,6 +6,8 @@ interface ScrollWrapperProps {
 
 const ScrollWrapper: React.FC<ScrollWrapperProps> = ({ children }) => {
   useEffect(() => {
+    let isComponentMounted = true;
+    
     // Load external CSS files in exact order
     const cssFiles = [
       '/normalize.css',
@@ -14,14 +16,16 @@ const ScrollWrapper: React.FC<ScrollWrapperProps> = ({ children }) => {
       '/loconative-scroll.min.css'
     ];
 
+    // Load CSS files first (non-blocking)
     cssFiles.forEach(file => {
       const link = document.createElement('link');
       link.rel = 'stylesheet';
       link.href = file;
+      link.onerror = () => console.warn(`Failed to load CSS: ${file}`);
       document.head.appendChild(link);
     });
 
-    // Load external scripts in exact order
+    // Load external scripts with error handling and timeout
     const scripts = [
       'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js',
       'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js',
@@ -38,21 +42,56 @@ const ScrollWrapper: React.FC<ScrollWrapperProps> = ({ children }) => {
 
     const loadScript = (src: string): Promise<void> => {
       return new Promise((resolve, reject) => {
+        // Check if component is still mounted
+        if (!isComponentMounted) {
+          reject(new Error('Component unmounted'));
+          return;
+        }
+
         const script = document.createElement('script');
         script.src = src;
-        script.onload = () => resolve();
-        script.onerror = reject;
+        
+        // Add timeout to prevent hanging
+        const timeout = setTimeout(() => {
+          reject(new Error(`Script load timeout: ${src}`));
+        }, 10000); // 10 second timeout
+
+        script.onload = () => {
+          clearTimeout(timeout);
+          resolve();
+        };
+        
+        script.onerror = () => {
+          clearTimeout(timeout);
+          console.warn(`Failed to load script: ${src}`);
+          // Don't reject, just warn and continue
+          resolve();
+        };
+        
         document.head.appendChild(script);
       });
     };
 
-    // Load scripts sequentially
-    scripts.reduce((promise: Promise<void>, src: string) => {
-      return promise.then(() => loadScript(src));
-    }, Promise.resolve());
+    // Load scripts sequentially with error handling
+    const loadAllScripts = async () => {
+      for (const src of scripts) {
+        if (!isComponentMounted) break;
+        try {
+          await loadScript(src);
+        } catch (error) {
+          console.warn(`Script loading error for ${src}:`, error);
+          // Continue loading other scripts even if one fails
+        }
+      }
+    };
+
+    loadAllScripts().catch(error => {
+      console.error('Script loading failed:', error);
+    });
 
     // Cleanup function
     return () => {
+      isComponentMounted = false;
       // Remove added stylesheets and scripts if needed
     };
   }, []);
