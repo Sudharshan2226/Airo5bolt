@@ -165,7 +165,7 @@ const Events = () => {
     {
       id: 4,
       name: "Web of Creativity",
-      description: "Harness the power of artificial intelligence to create mind-bending visual narratives and cinematic experiences.",
+      description: "Step into the director's chair and let your imagination run wild! AIRO 2K25 invites you to a one-of-a-kind creative showdown where cinematic vision meets cutting-edge Al tools. Whether you're a movie buff, a digital artist, or a master prompt engineer, this is your stage to shine. Use your storytelling flair and Al prompting skills to design stunning movie posters and create jaw-dropping teaser videos that leave a lasting impact.",
       teamSize: "2-3 members",
       prize: "₹5,000",
       icon: Video,
