@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Code, Palette, TrendingUp, Video, Bot, MessageSquare, ChevronLeft, ChevronRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import gwen from './assets/events/gwen.jpg';
 import CardFlip from './ui/card-flip';
 import { BorderBeam } from './ui/borderbeam';
@@ -102,6 +103,7 @@ const CarouselItem = ({ children, className }: { children: React.ReactNode; clas
 );
 
 const Events = () => {
+  const navigate = useNavigate();
   const [api, setApi] = useState<CarouselApi | null>(null);
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
@@ -198,7 +200,19 @@ const Events = () => {
   ];
 
   const handleReadMore = (eventId: number) => {
-    console.log(`Navigate to event ${eventId} details`);
+    const eventRoutes = {
+      1: '/events/glitch-multiverse',      // Glitch in the Multiverse 
+      2: '/events/webverse-interface',     // Webverse Interface
+      3: '/events/multiverse-pitch',       // Multiverse Pitch
+      4: '/events/web-creativity',         // Web of Creativity
+      5: '/events/spidey-bot',            // Spidey Bot
+      6: '/events/ctf-dimensions'         // CTF: Across Dimensions
+    };
+    
+    const route = eventRoutes[eventId as keyof typeof eventRoutes];
+    if (route) {
+      navigate(route);
+    }
   };
 
   return (
@@ -288,6 +302,7 @@ const Events = () => {
                     `Duration: ${event.duration}`,
                     `Prize: ${event.prize}`
                   ]}
+                  onClick={() => handleReadMore(event.id)}
                 />
               </div>
             );

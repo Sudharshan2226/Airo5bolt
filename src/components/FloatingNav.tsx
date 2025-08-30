@@ -21,7 +21,7 @@ export function FloatingNav() {
       icon: (
         <IconCalendar className="h-full w-full text-white" />
       ),
-      href: "/#events",
+      href: "/events",
     },
     {
       title: "Our Team",

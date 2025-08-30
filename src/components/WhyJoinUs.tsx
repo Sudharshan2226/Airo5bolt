@@ -3,7 +3,7 @@ import { FaUserTie, FaUsers, FaTrophy, FaTools } from "react-icons/fa";
 const WhyJoinUs = () => {
   const benefits = [
     {
-      icon: <FaUserTie className="text-red-500 text-2xl" />,
+      icon: <FaUserTie className="text-blue-500 text-2xl" />,
       title: "Industry Mentors",
       description: "Connect with experts, mentors, and innovators for real-world guidance.",
     },
@@ -13,12 +13,12 @@ const WhyJoinUs = () => {
       description: "Meet like-minded hackers and future collaborators.",
     },
     {
-      icon: <FaTrophy className="text-red-500 text-2xl" />,
+      icon: <FaTrophy className="text-yellow-500 text-2xl" />,
       title: "Exciting Prizes & Recognition",
       description: "Win from a prize pool worth ₹30,000 and get noticed by recruiters.",
     },
     {
-      icon: <FaTools className="text-red-500 text-2xl" />,
+      icon: <FaTools className="text-green-500 text-2xl" />,
       title: "Hands-on Experience",
       description: "Step out of the classroom and apply your skills to real-world problems.",
     }
@@ -27,7 +27,7 @@ const WhyJoinUs = () => {
   return (
     <div className="w-full bg-black/20 py-12 px-6 md:px-16">
       <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center font-avartar tracking-wider">
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-800">
+        <span className="text-white">
           Why Join Us?
         </span>
       </h2>

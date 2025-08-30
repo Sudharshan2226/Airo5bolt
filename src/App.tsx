@@ -12,8 +12,12 @@ import Preloader from './components/Preloader';
 import Events from "./components/Events";
 import FAQ from "./components/FAQ";
 import { FloatingNav } from "./components/FloatingNav";
-
-
+import AiroHackathonPage from "./components/AiroHackathonPage";
+import AiroChatbot from "./components/AiroChatbot";
+import Airopromo from "./components/Airopromo";
+import Airopitch from "./components/Airopitch";
+import Airoctf from "./components/Airocode";
+import Airocodebid from "./components/Airocodebid";
 function ScrollToHashElement() {
   const location = useLocation();
 
@@ -99,6 +103,21 @@ function App() {
             <Route path="/guidelines" element={<div><Rules /> <Footer /> </div>} />
             <Route path="/results" element={<div><Results /> <Footer /></div>} />
 
+            <Route path="/airo-hackathon" element={<AiroHackathonPage />} />
+            <Route path="/airo-chatbot" element={<AiroChatbot />} />
+            <Route path="/airo-promo" element={<Airopromo />} />
+            <Route path="/airo-pitch" element={<Airopitch />} />
+            <Route path="/airo-ctf" element={<Airoctf />} />
+            <Route path="/airo-code-bid" element={<Airocodebid />} />
+            
+            {/* Event-specific routes */}
+            <Route path="/events" element={<div><Events /> <Footer /></div>} />
+            <Route path="/events/glitch-multiverse" element={<Airocodebid />} />
+            <Route path="/events/webverse-interface" element={<AiroHackathonPage />} />
+            <Route path="/events/multiverse-pitch" element={<Airopitch />} />
+            <Route path="/events/web-creativity" element={<Airopromo />} />
+            <Route path="/events/spidey-bot" element={<AiroChatbot />} />
+            <Route path="/events/ctf-dimensions" element={<Airoctf />} />
           </Routes>
         </main>
       </div>

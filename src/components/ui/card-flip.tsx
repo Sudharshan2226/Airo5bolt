@@ -20,6 +20,7 @@ export interface CardFlipProps {
   description?: string;
   features?: string[];
   image?: string;
+  onClick?: () => void;
 }
 
 export default function CardFlip({
@@ -33,6 +34,7 @@ export default function CardFlip({
     'Zero Setup Required',
   ],
   image,
+  onClick,
 }: CardFlipProps) {
   const [imageError, setImageError] = useState(false);
   const [isFlipped, setIsFlipped] = useState(false);
@@ -199,6 +201,7 @@ export default function CardFlip({
               style={{
                 backgroundColor: 'rgba(26, 26, 26, 0.5)',
               }}
+              onClick={onClick}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = 'linear-gradient(90deg, rgba(0, 191, 255, 0.15) 0%, rgba(106, 13, 173, 0.1) 50%, transparent 100%)';
               }}

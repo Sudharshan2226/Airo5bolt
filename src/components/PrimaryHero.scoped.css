@@ -40,7 +40,7 @@
 .primaryHeroWrapper {
   /* Component wrapper - inherits fonts from global CSS but scopes all other styles */
   position: relative;
-  background-image: url('/texture-dark.jpg');
+  background-image: url('/texture2.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

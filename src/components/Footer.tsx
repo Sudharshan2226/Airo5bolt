@@ -54,7 +54,7 @@ const Footer: React.FC = () => {
                 <div>
                   <ul className="space-y-2 text-gray-400">
                     <li>
-                      <button onClick={() => handleNavigation("/#events")} className="hover:text-chart-2 transition-colors text-left">
+                      <button onClick={() => handleNavigation("/events")} className="hover:text-chart-2 transition-colors text-left">
                         Events
                       </button>
                     </li>
@@ -70,7 +70,7 @@ const Footer: React.FC = () => {
             <div>
               <h3 className="text-xl font-bold mb-4 text-white">Sponsors</h3>
               <div className="grid grid-cols-3 gap-4">
-                <SponsorLogo name="RM Group Of Compnies" />
+                {/* <SponsorLogo name="RM Group Of Compnies" /> */}
               </div>
             </div>
           </div>
@@ -97,20 +97,20 @@ const SocialIcon: React.FC<SocialIconProps> = ({ icon }) => (
   </a>
 );
 
-interface SponsorLogoProps {
-  name: string;
-}
+// interface SponsorLogoProps {
+//   name: string;
+// }
 
-const SponsorLogo: React.FC<SponsorLogoProps> = ({ name }) => (
-  <div className="flex items-center space-x-4">
-    <img
-      src={sponsor}
-      alt="sponsorlogo"
-      className="bg-gray-800/50 rounded flex items-center justify-center h-20 w-32"
-    />
-    <p>{name}</p>
-  </div>
+// const SponsorLogo: React.FC<SponsorLogoProps> = ({ name }) => (
+//   <div className="flex items-center space-x-4">
+//     <img
+//       src={sponsor}
+//       alt="sponsorlogo"
+//       className="bg-gray-800/50 rounded flex items-center justify-center h-20 w-32"
+//     />
+//     <p>{name}</p>
+//   </div>
 
-);
+// );
 
 export default Footer;
