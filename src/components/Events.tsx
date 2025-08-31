@@ -212,6 +212,10 @@ const Events = () => {
     const route = eventRoutes[eventId as keyof typeof eventRoutes];
     if (route) {
       navigate(route);
+      // Ensure page scrolls to top after navigation
+      setTimeout(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+      }, 100);
     }
   };
 

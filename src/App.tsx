@@ -19,6 +19,7 @@ import Airopitch from "./components/Airopitch";
 import Airoctf from "./components/Airocode";
 import Airocodebid from "./components/Airocodebid";
 import LoadingErrorBoundary from "./components/LoadingErrorBoundary";
+import ScrollToTop from "./components/ScrollToTop";
 import { loadingManager } from "./utils/performance";
 function ScrollToHashElement() {
   const location = useLocation();
@@ -46,6 +47,9 @@ function ScrollToHashElement() {
         
         return () => clearTimeout(timeoutId);
       }
+    } else {
+      // No hash - scroll to top for regular route navigation
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     }
   }, [location]);
 
@@ -98,6 +102,7 @@ function App() {
   return (
     <LoadingErrorBoundary>
       <Router>
+        <ScrollToTop />
         <ScrollToHashElement />
         <div className="flex flex-col min-h-screen">
           <FloatingNav />

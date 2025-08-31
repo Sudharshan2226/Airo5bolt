@@ -55,6 +55,10 @@ const FloatingDockMobile = ({
     } else {
       // Handle regular navigation
       navigate(href);
+      // Scroll to top for regular navigation
+      setTimeout(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+      }, 100);
     }
     setOpen(false);
   };
@@ -126,6 +130,10 @@ const FloatingDockDesktop = ({
     } else {
       // Handle regular navigation
       navigate(href);
+      // Scroll to top for regular navigation
+      setTimeout(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+      }, 100);
     }
   };
   return (

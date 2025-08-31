@@ -1,6 +1,6 @@
 import { Github, Instagram, Linkedin, Twitter } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import sponsor from './assets/sponsor.jpg'
+
 
 const Footer: React.FC = () => {
   const navigate = useNavigate();
@@ -13,6 +13,10 @@ const Footer: React.FC = () => {
     } else {
       // Handle regular navigation
       navigate(path);
+      // Scroll to top immediately for non-hash navigation
+      setTimeout(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+      }, 100);
     }
   };
 
