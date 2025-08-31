@@ -176,9 +176,16 @@ const Airopromo = () => {
               <p className="text-gray-400 mb-4">
                 Unleash your ideas with AIRO 5.0 – Web of Creativity! Register now to secure your spot.
               </p>
-              <button className="w-full px-6 py-3 bg-gradient-to-r from-pink-500 to-yellow-500 hover:from-pink-600 hover:to-yellow-600 rounded-lg font-semibold transition-all duration-300">
+              <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdQT8TN1xW2G3kWsNdYiE8mAeLby4ImPJT9J3r7gPbCkzQH4w/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full inline-block"
+              >
+              <button className="w-full px-6 py-3 bg-gradient-to-r from-red-500 to-purple-600 hover:from-red-600 hover:to-purple-700 rounded-lg font-semibold transition-all duration-300">
                 Register Now
               </button>
+              </a>
             </div>
             <div className="glass-card rounded-xl p-6 mb-8">
               <h2 className="text-sm font-medium text-gray-400 mb-6 border-b border-gray-700 pb-2">About Event</h2>

@@ -229,9 +229,16 @@ const AiroChatbot = () => {
               <p className="text-gray-400 mb-4">
                 Join us for an exciting AI Chatbot Challenge! Build intelligent conversational AI within 2 hours.
               </p>
-              <button className="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 rounded-lg font-semibold transition-all duration-300">
+              <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSecTLZEcF0fw86uxg3dvn0NZLJaUZhne1ucD8RzEGHa718cYQ/viewform?usp=header"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full inline-block"
+              >
+              <button className="w-full px-6 py-3 bg-gradient-to-r from-red-500 to-purple-600 hover:from-red-600 hover:to-purple-700 rounded-lg font-semibold transition-all duration-300">
                 Register Now
               </button>
+              </a>
             </div>
 
             {/* About Event */}

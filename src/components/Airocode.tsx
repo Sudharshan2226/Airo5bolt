@@ -219,19 +219,26 @@ const Airoctf = () => {
             {/* Registration Status */}
             <div className="glass-card rounded-xl p-6 mb-8">
               <div className="flex items-center space-x-3 mb-4">
-                <div className="flex items-center justify-center w-8 h-8 bg-red-700 rounded-full">
-                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                </div>
-                <h2 className="text-xl font-semibold text-white">Registration Open</h2>
+              <div className="flex items-center justify-center w-8 h-8 bg-red-700 rounded-full">
+                <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <h2 className="text-xl font-semibold text-white">Registration Open</h2>
               </div>
               <p className="text-gray-400 mb-4">
-                Join us for an exciting Capture The Flag challenge! Test your cybersecurity skills across multiple dimensions.
+              Join us for an exciting Capture The Flag challenge! Test your cybersecurity skills across multiple dimensions.
               </p>
+              <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLScZqvsiCvdRNuUhHXujxka48KuXpyyqRry0ILXvXgjwD6sPSA/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full inline-block"
+              >
               <button className="w-full px-6 py-3 bg-gradient-to-r from-red-500 to-purple-600 hover:from-red-600 hover:to-purple-700 rounded-lg font-semibold transition-all duration-300">
                 Register Now
               </button>
+              </a>
             </div>
 
             {/* About Event */}
