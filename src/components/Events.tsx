@@ -146,7 +146,7 @@ const Events = () => {
       id: 2,
       name: "Webverse Interface",
       description: "A fast-paced 2-hour hackathon where creativity meets usability. Teams of three will tackle a surprise problem statement, design core UI screens, and take on fun creative challenges along the way. With tools like Figma, Canva, and AI support, participants must showcase innovation, aesthetics, and user-centered design.",
-      teamSize: "2-4 members",
+      teamSize: "2-3 members",
       prize: "₹5,000",
       icon: Palette,
       image: eventImages.gwen, // Use the imported image (or add specific image later)
@@ -157,7 +157,7 @@ const Events = () => {
       id: 3,
       name: "Multiverse Pitch",
       description: "Teams will showcase bold, domain-driven ideas and pitch them to a panel of judges acting as investors. With surprise challenges, rapid problem-solving, and creative twists, this event is all about turning visionary concepts into scalable, real-world solutions.",
-      teamSize: "3-5 members",
+      teamSize: "2-3 members",
       prize: "₹5,000",
       icon: TrendingUp,
       image: eventImages.multiverse, // Use the imported image (or add specific image later)
@@ -179,7 +179,7 @@ const Events = () => {
       id: 5,
       name: "Spidey Bot",
       description: "Dive into the future of AI with our Chatbot Challenge! Participants will design theme-based chatbots that blend creativity, innovation, and intelligence, showcasing their skills in building engaging conversations that redefine human–machine interaction.",
-      teamSize: "2-4 members",
+      teamSize: "2-è members",
       prize: "₹5,000",
       icon: Bot,
       image: eventImages.spideybot, // Use the imported image (or add specific image later)
@@ -190,7 +190,7 @@ const Events = () => {
       id: 6,
       name: "CTF: Across Dimensions",
       description: "Dive into thrilling hacking puzzles, crack complex codes, and capture hidden flags before time runs out! Test your skills, race against the clock, and experience an electrifying journey of coding and cyber adventures!",
-      teamSize: "1 member",
+      teamSize: "2-4 member",
       prize: "₹5,000",
       icon: MessageSquare,
       image: eventImages.ctf, // Use the imported image (or add specific image later)
