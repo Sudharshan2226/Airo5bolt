@@ -209,7 +209,7 @@ const AiroChatbot = () => {
                     </div>
                   </div>
                   <div>
-                    <p className="font-medium text-white">Thursday, January 16</p>
+                    <p className="font-medium text-white">Friday, September 12</p>
                     <p className="text-gray-400 text-sm">11:00 AM - 1:00 PM</p>
                   </div>
                 </div>
