@@ -230,7 +230,7 @@ const AiroHackathonPage = () => {
                 Join us for an exciting UI/UX Design competition! Register now to secure your spot.
               </p>
               <a
-              href="https://docs.google.com/forms/d/14Ro5ATDkNXQkZOpNACYzwscBjdR7oSTM16FSlONz9d8/viewform?edit_requested=true"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSf1INweEEvtdSFL7heBO1nxnZ25YosozSpexwu9TOXABAXOCA/viewform"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full inline-block"
