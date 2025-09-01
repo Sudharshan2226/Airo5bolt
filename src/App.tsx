@@ -13,16 +13,24 @@ import Events from "./components/Events";
 import CollegeMap from "./components/CollegeMap";
 import WhyJoinUs from "./components/WhyJoinUs";
 import FAQ from "./components/FAQ";
-import { FloatingNav } from "./components/FloatingNav";
-import AiroHackathonPage from "./components/AiroHackathonPage";
-import AiroChatbot from "./components/AiroChatbot";
-import Airopromo from "./components/Airopromo";
-import Airopitch from "./components/Airopitch";
-import Airoctf from "./components/Airocode";
-import Airocodebid from "./components/Airocodebid";
-import LoadingErrorBoundary from "./components/LoadingErrorBoundary";
-import ScrollToTop from "./components/ScrollToTop";
-import { loadingManager } from "./utils/performance";
+
+// Lazy load non-critical route components
+const Rules = lazy(() => import("./components/Rules"));
+const OrganizersPage = lazy(() => import("./components/OrganizersPage"));
+const Results = lazy(() => import("./components/Results"));
+const AiroHackathonPage = lazy(() => import("./components/AiroHackathonPage"));
+const AiroChatbot = lazy(() => import("./components/AiroChatbot"));
+const Airopromo = lazy(() => import("./components/Airopromo"));
+const Airopitch = lazy(() => import("./components/Airopitch"));
+const Airoctf = lazy(() => import("./components/Airocode"));
+const Airocodebid = lazy(() => import("./components/Airocodebid"));
+
+// Loading fallback component
+const PageLoader = () => (
+  <div className="flex items-center justify-center min-h-[50vh]">
+    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
+  </div>
+);
 function ScrollToHashElement() {
   const location = useLocation();
 
@@ -57,7 +65,6 @@ function ScrollToHashElement() {
 
   return null;
 }
-*/ // End temporarily disabled ScrollToHashElement
 
 function App() {
   // Remove artificial preloader - it will only show when actually loading components
@@ -69,8 +76,8 @@ function App() {
   return (
     <LoadingErrorBoundary>
       <Router>
-        {/* <ScrollToTop /> */} {/* Temporarily disabled */}
-        {/* <ScrollToHashElement /> */} {/* Temporarily disabled */}
+        <ScrollToTop />
+        <ScrollToHashElement />
         <div className="flex flex-col min-h-screen">
           <FloatingNav />
           <main className="flex-grow">
