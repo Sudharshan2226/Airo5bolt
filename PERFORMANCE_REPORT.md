@@ -87,3 +87,40 @@ performanceMonitor.getMetrics()
 - ✅ Modern browsers (Chrome, Firefox, Safari, Edge)
 - ✅ Performance Observer API fallbacks
 - ✅ Graceful degradation for older browsers
+
+## September 2025 Performance Analysis
+
+This analysis was conducted on September 1st, 2025, and identified several additional areas for improvement.
+
+### High Impact Issues:
+
+1.  **Code Splitting:** The application does not currently implement code splitting. All components are loaded in the initial bundle, which significantly increases its size.
+    *   **Recommendation:** Implement route-based code splitting using `React.lazy` and `React.Suspense` to load components on demand.
+
+2.  **Video Optimization:** A 44.6MB video (`src/components/assets/Untitled design.mp4`) is loaded in the `PrimaryHero` component. This is a major performance bottleneck.
+    *   **Recommendation:** Compress the video and convert it to a more efficient format like WebM. The video should also be lazy-loaded.
+
+3.  **Image Optimization:** Several images in the `public` directory are not optimized, with some exceeding 300KB.
+    *   **Recommendation:** Compress all images and resize them to appropriate dimensions. Use modern image formats like WebP.
+
+### Medium Impact Issues:
+
+4.  **Artificial Preloader:** The preloader in `App.tsx` has an artificial delay of 1.5 seconds.
+    *   **Recommendation:** Remove the artificial delay and only show the preloader while the application is actually loading.
+
+5.  **Lazy Loading:** While some images are lazy-loaded, this is not applied consistently.
+    *   **Recommendation:** Use the native `loading="lazy"` attribute for all off-screen images and `React.lazy` for off-screen components.
+
+6.  **Third-Party Scripts:** `ScrollTrigger.min.js` and `SplitText.min.js` are loaded from the `public` directory.
+    *   **Recommendation:** Manage these scripts through `npm` to allow for better optimization and tree-shaking.
+
+### Low Impact Issues:
+
+7.  **Font Optimization:** Fonts are not preloaded, which can cause a flash of unstyled text (FOUT).
+    *   **Recommendation:** Preload fonts using `<link rel="preload">` in `index.html`.
+
+8.  **External CSS:** An external CSS file (`/styleguide-v1.2.css`) is loaded in `PrimaryHero.tsx`.
+    *   **Recommendation:** Import the CSS file directly into the component to allow it to be bundled with the rest of the CSS.
+
+9.  **Redundant Routes:** There are redundant routes in `App.tsx`.
+    *   **Recommendation:** Remove the redundant routes to improve code clarity.
