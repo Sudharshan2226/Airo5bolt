@@ -191,6 +191,7 @@ const AiroHackathonPage = () => {
                 <img 
                   src="/logo.png"
                   alt="AIRO 5.0" 
+                  loading="lazy"
                   className="w-6 h-6 rounded"
                 />
                 <span className="text-gray-400 text-sm">AIRO 5.0</span>

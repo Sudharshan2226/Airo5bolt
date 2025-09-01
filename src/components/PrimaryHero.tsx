@@ -1,23 +1,16 @@
 import React, { useEffect } from 'react';
-import spider from "./assets/Untitled design.mp4";
+import spider from "./assets/Untitled_design_optimized.mp4";
 import './PrimaryHero.scoped.css';
 const PrimaryHero: React.FC = () => {
   useEffect(() => {
-    // Load the original styleguide CSS that includes all fonts and styles
-    // but scope it to this component only
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = '/styleguide-v1.2.css';
-    link.id = 'primary-hero-styleguide';
-    document.head.appendChild(link);
-
-    // Cleanup function to remove the CSS when component unmounts
-    return () => {
-      const existingLink = document.getElementById('primary-hero-styleguide');
-      if (existingLink) {
-        existingLink.remove();
-      }
-    };
+    // Dynamically load styleguide CSS only once
+    if (!document.getElementById('primary-hero-styleguide')) {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = '/styleguide-v1.2.css';
+      link.id = 'primary-hero-styleguide';
+      document.head.appendChild(link);
+    }
   }, []);
 
   return (

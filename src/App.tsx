@@ -1,26 +1,36 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, Suspense, lazy } from "react";
+import LoadingErrorBoundary from "./components/LoadingErrorBoundary";
+import ScrollToTop from "./components/ScrollToTop";
+import { FloatingNav } from "./components/FloatingNav";
+import { loadingManager } from "./utils/performance";
+
+// Eager load critical components for the home page
 import Footer from "./components/Footer";
 import PrimaryHero from "./components/PrimaryHero";
 import ScrollWrapper from "./components/ScrollWrapper";
-import Rules from "./components/Rules";
-import OrganizersPage from "./components/OrganizersPage";
+import Events from "./components/Events";
 import CollegeMap from "./components/CollegeMap";
 import WhyJoinUs from "./components/WhyJoinUs";
-import Results from "./components/Results";
-import Preloader from './components/Preloader';
-import Events from "./components/Events";
 import FAQ from "./components/FAQ";
-import { FloatingNav } from "./components/FloatingNav";
-import AiroHackathonPage from "./components/AiroHackathonPage";
-import AiroChatbot from "./components/AiroChatbot";
-import Airopromo from "./components/Airopromo";
-import Airopitch from "./components/Airopitch";
-import Airoctf from "./components/Airocode";
-import Airocodebid from "./components/Airocodebid";
-import LoadingErrorBoundary from "./components/LoadingErrorBoundary";
-import ScrollToTop from "./components/ScrollToTop";
-import { loadingManager } from "./utils/performance";
+
+// Lazy load non-critical route components
+const Rules = lazy(() => import("./components/Rules"));
+const OrganizersPage = lazy(() => import("./components/OrganizersPage"));
+const Results = lazy(() => import("./components/Results"));
+const AiroHackathonPage = lazy(() => import("./components/AiroHackathonPage"));
+const AiroChatbot = lazy(() => import("./components/AiroChatbot"));
+const Airopromo = lazy(() => import("./components/Airopromo"));
+const Airopitch = lazy(() => import("./components/Airopitch"));
+const Airoctf = lazy(() => import("./components/Airocode"));
+const Airocodebid = lazy(() => import("./components/Airocodebid"));
+
+// Loading fallback component
+const PageLoader = () => (
+  <div className="flex items-center justify-center min-h-[50vh]">
+    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
+  </div>
+);
 function ScrollToHashElement() {
   const location = useLocation();
 
@@ -57,47 +67,11 @@ function ScrollToHashElement() {
 }
 
 function App() {
-  const [loading, setLoading] = useState(true);
-
+  // Remove artificial preloader - it will only show when actually loading components
   useEffect(() => {
     // Initialize performance monitoring
-    loadingManager.setLoading('app', true, 8000); // 8 second safety timeout
-
-    // Prevent preloader from showing again
-    if (!sessionStorage.getItem("hasLoaded")) {
-      // Reduced loading time and added error handling
-      const minLoadTime = 1500; // Reduced from 3000ms
-      const maxLoadTime = 5000; // Maximum timeout
-      
-      const loadingTimer = setTimeout(() => {
-        setLoading(false);
-        sessionStorage.setItem("hasLoaded", "true");
-        loadingManager.setLoading('app', false);
-      }, minLoadTime);
-
-      // Safety timeout to prevent infinite loading
-      const safetyTimer = setTimeout(() => {
-        console.warn("Loading took too long, forcing completion");
-        setLoading(false);
-        sessionStorage.setItem("hasLoaded", "true");
-        loadingManager.setLoading('app', false);
-      }, maxLoadTime);
-
-      return () => {
-        clearTimeout(loadingTimer);
-        clearTimeout(safetyTimer);
-        loadingManager.setLoading('app', false);
-      };
-    } else {
-      setLoading(false);
-      loadingManager.setLoading('app', false);
-    }
+    loadingManager.setLoading('app', false);
   }, []);
-
-  if (loading) {
-    return <Preloader isLoading={loading} setIsLoading={setLoading} />;
-  }
-  
 
   return (
     <LoadingErrorBoundary>
@@ -107,49 +81,44 @@ function App() {
         <div className="flex flex-col min-h-screen">
           <FloatingNav />
           <main className="flex-grow">
-            <Routes>
-              <Route path="/" element={
-                <ScrollWrapper>
-                  <PrimaryHero />
-                  <div data-scroll-section>
-                  </div>
-                  <div data-scroll-section>
-                    <Events />
-                  </div>
-                  <div data-scroll-section>
-                    <WhyJoinUs />
-                  </div>
-                  <div data-scroll-section>
-                    <CollegeMap />
-                  </div>
-                  <div data-scroll-section>
-                    <FAQ />
-                  </div>
-                  <div data-scroll-section>
-                    <Footer />
-                  </div>
-                </ScrollWrapper>
-              } />
-              <Route path="/team" element={<div><OrganizersPage /> <Footer /> </div>} />
-              <Route path="/guidelines" element={<div><Rules /> <Footer /> </div>} />
-              <Route path="/results" element={<div><Results /> <Footer /></div>} />
+            <Suspense fallback={<PageLoader />}>
+              <Routes>
+                <Route path="/" element={
+                  <ScrollWrapper>
+                    <PrimaryHero />
+                    <div data-scroll-section>
+                    </div>
+                    <div data-scroll-section>
+                      <Events />
+                    </div>
+                    <div data-scroll-section>
+                      <WhyJoinUs />
+                    </div>
+                    <div data-scroll-section>
+                      <CollegeMap />
+                    </div>
+                    <div data-scroll-section>
+                      <FAQ />
+                    </div>
+                    <div data-scroll-section>
+                      <Footer />
+                    </div>
+                  </ScrollWrapper>
+                } />
+                <Route path="/team" element={<div><OrganizersPage /> <Footer /> </div>} />
+                <Route path="/guidelines" element={<div><Rules /> <Footer /> </div>} />
+                <Route path="/results" element={<div><Results /> <Footer /></div>} />
 
-              <Route path="/airo-hackathon" element={<AiroHackathonPage />} />
-              <Route path="/airo-chatbot" element={<AiroChatbot />} />
-              <Route path="/airo-promo" element={<Airopromo />} />
-              <Route path="/airo-pitch" element={<Airopitch />} />
-              <Route path="/airo-ctf" element={<Airoctf />} />
-              <Route path="/airo-code-bid" element={<Airocodebid />} />
-              
-              {/* Event-specific routes */}
-              <Route path="/events" element={<div><Events /> <Footer /></div>} />
-              <Route path="/events/glitch-multiverse" element={<Airocodebid />} />
-              <Route path="/events/webverse-interface" element={<AiroHackathonPage />} />
-              <Route path="/events/multiverse-pitch" element={<Airopitch />} />
-              <Route path="/events/web-creativity" element={<Airopromo />} />
-              <Route path="/events/spidey-bot" element={<AiroChatbot />} />
-              <Route path="/events/ctf-dimensions" element={<Airoctf />} />
-            </Routes>
+                {/* Event-specific routes - using clean paths */}
+                <Route path="/events" element={<div><Events /> <Footer /></div>} />
+                <Route path="/events/glitch-multiverse" element={<Airocodebid />} />
+                <Route path="/events/webverse-interface" element={<AiroHackathonPage />} />
+                <Route path="/events/multiverse-pitch" element={<Airopitch />} />
+                <Route path="/events/web-creativity" element={<Airopromo />} />
+                <Route path="/events/spidey-bot" element={<AiroChatbot />} />
+                <Route path="/events/ctf-dimensions" element={<Airoctf />} />
+              </Routes>
+            </Suspense>
           </main>
         </div>
       </Router>
