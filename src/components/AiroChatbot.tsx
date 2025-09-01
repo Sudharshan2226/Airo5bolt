@@ -47,26 +47,9 @@ const AiroChatbot = () => {
 
   // Hosts data
   const hosts = [
-    {
-      name: "Prasanna Hari Ram S",
-      twitter: "https://www.linkedin.com/in/prasanna-hari-ram-s-824409333?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-    },
-    {
-      name: "Gurunath",
-      twitter: "https://www.linkedin.com/in/sanjeevansks"
-    },
-    {
-      name: "Berinta R",
-      twitter: "https://www.linkedin.com/in/berinta-r-a2369b296"
-    },
-    {
-      name: "Vijayalakshmi V",
-      twitter: "https://www.linkedin.com/in/vijayalakshmi-v-00461b2b7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-    },
-    {
-      name: "Sree Lekshmi.J.U",
-      twitter: "https://www.linkedin.com/in/sree-lekshmi-j-u-4b3678296"
-    }
+    { name: "Gurunath M", twitter: "https://www.linkedin.com/in/gurunath-m-24441427b" },
+    { name: "P Maha lashmi", twitter: "https://www.linkedin.com/in/maha-lashmi-p-161954295" }
+    // Anirudh, Kamesh, Sushmitaa not found in CSV
   ];
 
   return (
@@ -267,60 +250,10 @@ const AiroChatbot = () => {
 
                 <hr className="border-gray-700 my-6" />
 
-                <h2 className="text-xl font-bold text-white mb-4">🎯 Event Themes (Choose One)</h2>
-                <p className="text-gray-300 mb-4">
-                  Participants must build a functional AI chatbot based on one of the following themes within 2 hours using AI tools (e.g., ChatGPT APIs, prompt engineering, low-code platforms).
+                <h2 className="text-xl font-bold text-white mb-4">🎯 Event Themes</h2>
+                <p className="text-gray-300 mb-6">
+                  The event themes will be declared on the spot. Participants must build a functional AI chatbot based on the announced theme within 2 hours using AI tools (e.g., ChatGPT APIs, prompt engineering, low-code platforms).
                 </p>
-
-                <div className="space-y-6 mb-6">
-                  <div className="bg-gray-800/50 rounded-lg p-4">
-                    <h3 className="text-lg font-bold text-blue-400 mb-2">1) Smart Campus Assistant</h3>
-                    <p className="text-gray-300 mb-2"><strong>Goal:</strong> Helps students navigate campus, find faculty, and answer FAQs.</p>
-                    <p className="text-gray-300 mb-2"><strong>Minimum Requirements:</strong></p>
-                    <ul className="text-gray-300 space-y-1 ml-4 mb-2">
-                      <li>• Responds to queries about campus locations, events, and faculty info</li>
-                      <li>• Menu or keyword-based navigation (e.g., "library hours", "faculty contacts")</li>
-                      <li>• At least 5 FAQs hardcoded or AI-handled</li>
-                    </ul>
-                    <p className="text-green-400"><strong>Bonus:</strong> Supports both text and voice interaction</p>
-                  </div>
-
-                  <div className="bg-gray-800/50 rounded-lg p-4">
-                    <h3 className="text-lg font-bold text-blue-400 mb-2">2) Healthcare Symptom Advisor</h3>
-                    <p className="text-gray-300 mb-2"><strong>Goal:</strong> Provides symptom-based suggestions (non-diagnostic).</p>
-                    <p className="text-gray-300 mb-2"><strong>Minimum Requirements:</strong></p>
-                    <ul className="text-gray-300 space-y-1 ml-4 mb-2">
-                      <li>• Ask user for symptoms</li>
-                      <li>• Provide possible causes and advice (visit doctor, rest, etc.)</li>
-                      <li>• Include at least 5 common conditions</li>
-                    </ul>
-                    <p className="text-green-400"><strong>Bonus:</strong> Emergency keyword triggers (e.g., "chest pain" → "Call emergency services")</p>
-                  </div>
-
-                  <div className="bg-gray-800/50 rounded-lg p-4">
-                    <h3 className="text-lg font-bold text-blue-400 mb-2">3) Travel & Food Guide Bot</h3>
-                    <p className="text-gray-300 mb-2"><strong>Goal:</strong> Suggests local tourist spots and restaurants.</p>
-                    <p className="text-gray-300 mb-2"><strong>Minimum Requirements:</strong></p>
-                    <ul className="text-gray-300 space-y-1 ml-4 mb-2">
-                      <li>• Ask for city/location input</li>
-                      <li>• Suggest 3 attractions & 3 food places with descriptions</li>
-                      <li>• Provide short tips (e.g., "Best time to visit")</li>
-                    </ul>
-                    <p className="text-green-400"><strong>Bonus:</strong> Personalized suggestions based on user preferences</p>
-                  </div>
-
-                  <div className="bg-gray-800/50 rounded-lg p-4">
-                    <h3 className="text-lg font-bold text-blue-400 mb-2">4) Job Interview Practice Bot</h3>
-                    <p className="text-gray-300 mb-2"><strong>Goal:</strong> Conducts mock interviews and gives feedback.</p>
-                    <p className="text-gray-300 mb-2"><strong>Minimum Requirements:</strong></p>
-                    <ul className="text-gray-300 space-y-1 ml-4 mb-2">
-                      <li>• Ask at least 5 interview questions (user-selected role)</li>
-                      <li>• Provide feedback on each answer (strengths + improvement tips)</li>
-                      <li>• End with overall score or feedback</li>
-                    </ul>
-                    <p className="text-green-400"><strong>Bonus:</strong> Adapt difficulty level (beginner/intermediate/expert)</p>
-                  </div>
-                </div>
 
                 <hr className="border-gray-700 my-6" />
 

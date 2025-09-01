@@ -41,26 +41,11 @@ const Airopromo = () => {
   };
 
   const hosts = [
-    {
-      name: "Prasanna Hari Ram S",
-      twitter: "https://www.linkedin.com/in/prasanna-hari-ram-s-824409333?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-    },
-    {
-      name: "S K SANJEEVAN",
-      twitter: "https://www.linkedin.com/in/sanjeevansks"
-    },
-    {
-      name: "Berinta R",
-      twitter: "https://www.linkedin.com/in/berinta-r-a2369b296"
-    },
-    {
-      name: "Vijayalakshmi V",
-      twitter: "https://www.linkedin.com/in/vijayalakshmi-v-00461b2b7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-    },
-    {
-      name: "Sree Lekshmi.J.U",
-      twitter: "https://www.linkedin.com/in/sree-lekshmi-j-u-4b3678296"
-    }
+    { name: "Swarna Dhurga U", twitter: "https://www.linkedin.com/in/swarna-dhurga-u-0ba7a22a2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+    { name: "Balavignesh", twitter: "https://www.linkedin.com/in/balavignesh-shanmugam-61179728a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+    { name: "Jagadeeswaran E", twitter: "https://www.linkedin.com/in/jagadeeswaran-e-8bb0472b3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+    { name: "Haripriya N", twitter: "https://www.linkedin.com/in/haripriya-n-31161a292?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+    { name: "Kavin mukilan B", twitter: "https://www.linkedin.com/in/kavin-mukilan-bb2a41291?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" }
   ];
 
   return (

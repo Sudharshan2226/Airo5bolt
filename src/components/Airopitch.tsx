@@ -47,26 +47,11 @@ const Airopitch = () => {
 
   // Hosts data
   const hosts = [
-    {
-      name: "Prasanna Hari Ram S",
-      twitter: "https://www.linkedin.com/in/prasanna-hari-ram-s-824409333?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-    },
-    {
-      name: "S K SANJEEVAN",
-      twitter: "https://www.linkedin.com/in/sanjeevansks"
-    },
-    {
-      name: "Berinta R",
-      twitter: "https://www.linkedin.com/in/berinta-r-a2369b296"
-    },
-    {
-      name: "Vijayalakshmi V",
-      twitter: "https://www.linkedin.com/in/vijayalakshmi-v-00461b2b7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-    },
-    {
-      name: "Sree Lekshmi.J.U",
-      twitter: "https://www.linkedin.com/in/sree-lekshmi-j-u-4b3678296"
-    }
+    { name: "Jayanagavarshini RD", twitter: "https://www.linkedin.com/in/jayanagavarshini-rd-73193a28b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+    { name: "Muruganandam G", twitter: "https://www.linkedin.com/in/muruganandam-g-443855295?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+    { name: "Ashrufdeen R", twitter: "https://www.linkedin.com/in/ashrufdeen-rahamathulla-84b176248?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+    { name: "Sandhiya B", twitter: "https://www.linkedin.com/in/sandhiyababu06?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+    { name: "VIJAYA SUNDARI S", twitter: "https://www.linkedin.com/in/vijaya-sundari-9156072a3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" }
   ];
 
   return (

@@ -59,42 +59,43 @@ const TeamSection: React.FC<TeamSectionProps> = ({ title, members }) => (
 );
 
 const OrganizersPage: React.FC = () => {
+
+  // KEY PERSONS (CEO, Principal, HOD)
   const keyPersons: TeamMember[] = [
+    { name: "Dr. Sai Prakash Leomuthu", position: "CEO", image: "sairam_ceo.png", linkedin: "https://www.linkedin.com/in/sairamceo/" },
+    { name: "Dr. J Raja", position: "Principal", image: "principal.jpg", linkedin: "https://www.linkedin.com/in/raja-j-32b44164/" },
     { name: "Dr. Swagata Sarkar", position: "HOD", image: "1591960457895.jpeg", linkedin: "https://www.linkedin.com/in/swagatabsarkar/" }
   ];
-    
+
+  // STAFF CO-ORDINATORS (AI-DS)
   const staffCoordinators: TeamMember[] = [
-    { name: "Mrs.Madhivadhani D", position: "Assistant professor", image: "Mam.jpg", linkedin: "https://www.linkedin.com/in/madhivadhani-d-972018319?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+    { name: "MRS G GOMATHY", position: "ASSISTANT PROFESSOR", image: "gomathy.jpg", linkedin: "https://www.linkedin.com/in/swagatabsarkar/" },
+    { name: "MRS K P AISHWARYA", position: "ASSISTANT PROFESSOR", image: "Aish.jpg", linkedin: "https://www.linkedin.com/in/aishwarya-k-p-344171338?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" }
   ];
 
+  // OVERALL CO-ORDINATORS
   const overallCoordinators: TeamMember[] = [
-    { name: "Prabhu S", position: "Chairperson", image: "pra.jpg", linkedin: "https://www.linkedin.com/in/prabhu-s-b20018286?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
-    { name: "Aruna Varsha", position: "Vice Chairperson", image: "Aruna.jpg", linkedin: "https://www.linkedin.com/in/aruna-varsha-r-0827852a2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+    { name: "R KRISHNA KUMAR", position: "Overall Co-Ordinator", image: "kkr.jpg", linkedin: "https://www.linkedin.com/in/krishna-kumar-data-analyst?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+    { name: "S SAATHWEE", position: "Overall Co-Ordinator", image: "SaathweePic.jpg", linkedin: "https://www.linkedin.com/in/saathwee-sridharan/" }
   ];
-  const over: TeamMember[] = [
-    { name: "Sudharshan B", position: "Secretary", image: "profile4.jpg", linkedin: "https://sudharshan2026.github.io/" },
-    { name: "Vikash Raaj", position: "Secretary", image: "vikash.jpg"}
-  ];
-  const webDevelopers: TeamMember[] = [
-    { name: "Aravind M", position: "Web Developer", image: "ara.jpg", linkedin: "http://www.linkedin.com/in/aravind-m-1331062b7" },
-    { name: "Robin S", position: "Web Developer", image: "Robin.jpg", linkedin: "https://www.linkedin.com/in/robin-s-041239292?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
-    { name: "Arun Nehru S", position: "Web Developer", image: "arun.jpg", linkedin: "https://www.linkedin.com/in/arun-nehru-aa93aa271/" },
 
-  ];
+  // SECRETARIES
   const secretaries: TeamMember[] = [
-    // { name: " S", position: "Secretary", image: "Surya.jpg" },
-    { name: "Ashok Aathreyan U", position: "", image: "ashok.jpg", linkedin: "https://www.linkedin.com/in/ashok-aathreyan-u?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
-    { name: "Yashwanth Kumar R", position: "", image: "yash.jpg", linkedin: "https://www.linkedin.com/in/yashwanth-kumar-r-1156a2329" },
-    { name: "Nataraj EL", position: " ", image: "nat.jpg", linkedin: "https://www.linkedin.com/in/nataraj-el?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
-    { name: "SUJITH S M", position: "", image: "sujith.jpg", linkedin: "https://www.linkedin.com/in/sujith-s-m/" },
-    { name: "Mahalakshimi P", position: "", image: "maha.jpg" }
+    { name: "S ROBIN", position: "Secretary", image: "Robin.jpg", linkedin: "https://www.linkedin.com/in/robin-s-041239292?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+    { name: "K DAKSHINI", position: "Secretary", image: "DakshiniPic.jpg", linkedin: "https://www.linkedin.com/in/dakshini-kannan-a8864a28a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" }
   ];
 
-  const poster: TeamMember[] = [
-    { name: "Krishna Kumar R", position: " ", image: "kkr.jpg", linkedin: "https://www.linkedin.com/in/krishna-kumar-data-analyst/" },
-    { name: "Pooja M", position: " ", image: "pooja.jpg", linkedin: "http://www.linkedin.com/in/pooja-m-88b89228b" },
-    { name: "DAKSHINI K", position: " ", image: "dak.jpg", linkedin: "https://www.linkedin.com/in/dakshini-kannan-a8864a28a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" }
+  // TREASURERS (new section)
+  const treasurers: TeamMember[] = [
+    { name: "C VIJAYAKUMAR", position: "Treasurer", image: "VkPic.jpg", linkedin: "https://www.linkedin.com/in/vijayakumar-c-731279312?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+    { name: "M ATHISHTA", position: "Treasurer", image: "AthishtaPic.jpg", linkedin: "https://www.linkedin.com/in/athishta-mannavan-51a155283?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" }
   ];
+
+  // WEB DEVELOPERS
+  const webDevelopers: TeamMember[] = [
+    { name: "B SUDHARSHAN", position: "Web Developer", image: "profile4.jpg", linkedin: "https://www.linkedin.com/in/sudharshan-b-1227bb280?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+    { name: "R D JAYANAGAVARSHINI", position: "Web Developer", image: "JAYANAGAVARSHINI R D 2023-2027.jpg", linkedin: "https://www.linkedin.com/in/jayanagavarshini-rd-73193a28b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" }
+    ];
 
 
   // const mediaTeam: TeamMember[] = [
@@ -112,13 +113,12 @@ const OrganizersPage: React.FC = () => {
           </h1>
           <div className="w-24 h-1 bg-red-500 mx-auto animate-expand-line-fast"></div>
         </div>
-        <TeamSection title="KEY PERSON" members={keyPersons} />
-        <TeamSection title="STAFF CO-ORDINATOR" members={staffCoordinators} /> 
+        <TeamSection title="KEY PERSONS" members={keyPersons} />
+        <TeamSection title="STAFF CO-ORDINATORS (AI-DS)" members={staffCoordinators} />
         <TeamSection title="OVERALL CO-ORDINATORS" members={overallCoordinators} />
-        <TeamSection title="SECRETARY" members={over} />
+        <TeamSection title="SECRETARIES" members={secretaries} />
+        <TeamSection title="TREASURERS" members={treasurers} />
         <TeamSection title="WEB DEVELOPERS" members={webDevelopers} />
-        <TeamSection title="POSTER TEAM" members={poster} />
-        <TeamSection title="SPONSERSHIP TEAM" members={secretaries} />
       </div>
     </div>
   );

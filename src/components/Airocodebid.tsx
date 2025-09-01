@@ -47,26 +47,11 @@ const Airocodebid = () => {
 
   // Hosts data
   const hosts = [
-    {
-      name: "Prasanna Hari Ram S",
-      twitter: "https://www.linkedin.com/in/prasanna-hari-ram-s-824409333?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-    },
-    {
-      name: "S K SANJEEVAN",
-      twitter: "https://www.linkedin.com/in/sanjeevansks"
-    },
-    {
-      name: "Berinta R",
-      twitter: "https://www.linkedin.com/in/berinta-r-a2369b296"
-    },
-    {
-      name: "Vijayalakshmi V",
-      twitter: "https://www.linkedin.com/in/vijayalakshmi-v-00461b2b7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-    },
-    {
-      name: "Sree Lekshmi.J.U",
-      twitter: "https://www.linkedin.com/in/sree-lekshmi-j-u-4b3678296"
-    }
+    { name: "Hariharan M", twitter: "https://www.linkedin.com/in/hariharan-m-b9691a290?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+    { name: "SAHANA S", twitter: "https://www.linkedin.com/in/s-sahana-55b70a2b7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+    { name: "Monicka sri S", twitter: "http://www.linkedin.com/in/monicka-sri-s-12597a2a4" },
+    { name: "Dinesh K", twitter: "https://www.linkedin.com/in/k-dinesh-1696b32b6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+    { name: "KISHORE S", twitter: "https://www.linkedin.com/in/kishore-s-506b22342?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" }
   ];
 
   return (
