@@ -85,7 +85,7 @@ const AiroHackathonPage = () => {
         
         <div className="hidden md:flex items-center space-x-6">
           <div className="text-sm text-gray-400">{formatTime(currentTime)}</div>
-          <a href="#" className="text-sm hover:text-blue-400 transition-colors">Explore Events</a>
+          <a href="/#events" className="text-sm hover:text-blue-400 transition-colors">Explore Events</a>
           <button className="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg text-sm transition-colors">
             Register
           </button>
@@ -103,7 +103,7 @@ const AiroHackathonPage = () => {
       {isMenuOpen && (
         <div className="md:hidden absolute top-16 left-0 right-0 bg-gray-900/95 backdrop-blur-lg border-b border-gray-800 z-40 p-4">
           <div className="space-y-4">
-            <a href="#" className="block text-sm hover:text-blue-400 transition-colors">Explore Events</a>
+            <a href="/#events" className="block text-sm hover:text-blue-400 transition-colors">Explore Events</a>
             <button className="w-full px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg text-sm transition-colors">
               Register
             </button>
@@ -191,6 +191,7 @@ const AiroHackathonPage = () => {
                 <img 
                   src="/logo.png"
                   alt="AIRO 5.0" 
+                  loading="lazy"
                   className="w-6 h-6 rounded"
                 />
                 <span className="text-gray-400 text-sm">AIRO 5.0</span>
@@ -204,12 +205,12 @@ const AiroHackathonPage = () => {
                 <div className="flex items-center space-x-3">
                   <div className="flex items-center justify-center w-12 h-12 bg-gray-800 rounded-lg">
                     <div className="text-center">
-                      <div className="text-xs text-gray-400">Jan</div>
-                      <div className="text-sm font-bold text-white">15</div>
+                      <div className="text-xs text-gray-400">Sep</div>
+                      <div className="text-sm font-bold text-white">12</div>
                     </div>
                   </div>
                   <div>
-                    <p className="font-medium text-white">Wednesday, January 15</p>
+                    <p className="font-medium text-white">Friday, September 12</p>
                     <p className="text-gray-400 text-sm">11:00 AM - 1:00 PM</p>
                   </div>
                 </div>
@@ -294,7 +295,7 @@ const AiroHackathonPage = () => {
                   <li>• Team size: 3 members per team</li>
                   <li>• Problem statement will be revealed only during the event</li>
                   <li>• All designs must be original (plagiarism = disqualification)</li>
-                  <li>• Use of pre-built templates must be declared</li>
+                  <li>• Use of pre-built templates must be prohibited</li>
                   <li>• Teams must present their final design within the time limit</li>
                 </ul>
 

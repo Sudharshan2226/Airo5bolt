@@ -1,4 +1,14 @@
 import React, { useEffect, ReactNode } from 'react';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { TextPlugin } from "gsap/TextPlugin";
+
+// Register GSAP plugins
+gsap.registerPlugin(ScrollTrigger, TextPlugin);
+
+// Make GSAP available globally for external scripts
+(window as any).gsap = gsap;
+(window as any).ScrollTrigger = ScrollTrigger;
 
 interface ScrollWrapperProps {
   children: ReactNode;
@@ -25,19 +35,16 @@ const ScrollWrapper: React.FC<ScrollWrapperProps> = ({ children }) => {
       document.head.appendChild(link);
     });
 
-    // Load external scripts with error handling and timeout
+    // Load external scripts with error handling and timeout (excluding GSAP - now imported)
     const scripts = [
-      'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js',
-      'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js',
-      'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js',
-      '/SplitText.min.js',
+      '/SplitText.min.js', // Load SplitText first to make it globally available
       'https://unpkg.com/@vimeo/player@2.18.0/dist/player.min.js',
       'https://unpkg.com/@barba/core',
       'https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js',
       'https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js',
       'https://code.jquery.com/jquery-3.7.1.min.js',
       '/loconative-scroll.min.js',
-      '/index.js'
+      '/index.js' // Load this last after all dependencies
     ];
 
     const loadScript = (src: string): Promise<void> => {
@@ -58,6 +65,12 @@ const ScrollWrapper: React.FC<ScrollWrapperProps> = ({ children }) => {
 
         script.onload = () => {
           clearTimeout(timeout);
+          
+          // Make SplitText available globally if it was just loaded
+          if (src.includes('SplitText') && (window as any).SplitText) {
+            (window as any).SplitText = (window as any).SplitText;
+          }
+          
           resolve();
         };
         

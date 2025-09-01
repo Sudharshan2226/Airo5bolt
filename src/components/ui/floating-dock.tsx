@@ -49,16 +49,15 @@ const FloatingDockMobile = ({
     if (onClick) {
       onClick();
     } else if (href.startsWith('/#')) {
-      // Handle anchor links
+      // Handle anchor links within home page - use SPA navigation
       const hash = href.substring(1); // Remove the leading '/'
       navigate('/' + hash);
+    } else if (href === '/') {
+      // Home page - force full page refresh for clean state
+      window.location.href = href;
     } else {
-      // Handle regular navigation
-      navigate(href);
-      // Scroll to top for regular navigation
-      setTimeout(() => {
-        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-      }, 100);
+      // All other pages - force full page refresh to fix scroll issues
+      window.location.href = href;
     }
     setOpen(false);
   };
@@ -124,16 +123,15 @@ const FloatingDockDesktop = ({
     if (onClick) {
       onClick();
     } else if (href.startsWith('/#')) {
-      // Handle anchor links
+      // Handle anchor links within home page - use SPA navigation
       const hash = href.substring(1); // Remove the leading '/'
       navigate('/' + hash);
+    } else if (href === '/') {
+      // Home page - force full page refresh for clean state
+      window.location.href = href;
     } else {
-      // Handle regular navigation
-      navigate(href);
-      // Scroll to top for regular navigation
-      setTimeout(() => {
-        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-      }, 100);
+      // All other pages - force full page refresh to fix scroll issues
+      window.location.href = href;
     }
   };
   return (
