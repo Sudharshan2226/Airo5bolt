@@ -230,7 +230,7 @@ const AiroHackathonPage = () => {
                 Join us for an exciting UI/UX Design competition! Register now to secure your spot.
               </p>
               <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSf1INweEEvtdSFL7heBO1nxnZ25YosozSpexwu9TOXABAXOCA/viewform"
+              href="https://docs.google.com/forms/d/14Ro5ATDkNXQkZOpNACYzwscBjdR7oSTM16FSlONz9d8/edit"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full inline-block"
@@ -294,7 +294,7 @@ const AiroHackathonPage = () => {
                   <li>• Team size: 3 members per team</li>
                   <li>• Problem statement will be revealed only during the event</li>
                   <li>• All designs must be original (plagiarism = disqualification)</li>
-                  <li>• Use of pre-built templates must be declared</li>
+                  <li>• Use of pre-built templates must be prohibited</li>
                   <li>• Teams must present their final design within the time limit</li>
                 </ul>
 
