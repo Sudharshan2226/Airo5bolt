@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
 import PrimaryHero from "./components/PrimaryHero";
@@ -19,8 +19,9 @@ import Airopitch from "./components/Airopitch";
 import Airoctf from "./components/Airocode";
 import Airocodebid from "./components/Airocodebid";
 import LoadingErrorBoundary from "./components/LoadingErrorBoundary";
-import ScrollToTop from "./components/ScrollToTop";
+// import ScrollToTop from "./components/ScrollToTop"; // Temporarily disabled
 import { loadingManager } from "./utils/performance";
+/* // Temporarily disabled ScrollToHashElement
 function ScrollToHashElement() {
   const location = useLocation();
 
@@ -55,6 +56,7 @@ function ScrollToHashElement() {
 
   return null;
 }
+*/ // End temporarily disabled ScrollToHashElement
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -102,8 +104,8 @@ function App() {
   return (
     <LoadingErrorBoundary>
       <Router>
-        <ScrollToTop />
-        <ScrollToHashElement />
+        {/* <ScrollToTop /> */} {/* Temporarily disabled */}
+        {/* <ScrollToHashElement /> */} {/* Temporarily disabled */}
         <div className="flex flex-col min-h-screen">
           <FloatingNav />
           <main className="flex-grow">
