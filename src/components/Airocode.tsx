@@ -204,12 +204,12 @@ const Airoctf = () => {
                 <div className="flex items-center space-x-3">
                   <div className="flex items-center justify-center w-12 h-12 bg-gray-800 rounded-lg">
                     <div className="text-center">
-                      <div className="text-xs text-gray-400">Jan</div>
-                      <div className="text-sm font-bold text-white">19</div>
+                      <div className="text-xs text-gray-400">Sep</div>
+                      <div className="text-sm font-bold text-white">12</div>
                     </div>
                   </div>
                   <div>
-                    <p className="font-medium text-white">Sunday, January 19</p>
+                    <p className="font-medium text-white">Friday, September 12</p>
                     <p className="text-gray-400 text-sm">11:00 AM - 1:00 PM</p>
                   </div>
                 </div>

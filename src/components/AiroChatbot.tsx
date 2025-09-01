@@ -204,8 +204,8 @@ const AiroChatbot = () => {
                 <div className="flex items-center space-x-3">
                   <div className="flex items-center justify-center w-12 h-12 bg-gray-800 rounded-lg">
                     <div className="text-center">
-                      <div className="text-xs text-gray-400">Jan</div>
-                      <div className="text-sm font-bold text-white">16</div>
+                      <div className="text-xs text-gray-400">Sep</div>
+                      <div className="text-sm font-bold text-white">12</div>
                     </div>
                   </div>
                   <div>
