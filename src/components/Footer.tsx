@@ -7,16 +7,15 @@ const Footer: React.FC = () => {
 
   const handleNavigation = (path: string) => {
     if (path.startsWith('/#')) {
-      // Handle anchor links
+      // Handle anchor links within home page - use SPA navigation
       const hash = path.substring(1); // Remove the leading '/'
       navigate('/' + hash);
+    } else if (path === '/') {
+      // Home page - force full page refresh for clean state
+      window.location.href = path;
     } else {
-      // Handle regular navigation
-      navigate(path);
-      // Scroll to top immediately for non-hash navigation
-      setTimeout(() => {
-        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-      }, 100);
+      // All other pages - force full page refresh to fix scroll issues
+      window.location.href = path;
     }
   };
 

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Code, Palette, TrendingUp, Video, Bot, MessageSquare, ChevronLeft, ChevronRight } from "lucide-react";
-import { useNavigate } from "react-router-dom";
 import gwen from './assets/events/gwen.jpg';
 import CardFlip from './ui/card-flip';
 import { BorderBeam } from './ui/borderbeam';
@@ -103,7 +102,6 @@ const CarouselItem = ({ children, className }: { children: React.ReactNode; clas
 );
 
 const Events = () => {
-  const navigate = useNavigate();
   const [api, setApi] = useState<CarouselApi | null>(null);
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
@@ -211,11 +209,8 @@ const Events = () => {
     
     const route = eventRoutes[eventId as keyof typeof eventRoutes];
     if (route) {
-      navigate(route);
-      // Ensure page scrolls to top after navigation
-      setTimeout(() => {
-        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-      }, 100);
+      // Force full page refresh for all event navigation to fix scroll issues
+      window.location.href = route;
     }
   };
 

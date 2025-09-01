@@ -85,7 +85,7 @@ const AiroHackathonPage = () => {
         
         <div className="hidden md:flex items-center space-x-6">
           <div className="text-sm text-gray-400">{formatTime(currentTime)}</div>
-          <a href="#" className="text-sm hover:text-blue-400 transition-colors">Explore Events</a>
+          <a href="/#events" className="text-sm hover:text-blue-400 transition-colors">Explore Events</a>
           <button className="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg text-sm transition-colors">
             Register
           </button>
@@ -103,7 +103,7 @@ const AiroHackathonPage = () => {
       {isMenuOpen && (
         <div className="md:hidden absolute top-16 left-0 right-0 bg-gray-900/95 backdrop-blur-lg border-b border-gray-800 z-40 p-4">
           <div className="space-y-4">
-            <a href="#" className="block text-sm hover:text-blue-400 transition-colors">Explore Events</a>
+            <a href="/#events" className="block text-sm hover:text-blue-400 transition-colors">Explore Events</a>
             <button className="w-full px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg text-sm transition-colors">
               Register
             </button>
