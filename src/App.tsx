@@ -1,9 +1,10 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-import { useEffect, Suspense, lazy } from "react";
+import { useEffect, Suspense, lazy, useState } from "react";
 import LoadingErrorBoundary from "./components/LoadingErrorBoundary";
 import ScrollToTop from "./components/ScrollToTop";
 import { FloatingNav } from "./components/FloatingNav";
 import { loadingManager } from "./utils/performance";
+import Preloader from "./components/Preloader";
 
 // Eager load critical components for the home page
 import Footer from "./components/Footer";
@@ -67,14 +68,24 @@ function ScrollToHashElement() {
 }
 
 function App() {
-  // Remove artificial preloader - it will only show when actually loading components
+  const [showPreloader, setShowPreloader] = useState(true);
+
+  // Hide preloader after components are loaded and ready
   useEffect(() => {
     // Initialize performance monitoring
     loadingManager.setLoading('app', false);
+    
+    // Hide preloader after a minimum time to ensure smooth experience
+    const timer = setTimeout(() => {
+      setShowPreloader(false);
+    }, 3000); // 3 seconds to match your Preloader component timing
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
     <LoadingErrorBoundary>
+      {showPreloader && <Preloader />}
       <Router>
         <ScrollToTop />
         <ScrollToHashElement />
