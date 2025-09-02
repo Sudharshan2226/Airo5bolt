@@ -9,6 +9,7 @@ export default defineConfig({
         react(),
         tailwindcss(),
     ],
+    base: '/Airo5bolt/',
     resolve: {
         alias: {
             '@': path.resolve(__dirname, './src'),

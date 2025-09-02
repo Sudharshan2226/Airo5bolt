@@ -32,3 +32,44 @@ The project now uses a modern floating navigation dock interface with the follow
 - ✅ Resolved merge conflicts
 - ✅ Added floating navigation with smooth animations
 - ✅ Optimized build performance
+- ✅ Configured for GitHub Pages deployment
+
+## GitHub Pages Deployment
+
+This project is configured for automatic deployment to GitHub Pages. 
+
+### Setup Instructions:
+
+1. **Enable GitHub Pages in your repository settings:**
+   - Go to your repository on GitHub
+   - Navigate to Settings → Pages
+   - Under "Source", select "GitHub Actions"
+
+2. **Automatic Deployment:**
+   - The site will automatically deploy when you push to the `main` branch
+   - The GitHub Actions workflow will build and deploy your site
+   - Your site will be available at: `https://sudharshan2226.github.io/Airo5bolt/`
+
+3. **Manual Deployment (alternative):**
+   ```bash
+   npm run deploy
+   ```
+
+### Development Commands:
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+
+# Deploy to GitHub Pages
+npm run deploy
+```
