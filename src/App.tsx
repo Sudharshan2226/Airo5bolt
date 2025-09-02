@@ -68,24 +68,21 @@ function ScrollToHashElement() {
 }
 
 function App() {
-  const [showPreloader, setShowPreloader] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Hide preloader after components are loaded and ready
   useEffect(() => {
     // Initialize performance monitoring
     loadingManager.setLoading('app', false);
-    
-    // Hide preloader after a minimum time to ensure smooth experience
-    const timer = setTimeout(() => {
-      setShowPreloader(false);
-    }, 3000); // 3 seconds to match your Preloader component timing
-
-    return () => clearTimeout(timer);
   }, []);
 
   return (
     <LoadingErrorBoundary>
-      {showPreloader && <Preloader />}
+      <Preloader 
+        isLoading={isLoading} 
+        setIsLoading={setIsLoading}
+        minLoadTime={3000}
+      />
       <Router>
         <ScrollToTop />
         <ScrollToHashElement />
